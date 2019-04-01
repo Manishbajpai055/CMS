@@ -6,10 +6,11 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 @NgModule({
-  declarations: [HomepageComponent, NavbarComponent,HomeComponent, BlogComponent, AboutComponent],
+  declarations: [HomepageComponent, NavbarComponent,HomeComponent, BlogComponent, AboutComponent, CarouselComponent],
   imports: [
     CommonModule,
     RouterModule,

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
+import { FormsModule } from '@angular/forms';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -55,6 +57,7 @@ import {
     AppRoutingModule,
     HomeModule,
     AdminModule,
+    FormsModule
   
   ],
   providers: [],

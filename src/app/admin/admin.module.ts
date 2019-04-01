@@ -6,6 +6,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagesComponent } from './pages/pages.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from "@angular/forms";
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -43,10 +45,15 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { AdminBlogComponent } from './blog/blog.component';
+import { BloglistComponent } from './blog/bloglist/bloglist.component';
+import { BlogeditorComponent } from './blog/blogeditor/blogeditor.component';
+import { FormsModule }   from '@angular/forms';
+
 
 
 @NgModule({
-  declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent, PagesComponent,
+  declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent, PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
     ],
   imports: [
     CommonModule,
@@ -88,7 +95,9 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-  MatSidenavModule
+  MatSidenavModule,
+  FormsModule,
+  ReactiveFormsModule
   ],
   exports: [MatSidenavModule,
     MatAutocompleteModule,
