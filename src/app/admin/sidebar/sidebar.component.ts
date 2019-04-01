@@ -1,10 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
-import { AdminModule } from './admin/admin.module';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -45,19 +39,17 @@ import {
 } from '@angular/material';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HomeModule,
-    AdminModule,
-  
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+@Component({
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class AppModule { }
+export class SidebarComponent implements OnInit {
+  @Output() toggleSidenav = new EventEmitter<void>();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
