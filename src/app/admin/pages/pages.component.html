@@ -1,3 +1,17 @@
-<p>
-  pages works!
-</p>
+<form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
+  <label>
+    Title Of The Page
+    <input type="text" formControlName="title">
+  </label>
+
+  <label>
+    Page Body
+    <angular-editor formControlName="body" [config]="editorConfig"></angular-editor>  </label>
+  <label>
+    Keywords On this Page For SEO
+    <input type="text" formControlName="Keywords">
+  </label>
+  <input type="submit">
+
+</form>
+

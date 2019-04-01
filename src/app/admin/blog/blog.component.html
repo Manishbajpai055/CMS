@@ -1,7 +1,20 @@
-<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
-    <input type = "text" name = "title" placeholder = "Titlle of Blog" ngModel>
-    <br/>
-    <input type = "text" name = "body" placeholder = "Body Of the Blog"  ngModel>
-    <br/>
-    <input type = "submit" value = "submit">
- </form>
+<form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
+    <label>
+      Title Of The Page
+      <input type="text" formControlName="title">
+    </label>
+  
+    <label>
+      Page Body
+      <!-- <angular-editor formControlName="body" [config]="editorConfig"></angular-editor>-->
+    <!-- -->  <app-ngx-editor formControlName="body" [placeholder]="'Enter text here...'" [spellcheck]="true"></app-ngx-editor>
+
+      </label>
+    <label>
+      Keywords On this Page For SEO
+      <input type="text" formControlName="Keywords">
+    </label>
+    <input type="submit">
+  
+  </form>
+  <!-- use with ngModel -->
