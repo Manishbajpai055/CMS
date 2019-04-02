@@ -19,4 +19,9 @@ export class BloglistComponent implements OnInit {
       })
   }
 
+  Delete(id){
+    console.log(id)
+    this.list.deleteblog(id)
+  }
+
 }

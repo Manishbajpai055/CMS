@@ -14,7 +14,7 @@
         <td>{{blog.title}}</td>
         <td>{{blog.body}}</td>
         <td>Edit</td>
-        <td>Delete</td>
+        <td (click)="Delete(blog.id)" > Delete</td>
       </tr>
     </tbody>
   </table>

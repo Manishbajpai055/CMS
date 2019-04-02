@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import {BlogService } from '../../../services/blog.service'
+
 
 @Component({
   selector: 'app-blogeditor',
@@ -13,13 +15,16 @@ export class BlogeditorComponent implements OnInit {
     body: new FormControl(''),
   }); 
   body=''
-  constructor() { }
+  constructor(private newblog:BlogService) { }
 
   ngOnInit() {
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.NewPost.value);
+    this.newblog.newblog(this.NewPost.value)
+
+
   }
    
 }

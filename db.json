@@ -1,69 +1,57 @@
 {
-    "author" : [ {
-        "id": 1,
-        "age" : 16,
-        "name" : "Andy"
-      }, 
-      {
-        "id": 2,
-        "age" : 22,
-        "name" : "Lisa"
-      }
-    ],
-    "comments" : [ 
-        {
-        "id": 1,
-        "date" : "03-18-2016",
-        "message" : "Nice!"
-      },
-      {
-        "id": 2,
-        "date" : "06-21-2017",
-        "message" : "Great view!"
-      }
-    ],
-    "crousel" : [
-      {
-        "id": 1,
-        "author" : "Lisa",
-        "description" : "A wonderful view of nature",
-        "img" : "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
-        "title" : "A natural view"
-      },
-      {
-        "id": 2,
-        "author" : "Andy",
-        "description" : "Seaside sunset",
-        "img": "https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg",
-        "title" : "Landscape view"
-      },
-      {
-        "id": 3,
-        "author" : "Andy",
-        "description" : "Seaside sunset",
-        "img": "https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg",
-        "title" : "Landscape view"
-      }
-    ],
-    "Blogs" : [ 
-        {
-        "id": 1,
-        "title" : "FIrst Blog Post",
-        "body" :  "FIrst Blog Post Nice! work this is",
-        "keywords" : "Hi Heloow Thi is "
-      },
-      {
-        "id": 2,
-        "title" : "Second Blog Post",
-        "body" :  "FIrst Blog Post Nice! work this is",
-        "keywords" : "Hi Heloow Thi is "
-      },
-      {
-        "id": 3,
-        "title" : "FIrst Blog Post",
-        "body" :  "FIrst Blog Post Nice! work this is",
-        "keywords" : "Hi Heloow Thi is "
-      }
-    ]
-  }
-  
+  "author": [
+    {
+      "id": 1,
+      "age": 16,
+      "name": "Andy"
+    },
+    {
+      "id": 2,
+      "age": 22,
+      "name": "Lisa"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "date": "03-18-2016",
+      "message": "Nice!"
+    },
+    {
+      "id": 2,
+      "date": "06-21-2017",
+      "message": "Great view!"
+    }
+  ],
+  "crousel": [
+    {
+      "id": 1,
+      "author": "Lisa",
+      "description": "A wonderful view of nature",
+      "img": "https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg",
+      "title": "A natural view"
+    },
+    {
+      "id": 2,
+      "author": "Andy",
+      "description": "Seaside sunset",
+      "img": "https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg",
+      "title": "Landscape view"
+    },
+    {
+      "id": 3,
+      "author": "Andy",
+      "description": "Seaside sunset",
+      "img": "https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg",
+      "title": "Landscape view"
+    }
+  ],
+  "Blogs": [
+    {
+      "id": 2,
+      "title": "Second Blog Post",
+      "body": "FIrst Blog Post Nice! work this is",
+      "keywords": "Hi Heloow Thi is "
+    }
+  ]
+}
