@@ -15,13 +15,15 @@ import {QuillModule} from 'ngx-quill';
   import { from } from 'rxjs';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
+import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
 
 
 
 @NgModule({
   declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent,
     PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
-    CarouselComponent],
+    CarouselComponent,
+    CarousellistComponent],
   imports: [
     CarouselModule,
     CommonModule,

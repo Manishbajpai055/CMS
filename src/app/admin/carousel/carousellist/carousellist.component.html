@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Preview</th>
+        <td scope="col">Edit</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let slide of sliderArray">
+        <th scope="row">{{slide.id}}</th>
+        <td>{{slide.title}}</td>
+        <td>{{slide.description}}</td>
+        <td><img style="height:20px" src="{{slide.img}}"></td>
+        <td>Edit</td>
+      </tr>
+    </tbody>
+  </table>
