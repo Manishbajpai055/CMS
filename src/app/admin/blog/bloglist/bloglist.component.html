@@ -1,3 +1,20 @@
-<p>
-  bloglist works!
-</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <td scope="col">Edit</td>
+        <td scope="col">Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of bloglist">
+        <th scope="row">{{blog.id}}</th>
+        <td>{{blog.title}}</td>
+        <td>{{blog.body}}</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+    </tbody>
+  </table>
