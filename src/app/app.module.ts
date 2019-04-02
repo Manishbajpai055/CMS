@@ -7,14 +7,13 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import {QuillModule} from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
-import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogdetailComponent,
+  
 
 
   ],

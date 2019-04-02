@@ -10,6 +10,9 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import {NgbModule, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -17,6 +20,10 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     RouterModule,
-  ]
+    NgbModule,
+    NgbPaginationModule, NgbAlertModule,
+    
+  ],
+  providers: [NgbCarouselConfig] 
 })
 export class HomeModule { }

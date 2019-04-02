@@ -8,11 +8,11 @@ export class BlogService {
   constructor(private http:HttpClient) { }
 
   bloglist(){
-    return this.http.get('http://127.0.0.1:8000/api/')
+    return this.http.get('http://localhost:3004/Blogs/')
    
   }
   blodetail(id){
-    return this.http.get('http://127.0.0.1:8000/api/'+id+'/')
+    return this.http.get('http://localhost:3004/Blogs/'+id+'/')
 
   }
   }
