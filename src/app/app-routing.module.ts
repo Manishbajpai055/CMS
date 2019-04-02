@@ -8,6 +8,7 @@ import { AboutComponent } from './home/about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { PagesComponent } from './admin/pages/pages.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
+import { BlogdetailComponent } from './home/blog/blogdetail/blogdetail.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,12 @@ const routes: Routes = [
     {
       path : 'blog',
       component : BlogComponent,
+      children:[{
+        
+          path : ':i',
+          component : BlogdetailComponent
+        
+      }]
       
     },
   {
@@ -47,7 +54,7 @@ const routes: Routes = [
       },
       {
         path : 'blogs',
-        component : AdminBlogComponent
+        component : AdminBlogComponent,
       }
     ],
     },

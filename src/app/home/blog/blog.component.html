@@ -1,3 +1,7 @@
-<p>
-  blog works!
-</p>
+<h3>Blogs</h3>
+<div *ngFor="let blog of bloglist">
+  
+        <h4 class="badge"> <a [routerLink]="[blog.id]" >{{blog.title}}</a> </h4>
+         <p>{{blog.content}}</p> 
+         <a [routerLink]="[blog.id]" >GO to detail</a>
+ </div>

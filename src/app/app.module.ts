@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import {QuillModule} from 'ngx-quill';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   MatAutocompleteModule,
@@ -46,15 +47,19 @@ import {
   MatTreeModule,
   MatDrawer,
 } from '@angular/material';
+import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    BlogdetailComponent,
 
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    
     AppRoutingModule,
     HomeModule,
     QuillModule.forRoot({
