@@ -24,14 +24,15 @@ const routes: Routes = [
     {
       path : 'blog',
       component : BlogComponent,
-      children:[{
-        
-          path : ':i',
-          component : BlogdetailComponent
-        
-      }]
+      children:[]
       
     },
+    {
+        
+      path : 'blog/:id',
+      component : BlogdetailComponent
+    
+  },
   {
     path : 'about',
     component : AboutComponent

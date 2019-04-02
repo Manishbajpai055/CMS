@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';@Injectable({
+import { HttpClient } from '@angular/common/http';
+@Injectable({
   providedIn: 'root'
 })
 export class BlogService {
@@ -9,5 +10,9 @@ export class BlogService {
   bloglist(){
     return this.http.get('http://127.0.0.1:8000/api/')
    
+  }
+  blodetail(id){
+    return this.http.get('http://127.0.0.1:8000/api/'+id+'/')
+
   }
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {BlogService } from './../../../services/blog.service'
 
 @Component({
   selector: 'app-blogdetail',
@@ -7,14 +8,19 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./blogdetail.component.css']
 })
 export class BlogdetailComponent implements OnInit {
+  blodetail: Object;
+  id = 1 
+  constructor(private rout:ActivatedRoute, private detail:BlogService) {
+    this.rout.params.subscribe( params => console.log(params) );
 
-  constructor(private rout:ActivatedRoute) { }
+   }
 
   ngOnInit() {
     this.rout.params.subscribe( params => console.log(params) );
-
-    console.log("getgwjjkd")
-
+    this.detail.blodetail(this.id).subscribe(
+      data => {
+        this.blodetail = data;
+      })
   }
 
 }

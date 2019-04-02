@@ -12,20 +12,23 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  constructor(private list:BlogService , private router:Router,private rout:ActivatedRoute) { }
+  constructor(private list:BlogService , private router:Router,private rout:ActivatedRoute) {
+    this.rout.params.subscribe( params => console.log(params) );
+    this.rout.params.subscribe( params => console.log("",params) );
+
+
+   }
   bloglist
 
   ngOnInit() {
-        this.rout.params.subscribe( params => console.log(params) );
    this.list.bloglist().subscribe(
     data => {
       this.bloglist = data;
-    },
-     
-   )
+    })
   }
   ViewDetail(id){
-      this.router.navigate(['blog', id]);
+    console.log(id)
+    this.router.navigate(['blog',id]);
   }
    
    
