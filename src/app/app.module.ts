@@ -50,10 +50,12 @@ import {
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     BlogdetailComponent,
+
 
   ],
   imports: [

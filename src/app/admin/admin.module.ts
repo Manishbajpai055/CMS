@@ -18,14 +18,17 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {QuillModule} from 'ngx-quill';
   import { from } from 'rxjs';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselModule } from 'ngx-bootstrap';
 
 
 
 @NgModule({
   declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent,
     PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
-    ],
+    CarouselComponent],
   imports: [
+    CarouselModule,
     CommonModule,
     RouterModule,
     HttpClientModule, 
