@@ -1,3 +1,20 @@
-<p>
-  blogeditor works!
-</p>
+<form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
+  <label>
+    Title Of The Page
+    <input type="text" formControlName="title">
+  </label>
+
+  <label>
+    Page Body
+    <br>
+<!-- or use with formControl -->
+  <quill-editor formControlName="body"></quill-editor>
+     </label>
+  <label>
+    Keywords On this Page For SEO
+    <input type="text" formControlName="Keywords">
+  </label>
+  <input type="submit">
+
+</form>
+<!-- use with ngModel -->

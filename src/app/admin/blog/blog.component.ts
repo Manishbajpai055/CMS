@@ -9,21 +9,11 @@ import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
   styleUrls: ['./blog.component.css']
 })
 export class AdminBlogComponent implements OnInit { 
-  NewPost = new FormGroup({
-    Keywords: new FormControl(''),
-    title: new FormControl(''),
-    body: new FormControl(''),
-  }); 
-  body=''
   constructor( ) { }
 
   ngOnInit() {
 
   }
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.NewPost.value);
-  }
-   
+ 
  
 }
