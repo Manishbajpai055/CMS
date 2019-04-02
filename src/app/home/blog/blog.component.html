@@ -1,8 +1,12 @@
-<div style="display:inline"  *ngFor="let blog of bloglist" class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div style="display:inline" class="card-body">
-                  <h5 class="card-title">{{blog.title}}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a [routerLink]="[blog.id]" class="btn btn-primary">ReadFull</a>
+<div class="row">
+                <div *ngFor="let blog of bloglist" class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{blog.title}}</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a [routerLink]="[blog.id]" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
                 </div>
-</div>
+        
+              </div>
