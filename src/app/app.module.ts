@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
+import {QuillModule} from 'ngx-quill';
 
 import {
   MatAutocompleteModule,
@@ -56,8 +57,13 @@ import {
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    AdminModule,
-    FormsModule
+    QuillModule.forRoot({
+      modules: {
+        syntax: true,
+      }
+    }),
+        AdminModule,
+    FormsModule,
   
   ],
   providers: [],

@@ -7,29 +7,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent implements OnInit {
-  editorConfig: AngularEditorConfig = {
-    editable: true,
-    height: '25rem',
-    minHeight: '5rem',
-    placeholder: 'Enter text here...',
-    translate: 'no',
-    uploadUrl: 'v1/images', // if needed
-    customClasses: [ // optional
-      {
-        name: "quote",
-        class: "quote",
-      },
-      {
-        name: 'redText',
-        class: 'redText'
-      },
-      {
-        name: "titleText",
-        class: "titleText",
-        tag: "h1",
-      },
-    ]
-  };
+  
   constructor() { }
   NewPost = new FormGroup({
     Keywords: new FormControl(''),

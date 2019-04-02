@@ -1,3 +1,5 @@
+
+
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
   <label>
     Title Of The Page
@@ -6,7 +8,10 @@
 
   <label>
     Page Body
-    <angular-editor formControlName="body" [config]="editorConfig"></angular-editor>  </label>
+    <br>
+<!-- or use with formControl -->
+  <quill-editor formControlName="body"></quill-editor>
+     </label>
   <label>
     Keywords On this Page For SEO
     <input type="text" formControlName="Keywords">
@@ -14,4 +19,4 @@
   <input type="submit">
 
 </form>
-
+<!-- use with ngModel -->

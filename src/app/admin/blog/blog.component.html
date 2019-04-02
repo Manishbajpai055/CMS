@@ -1,20 +1,20 @@
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
-    <label>
-      Title Of The Page
-      <input type="text" formControlName="title">
-    </label>
-  
-    <label>
-      Page Body
-      <!-- <angular-editor formControlName="body" [config]="editorConfig"></angular-editor>-->
-    <!-- -->  <app-ngx-editor formControlName="body" [placeholder]="'Enter text here...'" [spellcheck]="true"></app-ngx-editor>
+  <label>
+    Title Of The Page
+    <input type="text" formControlName="title">
+  </label>
 
-      </label>
-    <label>
-      Keywords On this Page For SEO
-      <input type="text" formControlName="Keywords">
-    </label>
-    <input type="submit">
-  
-  </form>
-  <!-- use with ngModel -->
+  <label>
+    Page Body
+    <br>
+<!-- or use with formControl -->
+  <quill-editor formControlName="body"></quill-editor>
+     </label>
+  <label>
+    Keywords On this Page For SEO
+    <input type="text" formControlName="Keywords">
+  </label>
+  <input type="submit">
+
+</form>
+<!-- use with ngModel -->
