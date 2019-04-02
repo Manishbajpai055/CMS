@@ -11,12 +11,11 @@ export class BlogdetailComponent implements OnInit {
   blodetail: Object;
   id = 1 
   constructor(private rout:ActivatedRoute, private detail:BlogService) {
-    this.rout.params.subscribe( params => console.log(params) );
 
    }
 
   ngOnInit() {
-    this.rout.params.subscribe( params => console.log(params) );
+    this.rout.params.subscribe( params => this.id = params.id);
     this.detail.blodetail(this.id).subscribe(
       data => {
         this.blodetail = data;
