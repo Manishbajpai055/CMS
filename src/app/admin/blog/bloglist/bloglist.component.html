@@ -4,7 +4,7 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
-W        <td scope="col">Edit</td>
+        <td scope="col">Edit</td>
         <td scope="col">Delete</td>
       </tr>
     </thead>
@@ -12,8 +12,8 @@ W        <td scope="col">Edit</td>
       <tr *ngFor="let blog of bloglist"W>
         <th scope="row">{{blog.id}}</th>
         <td>{{blog.title}}</td>
-        <td>Edit</td>
-        <td (click)="Delete(blog.id)" > Delete</td>
+        <td class="btn btn-primary-modal" (click)="Edit(blog.id)" )>Edit</td>
+        <td class="btn btn-primary-modal" (click)="Delete(blog.id)" > Delete</td>
       </tr>
     </tbody>
   </table>

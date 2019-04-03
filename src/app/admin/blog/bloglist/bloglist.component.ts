@@ -3,6 +3,7 @@ import {BlogService } from '../../../services/blog.service'
 import { Router } from '@angular/router';
 import {ActivatedRoute} from "@angular/router";
 import { AdminBlogComponent } from '../blog.component';
+import any = jasmine.any;
 
 
 @Component({
@@ -32,4 +33,7 @@ export class BloglistComponent implements OnInit {
     this.adminblog.islistactive=false
   }
 
+  Edit(id: any) {
+    console.log(id)
+  }
 }
