@@ -12,11 +12,13 @@ import { ViewEncapsulation } from '@angular/compiler/src/core';
 })
 export class CarouselComponent implements OnInit {
   sliderArray ;
-  selectedIndex: number;
-  transform: number;
-
+  index = [1,2,3]
   constructor(private carousel:CarouselService,private config:NgbCarouselConfig) { 
-  
+    config.interval = 10000;
+    config.wrap = true;
+    config.keyboard = true;
+    config.pauseOnHover = true;
+    
   }
 
   ngOnInit() {

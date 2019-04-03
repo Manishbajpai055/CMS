@@ -9,20 +9,14 @@
     <!--/.Indicators-->
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
-      <div *ngFor="let slide of sliderArray" [ngClass]="{ active: 1===slide.id}" class="carousel-item ">
-        <div class="view">
+      <div *ngFor="let slide of sliderArray" [ngClass]="{ active: 1===slide.id}" class="carousel-item" data-slide-to={sliderArray}>
           <img class="d-block w-100" src="{{slide.img}}" alt="First slide">
-          <div class="mask rgba-black-light"></div>
-        </div>
         <div class="carousel-caption">
           <h3 class="h3-responsive">{{slide.title}},</h3>
           <p>{{slide.description}}</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <!--Mask color-->
-       
-    </div>
+
     <!--/.Slides-->
     <!--Controls-->
     <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">

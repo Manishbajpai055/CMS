@@ -7,6 +7,7 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import {QuillModule} from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 
@@ -20,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    
     AppRoutingModule,
     HomeModule,
     QuillModule.forRoot({
@@ -28,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
         syntax: true,
       }
     }),
-        AdminModule,
+    AdminModule,
+    MarkdownModule.forRoot(),
     FormsModule,
   
   ],

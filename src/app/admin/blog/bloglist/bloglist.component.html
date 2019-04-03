@@ -4,16 +4,14 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <td scope="col">Edit</td>
+W        <td scope="col">Edit</td>
         <td scope="col">Delete</td>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let blog of bloglist">
+      <tr *ngFor="let blog of bloglist"W>
         <th scope="row">{{blog.id}}</th>
         <td>{{blog.title}}</td>
-        <td>{{blog.body}}</td>
         <td>Edit</td>
         <td (click)="Delete(blog.id)" > Delete</td>
       </tr>

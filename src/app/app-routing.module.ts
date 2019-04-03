@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { PagesComponent } from './admin/pages/pages.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { BlogdetailComponent } from './home/blog/blogdetail/blogdetail.component';
+import { BlogliistComponent } from './home/blog/blogliist/blogliist.component';
 
 const routes: Routes = [
   {
@@ -20,19 +21,26 @@ const routes: Routes = [
     },
     {
       path:'',component:HomepageComponent
-  },
+   },
     {
       path : 'blog',
       component : BlogComponent,
-      children:[]
+      children:[
+        {
+          path : 'blog',
+          loadChildren:'./home/blog/blog.module#BlogModule',
+      },
+      {
+        path:'',component:BlogliistComponent
+      },
+      {
+          path : 'post/:id',
+          component:BlogdetailComponent
+      }
+      ]
       
     },
-    {
-        
-      path : 'blog/:id',
-      component : BlogdetailComponent
     
-  },
   {
     path : 'about',
     component : AboutComponent

@@ -12,15 +12,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {NgbModule, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { BlogModule } from './blog/blog.module';
+import { BlogliistComponent } from './blog/blogliist/blogliist.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 @NgModule({
-  declarations: [HomepageComponent, NavbarComponent,HomeComponent, BlogComponent, AboutComponent, CarouselComponent, BlogdetailComponent, HeaderComponent, FooterComponent],
+  declarations: [HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule,
     NgbModule,
+    BlogModule,
     NgbPaginationModule, NgbAlertModule,
     
   ],
