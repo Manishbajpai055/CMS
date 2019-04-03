@@ -1,2 +1,3 @@
-<app-blogeditor></app-blogeditor>
-<app-bloglist></app-bloglist>
+
+<app-blogeditor  *ngIf="iseditoractive"></app-blogeditor>
+<app-bloglist *ngIf="islistactive" ></app-bloglist>

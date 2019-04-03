@@ -16,5 +16,8 @@ export class CarousellistComponent implements OnInit {
       this.sliderArray = res
     })
   }
-
+  delet(id){
+      this.carousel.carouseldelet(id).subscribe(res =>{
+      })
+  }
 }

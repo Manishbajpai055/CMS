@@ -17,13 +17,11 @@ export class BlogService {
   }
   newblog(data){
     return this.http.post('http://localhost:3004/Blogs/',data).subscribe(res=>{
-      console.log(res)
     })
   
   }
   deleteblog(id){
     return this.http.delete('http://localhost:3004/Blogs/'+id+'/').subscribe(res=>{
-      console.log(res)
     })
   }
   }

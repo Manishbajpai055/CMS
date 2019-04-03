@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import {BlogService } from '../../../services/blog.service'
+import { AdminBlogComponent } from '../blog.component';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class BlogeditorComponent implements OnInit {
     body: new FormControl(''),
   }); 
   body=''
-  constructor(private newblog:BlogService) { }
+  constructor(private newblog:BlogService,private adminblog:AdminBlogComponent) { }
 
   ngOnInit() {
   }
@@ -23,8 +24,10 @@ export class BlogeditorComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.NewPost.value);
     this.newblog.newblog(this.NewPost.value)
-
-
+  }
+  goback(){
+      this.adminblog.islistactive=true
+      this.adminblog.iseditoractive=false
   }
    
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {BlogService } from '../../../services/blog.service'
 import { Router } from '@angular/router';
 import {ActivatedRoute} from "@angular/router";
+import { AdminBlogComponent } from '../blog.component';
+
 
 @Component({
   selector: 'app-bloglist',
@@ -10,18 +12,24 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class BloglistComponent implements OnInit {
   bloglist
-  constructor(private list:BlogService , private router:Router,private rout:ActivatedRoute) { }
+  constructor(private list:BlogService , private router:Router,private rout:ActivatedRoute,private adminblog:AdminBlogComponent) { }
 
   ngOnInit() {
     this.list.bloglist().subscribe(
       data => {
         this.bloglist = data;
+        
       })
   }
 
   Delete(id){
     console.log(id)
     this.list.deleteblog(id)
+  }
+
+  add_newPost(){
+    this.adminblog.iseditoractive=true
+    this.adminblog.islistactive=false
   }
 
 }

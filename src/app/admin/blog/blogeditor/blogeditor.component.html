@@ -1,3 +1,4 @@
+<button (click)="goback()">Go back To list</button>
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
   <label>
     Title Of The Page
@@ -14,7 +15,7 @@
     Keywords On this Page For SEO
     <input type="text" formControlName="Keywords">
   </label>
-  <input type="submit">
+  <input type="submit" name="Save">
 
 </form>
 <!-- use with ngModel -->

@@ -10,7 +10,8 @@ import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 })
 export class AdminBlogComponent implements OnInit { 
   constructor( ) { }
-
+  iseditoractive = false
+  islistactive = true
   ngOnInit() {
 
   }

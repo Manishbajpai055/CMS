@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarouselService  } from '../../services/carousel.service'
 
 @Component({
   selector: 'app-carousel',
@@ -14,12 +15,21 @@ export class CarouselComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = () => {
     this.imagePreview = reader.result;
+
     };
   reader.readAsDataURL(this.selecetdFile);
 }
-  constructor() { }
+  constructor( private carousleservice :CarouselService) { }
 
   ngOnInit() {
   }
+
+upload(){
+  console.log("",this.imagePreview)
+    var data = {"img":this.imagePreview}
+    this.carousleservice.carouselupload(data).subscribe(res=>{
+      console.log(res)
+    })
+}
 
 }

@@ -5,7 +5,7 @@
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">Preview</th>
-        <td scope="col">Edit</td>
+        <td scope="col">Delete</td>
       </tr>
     </thead>
     <tbody>
@@ -14,7 +14,7 @@
         <td>{{slide.title}}</td>
         <td>{{slide.description}}</td>
         <td><img style="height:20px" src="{{slide.img}}"></td>
-        <td>Edit</td>
+        <td (click)="delet(slide.id)">Delete</td>
       </tr>
     </tbody>
   </table>
