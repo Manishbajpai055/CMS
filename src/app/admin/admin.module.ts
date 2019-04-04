@@ -16,6 +16,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
     CarouselComponent,
     CarousellistComponent,
     HeaderFooterComponent,
+    AboutComponent,
     ],
   imports: [
     CarouselModule,

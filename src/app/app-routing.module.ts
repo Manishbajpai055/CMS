@@ -77,6 +77,10 @@ const routes: Routes = [
       {
         path : 'carousel',
         component : CarouselComponent
+      },
+      {
+        path : 'about',
+        component : AboutComponent
       }
     ],
     },{
