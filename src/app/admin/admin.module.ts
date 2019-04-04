@@ -22,7 +22,6 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { AboutComponentadmin } from './about/about.component';
 
 
-
 @NgModule({
   declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent,
     PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
@@ -31,7 +30,8 @@ import { AboutComponentadmin } from './about/about.component';
     HeaderFooterComponent,
     PageditorComponent,
     PagelistComponent,
-    AboutComponentadmin],
+    AboutComponentadmin,
+    ],
   imports: [
     CarouselModule,
     CommonModule,
