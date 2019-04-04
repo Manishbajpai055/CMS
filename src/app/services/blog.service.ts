@@ -13,7 +13,7 @@ export class BlogService {
   }
   blodetail(id){
     return this.http.get('http://localhost:3004/Blogs/'+id+'/')
-
+      
   }
   newblog(data){
     return this.http.post('http://localhost:3004/Blogs/',data).subscribe(res=>{

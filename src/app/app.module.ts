@@ -7,16 +7,14 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
 import {QuillModule} from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
-import { MarkdownModule } from 'ngx-markdown';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-  
-
-
+    
   ],
   imports: [
     BrowserModule,
@@ -29,8 +27,10 @@ import { MarkdownModule } from 'ngx-markdown';
       }
     }),
     AdminModule,
-    MarkdownModule.forRoot(),
     FormsModule,
+    AuthenticationModule
+    
+    
   
   ],
   providers: [],

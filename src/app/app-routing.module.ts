@@ -10,6 +10,9 @@ import { PagesComponent } from './admin/pages/pages.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { BlogdetailComponent } from './home/blog/blogdetail/blogdetail.component';
 import { BlogliistComponent } from './home/blog/blogliist/blogliist.component';
+import { LoginComponent } from "./authentication/login/login.component";
+import { AuthenticationComponent } from './authentication/authentication.component';
+
 
 const routes: Routes = [
   {
@@ -66,7 +69,19 @@ const routes: Routes = [
         component : AdminBlogComponent,
       }
     ],
-    },
+    },{
+      path:'auth',
+      component:AuthenticationComponent,
+      children:[
+        {
+          path: 'authh',
+          loadChildren: './authentication/authentication.module#AuthenticationModule'
+        },{
+          path:'',
+          component:LoginComponent
+        }
+      ]
+    }
     
     
 ];
