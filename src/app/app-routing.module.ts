@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { AdminBlogComponent } from './admin/blog/blog.component';
 import { AboutComponent } from './home/about/about.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { PagesComponent } from './admin/pages/pages.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
@@ -14,6 +15,7 @@ import { LoginComponent } from "./authentication/login/login.component";
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { HeaderFooterComponent } from './admin/header-footer/header-footer.component';
 import { CarouselComponent } from './admin/carousel/carousel.component';
+import { AboutComponentadmin } from './admin/about/about.component';
 
 
 const routes: Routes = [
@@ -80,7 +82,7 @@ const routes: Routes = [
       },
       {
         path : 'about',
-        component : AboutComponent
+        component : AboutComponentadmin
       }
     ],
     },{

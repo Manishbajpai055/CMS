@@ -30,7 +30,8 @@ import { AboutComponent } from './about/about.component';
     CarousellistComponent,
     HeaderFooterComponent,
     PageditorComponent,
-    PagelistComponent],
+    PagelistComponent,
+    AboutComponent],
   imports: [
     CarouselModule,
     CommonModule,
