@@ -2,19 +2,19 @@
 <button class="btn btn-primary-modal" (click)="goback()">Go back To list</button>
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
   <label>
-    Title Of The Blog
+    Title Of The Page
     <input type="text" formControlName="title">
   </label>
 
   <label>
-    Blog Body
+    Page Body
     <br>
 <br>
 <!-- or use with formControl -->
  <quill-editor formControlName="body"></quill-editor>
      </label>
   <label>
-    Keywords On this Blog For SEO
+    Keywords On this Page For SEO
     <input type="text" formControlName="Keywords">
   </label>
   <input class="btn btn-primary-modal" type="submit" value="Save" name="Save">

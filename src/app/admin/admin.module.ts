@@ -16,13 +16,17 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { PageditorComponent } from './pages/pageditor/pageditor.component';
+import { PagelistComponent } from './pages/pagelist/pagelist.component';
 
 
 @NgModule({
   declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent,
     PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
     CarouselComponent,
-    CarousellistComponent],
+    CarousellistComponent,
+    PageditorComponent,
+    PagelistComponent],
   imports: [
     CarouselModule,
     CommonModule,
