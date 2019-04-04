@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-header-footer',
@@ -11,5 +12,10 @@ export class HeaderFooterComponent implements OnInit {
 
   ngOnInit() {
   }
+  NewPost = new FormGroup({
+    Keywords: new FormControl(''),
+    title: new FormControl(''),
+    body: new FormControl(''),
+  });
 
 }
