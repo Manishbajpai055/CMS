@@ -1,33 +1,28 @@
-<div class="d-flex align-items-stretch min-height-100 h-100">
-    <div class="bg-cover bg-1 hidden-sm-down col-md-6 col-lg-8"></div>
-    <div class="card card-block mb-0 rounded-0 p-5 col-sm-12 col-md-6 col-lg-4">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-          <img src="assets/images/logo.png" class="avatar-xs mb-1" alt="">
-          <p class="ff-headers text-uppercase">Sign in to your account</p>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
+        <div class="form-group">
+            <label>Username:</label>
+            <input class="form-control" formControlName="username" type="text">
         </div>
-  
-        <div *ngIf="errorMessage" class="text-danger" style="margin-bottom: 10px">{{errorMessage}}</div>
-  
-        <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['username'].hasError('required') && form.controls['username'].touched}">
-          <label for="username" class="form-control-label">
-            Enter your username
-          </label>
-          <input type="text" class="form-control" placeholder="username" [formControl]="form.controls['username']" [ngClass]="{'form-control-danger': form.controls['username'].hasError('required') && form.controls['username'].touched}"/>
-          <div class="form-control-feedback" *ngIf="form.controls['username'].hasError('required') && form.controls['username'].touched">Username is required.</div>
-        </fieldset>
-        <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
-          <label for="password" class="form-control-label">
-            Enter your password
-          </label>
-          <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}"/>
-          <div class="form-control-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Password is required.</div>
-          <a [routerLink]="['/authentication/forgot']" class="form-text"><small>Recover password</small></a>
-        </fieldset>
-  
-        <div class="block"></div>
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Login</button>
-      </form>
-    </div>
-  </div>
-  
+        <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls['username'].errors.required">
+              Username is required.
+            </div>
+        </div>
+         <div class="form-group">
+            <label>Password:</label>
+            <input class="form-control" formControlName="password" type="text">
+        </div>
+        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls['password'].errors.required">
+              Password is required.
+            </div>
+        </div>
+        <p class="alert alert-danger" *ngIf="errorMassage">{{errorMassage}}</p>
+        <button type="submit"
+            [disabled]="loginForm.pristine || loginForm.invalid" class="btn btn-success">
+            Login
+        </button>
+  </form>
+  <br />
+</div>

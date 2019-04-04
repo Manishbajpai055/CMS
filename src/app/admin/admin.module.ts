@@ -15,8 +15,12 @@ import {QuillModule} from 'ngx-quill';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
+<<<<<<< HEAD
 import { JoditAngularModule } from 'jodit-angular';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
+=======
+import { EditorModule } from '@tinymce/tinymce-angular';
+>>>>>>> d10b2572d65787ade4746ee5ad9ca739808da3c2
 
 
 @NgModule({
@@ -37,8 +41,7 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
       }
     }),
       FormsModule,
-      JoditAngularModule,
-  ReactiveFormsModule
+      ReactiveFormsModule
   ],
   
  
