@@ -7,20 +7,13 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent implements OnInit {
-  
+  iseditoractive = false
+  islistactive = true
   constructor() { }
-  NewPost = new FormGroup({
-    Keywords: new FormControl(''),
-    title: new FormControl(''),
-    body: new FormControl(''),
-  });  ngOnInit() {
+ ngOnInit() {
   }
        
 
-onSubmit() {
-  // TODO: Use EventEmitter with form value
-  console.warn(this.NewPost.value);
-}
- 
+
 
 }

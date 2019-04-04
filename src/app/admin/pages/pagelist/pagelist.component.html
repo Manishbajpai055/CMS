@@ -1,0 +1,19 @@
+<button (click)="add_newPage()" >Add New Post</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <td scope="col">Edit</td>
+        <td scope="col">Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let page of pagelist">
+        <th scope="row">{{page.id}}</th>
+        <td>{{page.title}}</td>
+        <td class="btn btn-primary-modal" (click)="Edit(page.id)">Edit</td>
+        <td class="btn btn-primary-modal" (click)="Delete(page.id)" > Delete</td>
+      </tr>
+    </tbody>
+  </table>

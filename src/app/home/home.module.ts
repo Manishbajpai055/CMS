@@ -14,11 +14,11 @@ import {NgbModule, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { BlogModule } from './blog/blog.module';
 import { BlogliistComponent } from './blog/blogliist/blogliist.component';
-import { MarkdownModule } from 'ngx-markdown';
+import { PagelistComponent } from './pages/pagelist/pagelist.component';
 
 
 @NgModule({
-  declarations: [HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent, HeaderComponent, FooterComponent],
+  declarations: [HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent, HeaderComponent, FooterComponent, PagelistComponent],
   imports: [
     CommonModule,
     RouterModule,
