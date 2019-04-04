@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
+  contact = "94515151515"
+  Email= "www.nj"
 
   ngOnInit() {
   }

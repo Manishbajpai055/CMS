@@ -16,14 +16,16 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
 import { JoditAngularModule } from 'jodit-angular';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { HeaderFooterComponent } from './header-footer/header-footer.component';
 
 
 @NgModule({
   declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent,
     PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
     CarouselComponent,
-    CarousellistComponent],
+    CarousellistComponent,
+    HeaderFooterComponent,
+    HeaderFooterComponent],
   imports: [
     CarouselModule,
     CommonModule,
@@ -34,7 +36,6 @@ import { EditorModule } from '@tinymce/tinymce-angular';
         syntax: false,
       }
     }),
-    EditorModule,
       FormsModule,
       JoditAngularModule,
   ReactiveFormsModule

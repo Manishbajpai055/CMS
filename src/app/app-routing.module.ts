@@ -12,6 +12,7 @@ import { BlogdetailComponent } from './home/blog/blogdetail/blogdetail.component
 import { BlogliistComponent } from './home/blog/blogliist/blogliist.component';
 import { LoginComponent } from "./authentication/login/login.component";
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { HeaderFooterComponent } from './admin/header-footer/header-footer.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,10 @@ const routes: Routes = [
       {
         path : 'blogs',
         component : AdminBlogComponent,
+      },
+      {
+        path : 'header-footer',
+        component : HeaderFooterComponent
       }
     ],
     },{

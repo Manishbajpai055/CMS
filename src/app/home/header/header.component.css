@@ -1,0 +1,12 @@
+.mail , .contact{
+    float: left;
+}
+div{
+    background-color:whitesmoke;
+}
+i{
+    float: right;
+    position: relative;
+    color : blue;
+    size: 10px;
+}
