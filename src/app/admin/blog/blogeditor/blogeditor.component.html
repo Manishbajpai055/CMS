@@ -1,23 +1,24 @@
 <div id="editor"></div>
-<button class="btn btn-primary-modal" (click)="goback()">Go back To list</button>
+<button class="btn btn-primary" (click)="goback()">Go back To list</button>
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
   <label>
-    Title Of The Blog
+      <br>
+
+      Title Of The Blog
     <input type="text" formControlName="title">
   </label>
-
+    <br>
   <label>
     Blog Body
+  </label>
     <br>
-<br>
-<!-- or use with formControl -->
  <quill-editor formControlName="body"></quill-editor>
-     </label>
   <label>
     Keywords On this Blog For SEO
     <input type="text" formControlName="Keywords">
   </label>
-  <input class="btn btn-primary-modal" type="submit" value="Save" name="Save">
+    <br>
+  <input   class="btn btn-primary" type="submit" value="Save" name="Save">
 
 </form>
 <!-- use with ngModel -->

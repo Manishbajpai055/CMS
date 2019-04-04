@@ -1,23 +1,22 @@
+<div style="float: right;box-sizing: content-box">
 <div id="editor"></div>
-<button class="btn btn-primary-modal" (click)="goback()">Go back To list</button>
-<form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
+<form [formGroup]="AboutForm" (ngSubmit)="onSubmit()">  
   <label>
     Title Of The Page
     <input type="text" formControlName="title">
   </label>
-
-  <label>
-    Page Body
+    <label>
+    About Body
     <br>
-<br>
-<!-- or use with formControl -->
- <quill-editor formControlName="body"></quill-editor>
+     <quill-editor style="width: 20px;"  (onEditorCreated)="created($event)"  formControlName="body">
+    </quill-editor>
      </label>
   <label>
-    
+    Keywords
     <input type="text" formControlName="Keywords">
   </label>
   <input class="btn btn-primary-modal" type="submit" value="Save" name="Save">
 
 </form>
 <!-- use with ngModel -->
+</div>
