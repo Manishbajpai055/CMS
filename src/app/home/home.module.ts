@@ -15,10 +15,13 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { BlogModule } from './blog/blog.module';
 import { BlogliistComponent } from './blog/blogliist/blogliist.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
+import { ContactusComponent } from '../admin/contactus/contactus.component';
 
 
 @NgModule({
-  declarations: [HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent, HeaderComponent, FooterComponent, PagelistComponent],
+  declarations: [ContactusComponent, 
+    HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
+     HeaderComponent, FooterComponent, PagelistComponent],
   imports: [
     CommonModule,
     RouterModule,

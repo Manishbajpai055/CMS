@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  tit = "geek"
+  constructor(private titleserv:Title) { }
 
   ngOnInit() {
+    this.titleserv.setTitle(this.tit)
   }
 
 }
