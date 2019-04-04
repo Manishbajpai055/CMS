@@ -19,7 +19,7 @@ import { CarousellistComponent } from './carousel/carousellist/carousellist.comp
 import { PageditorComponent } from './pages/pageditor/pageditor.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
-import { AboutComponent } from './about/about.component';
+import { AboutComponentadmin } from './about/about.component';
 
 
 
@@ -31,7 +31,7 @@ import { AboutComponent } from './about/about.component';
     HeaderFooterComponent,
     PageditorComponent,
     PagelistComponent,
-    AboutComponent],
+    AboutComponentadmin],
   imports: [
     CarouselModule,
     CommonModule,
