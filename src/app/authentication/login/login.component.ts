@@ -13,6 +13,7 @@ loginForm: FormGroup;
 constructor(private fb: FormBuilder ,private router:Router) {
  this.createForm();
 }
+errorMassage = ''
 createForm() {
  this.loginForm = this.fb.group({
     username: ['', Validators.required ],
@@ -20,6 +21,11 @@ createForm() {
  });}
  onSubmit(){
    console.log(this.loginForm.value.username,this.loginForm.value.password)
+   
+ if (this.loginForm.value.username === 'admin' && this.loginForm.value.password ==='password' ) {
+        return this.router.navigate(['admin'])
+ } else {
+      this.errorMassage = "Inavlid Username And Password"
  }
-
+ }
 }

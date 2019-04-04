@@ -15,7 +15,6 @@ import {QuillModule} from 'ngx-quill';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
-import { JoditAngularModule } from 'jodit-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 
@@ -36,8 +35,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     }),
     EditorModule,
       FormsModule,
-      JoditAngularModule,
-  ReactiveFormsModule
+      ReactiveFormsModule
   ],
   
  

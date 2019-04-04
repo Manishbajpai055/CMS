@@ -18,10 +18,10 @@
               Password is required.
             </div>
         </div>
-        <p *ngIf="errors"></p>
+        <p class="alert alert-danger" *ngIf="errorMassage">{{errorMassage}}</p>
         <button type="submit"
             [disabled]="loginForm.pristine || loginForm.invalid" class="btn btn-success">
-            Save
+            Login
         </button>
   </form>
   <br />
