@@ -44,8 +44,6 @@ import { AboutComponentadmin } from './about/about.component';
     }),
       FormsModule,
       ReactiveFormsModule
-  ],
-  
- 
+  ], 
 })
 export class AdminModule { }
