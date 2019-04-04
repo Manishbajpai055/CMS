@@ -1,0 +1,12 @@
+
+.footer {
+    height: 25px;
+}
+
+
+a,footer {
+    background-color: #3f51b5 !important;
+    color: white;
+    line-height: 50px;
+    padding: 0 20px;
+}

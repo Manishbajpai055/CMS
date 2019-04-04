@@ -15,9 +15,13 @@ import {QuillModule} from 'ngx-quill';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
+<<<<<<< HEAD
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { PageditorComponent } from './pages/pageditor/pageditor.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
+=======
+import { HeaderFooterComponent } from './header-footer/header-footer.component';
+>>>>>>> a1060283406d4d59d14af0c5a23055a54bb58075
 
 
 @NgModule({
@@ -25,8 +29,13 @@ import { PagelistComponent } from './pages/pagelist/pagelist.component';
     PagesComponent, AdminBlogComponent, BloglistComponent, BlogeditorComponent,
     CarouselComponent,
     CarousellistComponent,
+<<<<<<< HEAD
     PageditorComponent,
     PagelistComponent],
+=======
+    HeaderFooterComponent,
+    ],
+>>>>>>> a1060283406d4d59d14af0c5a23055a54bb58075
   imports: [
     CarouselModule,
     CommonModule,
@@ -37,7 +46,6 @@ import { PagelistComponent } from './pages/pagelist/pagelist.component';
         syntax: false,
       }
     }),
-    EditorModule,
       FormsModule,
       ReactiveFormsModule
   ],
