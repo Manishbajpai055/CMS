@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
 @Component({
   selector: 'app-header-footer',
@@ -8,14 +9,23 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class HeaderFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getHeadefooter:HeaderFooterService ) { }
 
   ngOnInit() {
   }
-  NewPost = new FormGroup({
-    Keywords: new FormControl(''),
-    title: new FormControl(''),
-    body: new FormControl(''),
+  headerfooter = new FormGroup({
+    contact: new FormControl(''),
+    email: new FormControl(''),
+    facebook: new FormControl(''),
+    twitter: new FormControl(''),
+    instagram: new FormControl(''),
+
   });
+
+  onSubmit(){
+    console.log(this.headerfooter.value)
+    this.getHeadefooter.postHeadeFooter(this.headerfooter.value)
+
+  }
 
 }

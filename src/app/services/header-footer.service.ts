@@ -7,8 +7,12 @@ import { HttpClient } from '@angular/common/http';
 export class HeaderFooterService {
 
   constructor(private http:HttpClient) { }
-  getHeadeFooter(contact: "contact"){
-    return this.http.post('http://localhost:3004/headerfooter/',contact).subscribe(res=>{
+  postHeadeFooter(data){
+    return this.http.post('http://localhost:3004/headerfooter/',data).subscribe(res=>{
+    })
+  }
+  getHeadeFooter(){
+    return this.http.get('http://localhost:3004/headerfooter/').subscribe(res=>{
     })
   }
 }

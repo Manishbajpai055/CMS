@@ -1,17 +1,17 @@
 <br>
 
 <div class="container">
-<form #registerForm="ngForm">
+<form [formGroup]="headerfooter" (ngSubmit)="onSubmit()" >
     <label>Contact No :</label>
-    <input type="Text" [formControl]="contacts"> {{contact}} <br>
+    <input formControlName="contact" type="Text" > {{contact}} <br>
     <label>  Email-Address :</label>
-    <input type="Text">{{Email}}
+    <input formControlName="email" type="Text">{{Email}}
     <label>  facebook :</label>
-    <input type="text" > {{facebook}}<br>
+    <input formControlName="facebook" type="text" > {{facebook}}<br>
     <label>Twitter:</label>
-    <input type="text" >  {{twitter}}<br>
+    <input formControlName="twitter" type="text" >  {{twitter}}<br>
     <label>Instagram :</label>
-    <input type="text" >   {{instagram}}<br>
-    <button type="button" (click)="Update(registerForm)">Submit</button>
+    <input formControlName="instagram" type="text" >   {{instagram}}<br>
+    <button type="submit">Submit</button>
 </form>
 </div>
