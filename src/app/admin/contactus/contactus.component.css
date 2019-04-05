@@ -1,4 +1,21 @@
 .form-group{
-    width: 400px;
+        width: 100%
     
+}
+form{
+    width: 400px;
+}
+@media (max-width: 380px) {
+    form,.form-group{
+        width: 100%;
+        min-width: 10px;
+        
+    }
+}
+@media ( min-width: 1024px) {
+    form,.form-group{
+        width: 400px;
+        min-width: 10px;
+        
+    }
 }

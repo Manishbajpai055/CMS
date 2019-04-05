@@ -44,3 +44,4 @@ created(editorInstance) {
    }
 
 }
+ 

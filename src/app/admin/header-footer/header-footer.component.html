@@ -1,7 +1,17 @@
-<input type="Text"> Contact-no : {{contact}} <br>
-<input type="Text"> Email-Address : {{Emial}}>
+<br>
 
-
-<input type="text" > facebook : {{facebook}}<br>
-<input type="text" > Twitter: {{twitter}}<br>
-<input type="text" > Instagram : {{instagram}}<br>
+<div class="container">
+<form #registerForm="ngForm">
+    <label>Contact No :</label>
+    <input type="Text" [formControl]="contacts"> {{contact}} <br>
+    <label>  Email-Address :</label>
+    <input type="Text">{{Email}}
+    <label>  facebook :</label>
+    <input type="text" > {{facebook}}<br>
+    <label>Twitter:</label>
+    <input type="text" >  {{twitter}}<br>
+    <label>Instagram :</label>
+    <input type="text" >   {{instagram}}<br>
+    <button type="button" (click)="Update(registerForm)">Submit</button>
+</form>
+</div>
