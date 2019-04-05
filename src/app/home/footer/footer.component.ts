@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  footernotes
+  constructor(private headerfooter: HeaderFooterService) { }
 
   ngOnInit() {
+   this.footernotes = this.headerfooter.getupdatefooter().subscribe(res => {
+     this.footernotes = res
+   }
+   )
+
   }
 
 }

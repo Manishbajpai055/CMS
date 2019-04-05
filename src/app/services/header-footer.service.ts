@@ -15,4 +15,11 @@ export class HeaderFooterService {
     return this.http.get('http://localhost:3004/headerfooter/').subscribe(res=>{
     })
   }
+  updatefooter(data){
+    return this.http.put('http://localhost:3004/footerdetails/1',data).subscribe(res=>{
+    })
+  }
+  getupdatefooter(){
+    return this.http.get('http://localhost:3004/footerdetails/1')
+  }
 }

@@ -21,11 +21,17 @@ export class HeaderFooterComponent implements OnInit {
     instagram: new FormControl(''),
 
   });
+  Footerdetail = new FormGroup({
+    footerdetail : new FormControl('')
+  })
 
   onSubmit(){
     console.log(this.headerfooter.value)
     this.getHeadefooter.postHeadeFooter(this.headerfooter.value)
-
+  }
+  updatefooter(){
+    this.getHeadefooter.updatefooter(this.Footerdetail.value)
+    console.log(this.Footerdetail.value)
   }
 
 }

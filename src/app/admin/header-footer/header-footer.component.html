@@ -15,3 +15,13 @@
     <button type="submit">Submit</button>
 </form>
 </div>
+
+<br>
+
+<div class="container"> 
+<form [formGroup]="Footerdetail" (ngSubmit)="updatefooter()" >
+    <label>Footer details :</label>
+    <input formControlName="footerdetail" type="text" >   {{footerdetail}}<br>
+    <button type="submit">Submit</button>
+</form>
+</div>
