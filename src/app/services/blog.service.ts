@@ -24,4 +24,8 @@ export class BlogService {
     return this.http.delete('http://localhost:3004/Blogs/'+id+'/').subscribe(res=>{
     })
   }
+  edit(id,data){
+    return this.http.patch('http://localhost:3004/Blogs/'+id+'/',data).subscribe(res=>{
+    })
+  }
   }

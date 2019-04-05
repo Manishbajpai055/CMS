@@ -19,6 +19,11 @@ export class PageditorComponent implements OnInit {
     title: new FormControl(''),
     body: new FormControl(''),
   });  
+  config = {
+    height: '200px',
+    uploadImagePath: '/api/upload',
+    placeholder: 'Enter Text Here',
+  };
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.NewPost.value);

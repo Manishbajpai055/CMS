@@ -16,6 +16,7 @@ import { BlogModule } from './blog/blog.module';
 import { BlogliistComponent } from './blog/blogliist/blogliist.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
 import { ContactusComponent } from '../admin/contactus/contactus.component';
+import { NgxSummernoteModule, } from 'ngx-summernote';
 
 
 @NgModule({
@@ -28,8 +29,10 @@ import { ContactusComponent } from '../admin/contactus/contactus.component';
     NgbModule,
     BlogModule,
     NgbPaginationModule, NgbAlertModule,
+    NgxSummernoteModule,
     
   ],
+  
   providers: [NgbCarouselConfig] 
 })
 export class HomeModule { }

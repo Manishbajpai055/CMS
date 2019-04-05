@@ -22,14 +22,13 @@
               "src/favicon.ico",
               "src/assets"
             ],
-           "styles": [
-  
-  "node_modules/summernote/dist/summernote-lite.css"
-],
-"scripts": [
-  "node_modules/jquery/dist/jquery.min.js",
-  "node_modules/summernote/dist/summernote-lite.js"
-],
+            "styles": [
+              "node_modules/summernote/dist/summernote-lite.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/summernote/dist/summernote-lite.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

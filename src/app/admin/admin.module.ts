@@ -6,6 +6,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagesComponent } from './pages/pages.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxSummernoteModule } from 'ngx-summernote';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AdminBlogComponent } from './blog/blog.component';
 import { BloglistComponent } from './blog/bloglist/bloglist.component';
 import { BlogeditorComponent } from './blog/blogeditor/blogeditor.component';
@@ -31,6 +33,7 @@ import { AboutComponentadmin } from './about/about.component';
     PageditorComponent,
     PagelistComponent,
     AboutComponentadmin,
+    
     ],
   imports: [
     CarouselModule,
@@ -39,11 +42,14 @@ import { AboutComponentadmin } from './about/about.component';
     HttpClientModule,
     QuillModule.forRoot({
       modules: {
-        syntax: false,
+        syntax: true,
       }
     }),
+    AngularEditorModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      NgxSummernoteModule,
+
   ], 
 })
 export class AdminModule { }

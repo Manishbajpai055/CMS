@@ -16,22 +16,11 @@ export class BlogeditorComponent implements OnInit {
     body: new FormControl(''),
   });
 
-  config ={
-    placeholder: '',
-    tabsize: 2,
-    height: 100,
-    uploadImagePath: '',
-    toolbar: [
-      // [groupName, [list of button]]
-      ['misc', ['codeview', 'undo', 'redo']],
-      ['style', ['bold', 'italic', 'underline', 'clear']],
-      ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
-      ['fontsize', ['fontname', 'fontsize', 'color']],
-      ['para', ['style0', 'ul', 'ol', 'paragraph', 'height']],
-      ['insert', ['table', 'picture', 'link', 'video', 'hr']]
-    ],
-    fontNames: ['Helvetica', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Roboto', 'Times']
-  }
+  config = {
+    height: '200px',
+    uploadImagePath: '/api/upload',
+    placeholder: 'Enter Text Here',
+  };
   constructor(private newblog: BlogService,private adminblog: AdminBlogComponent) { }
 
   ngOnInit() {
