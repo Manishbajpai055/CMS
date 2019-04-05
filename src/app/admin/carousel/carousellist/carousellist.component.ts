@@ -20,4 +20,5 @@ export class CarousellistComponent implements OnInit {
       this.carousel.carouseldelet(id).subscribe(res =>{
       })
   }
+ 
 }

@@ -13,7 +13,7 @@ export class HeaderFooterComponent implements OnInit {
 
   ngOnInit() {
   }
-  headerfooter = new FormGroup({
+  headerfooter = new FormGroup({ 
     contact: new FormControl(''),
     email: new FormControl(''),
     facebook: new FormControl(''),

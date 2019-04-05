@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
   Quill: any = null
   aboutdetail;
   constructor(private about: AboutService,private quill:QuillModule) { }
-  quillEditor = new Quill()
+  quillEditor = new this.Quill()
   ngOnInit() {
     this.about.About().subscribe(res => {
       this.quillEditor.setText("wdjkqqwkhwd", 'silent') })
