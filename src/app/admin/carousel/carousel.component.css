@@ -1,0 +1,16 @@
+.container{
+    display : ruby;
+    padding-left : 10%  ;
+     
+
+}
+button,input{
+    background-color: #3f51b5;
+    border: white;
+    margin-left: 5%;
+}
+
+button:hover,input:hover{
+    background-color: #404249
+    
+}

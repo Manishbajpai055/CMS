@@ -1,10 +1,10 @@
 <header id="header">
     <div class="container">
-        <div class="contact"> contact:{{contact}}</div> <br>
-        <div class="mail">Emial:{{Email}}</div>
-        <a href="#"><i class="fa fa-facebook">{{facebook}} </i></a> 
-        <a href="#"><i class="fa fa-twitter">{{ twitter }}</i></a>
-        <a href="#"><i class="fa fa-instagram">{{instagram}}</i> </a>   
+        <div class="contact"> contact:{{headerinfo.contact}}</div> <br>
+        <div class="mail">Emial:{{headerinfo.email}}</div>
+        <a href="{{headerinfo.facebook}} "><i class="fa fa-facebook"> </i></a> 
+        <a href="{{ headerinfo.twitter }}"><i class="fa fa-twitter"></i></a>
+        <a href="{{ headerinfo.instagram}}"><i class="fa fa-instagram"></i> </a>   
            
     </div>
   </header>

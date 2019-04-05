@@ -1,11 +1,13 @@
 .row{
     margin-left: 5%;
+    
 }
 .card{
     margin-bottom: 10%;
 }
-@media (min-width: 540px){
+@media (min-width: 348px){
 .col-sm-6 {
+    display: ruby-base ;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
     flex: 0 0 30%;

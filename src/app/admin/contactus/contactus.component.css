@@ -1,21 +1,13 @@
-.form-group{
-        width: 100%
+.container{
+    display : ruby;
+    padding : 5%  ;
+}
+button{
+    background-color: #3f51b5;
+    border: white;
+}
+
+button:hover{
+    background-color: #0020d3
     
-}
-form{
-    width: 400px;
-}
-@media (max-width: 380px) {
-    form,.form-group{
-        width: 100%;
-        min-width: 10px;
-        
-    }
-}
-@media ( min-width: 1024px) {
-    form,.form-group{
-        width: 400px;
-        min-width: 10px;
-        
-    }
 }

@@ -33,5 +33,7 @@ export class HeaderFooterComponent implements OnInit {
     this.getHeadefooter.updatefooter(this.Footerdetail.value)
     console.log(this.Footerdetail.value)
   }
+  
+
 
 }

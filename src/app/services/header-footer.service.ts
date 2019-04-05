@@ -8,7 +8,7 @@ export class HeaderFooterService {
 
   constructor(private http:HttpClient) { }
   postHeadeFooter(data){
-    return this.http.post('http://localhost:3004/headerfooter/',data).subscribe(res=>{
+    return this.http.put('http://localhost:3004/headerfooter/1',data).subscribe(res=>{
     })
   }
   getHeadeFooter(){
@@ -18,6 +18,9 @@ export class HeaderFooterService {
   updatefooter(data){
     return this.http.put('http://localhost:3004/footerdetails/1',data).subscribe(res=>{
     })
+  }
+  getHeader(){
+    return this.http.get('http://localhost:3004/headerfooter/1')
   }
   getupdatefooter(){
     return this.http.get('http://localhost:3004/footerdetails/1')

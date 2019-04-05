@@ -1,9 +1,10 @@
-<input type="file" (change)="onFileUpload($event)">
-<div *ngIf="imagePreview" style="max-height:50px" class="image-preview" >
-    <img [src]="imagePreview" >
-    </div>
-<button (click)="upload()">Upload</button>
-<p>admin carousle</p>
+<div class="container">
+<input  type="submit" class="btn btn-success" type="file" (change)="onFileUpload($event)">
+
+<button  type="submit" class="btn btn-success" (click)="upload()">Upload</button>
+</div>
+<br>
+<br>
 <app-carousellist>
     
 </app-carousellist>
