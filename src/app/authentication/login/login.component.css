@@ -1,20 +1,22 @@
-::ng-deep {
-    background-color:red
+
+.loginwindow{
+    background-color: #3f51b5; 
+    height: 670px;
+      width: 100%;
 }
 
 @media screen and (min-device-width: 0px) and (max-device-width: 2180px){
     .container{
-        background-color:#3f51b5;
+        background: linear-gradient(to right bottom, #546dff, #ff5e62);
         color: aliceblue;
-        
         position: absolute;
         top: 25%;
         left: 0%;
         right: 0%;
-        
         width: 100%;
         border-radius: 0px 20px;
         padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 @media  (min-width: 1024px){
@@ -35,10 +37,8 @@ button:hover{
     border-radius: 0px 10px;
     border-color: aliceblue;   
 }
-body{
-    background-color: red; 
-}
-button{
+
+.btn,button{
     background-color: #3f51b5;
     border-radius: 0px 10px;
     border-color: aliceblue;   

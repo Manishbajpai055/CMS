@@ -1,5 +1,6 @@
-<br>
 
+<div class="footerlable">Header Deatails</div>
+<div class="header-footer">
 <div class="container">
 <form [formGroup]="headerfooter" (ngSubmit)="onSubmit()" >
     <label>Contact No :</label>
@@ -16,12 +17,12 @@
 </form>
 </div>
 
-<br>
-
+<div class="footerlable">Footer Details</div>
 <div class="container"> 
 <form [formGroup]="Footerdetail" (ngSubmit)="updatefooter()" >
     <label>Footer details :</label>
     <input formControlName="footerdetail" type="text" >   {{footerdetail}}<br>
     <button type="submit">Submit</button>
 </form>
+</div>
 </div>

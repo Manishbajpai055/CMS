@@ -5,7 +5,11 @@
 .card{
     margin-bottom: 10%;
 }
-@media (min-width: 348px){
+.card-body{
+    background-color: whitesmoke;
+}
+@media screen and (min-device-width: 0px) and (max-device-width: 2180px){
+    
 .col-sm-6 {
     display: ruby-base ;
     -webkit-box-flex: 0;
@@ -14,4 +18,8 @@
     /* max-width: 50%; */
     text-shadow: 0 0 0px black;
 }
+}
+.btn{
+    background-color: #3f51b5;
+    color: aliceblue;
 }
