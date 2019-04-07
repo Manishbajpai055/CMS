@@ -18,7 +18,7 @@ export class BlogeditorComponent implements OnInit {
 
   config = {
     height: '200px',
-    uploadImagePath: '/api/upload',
+    uploadImagePath: 'http://127.0.0.1:8000/blog/images/upload/',
     placeholder: 'Enter Text Here',
   };
   updateblogdetail: any;
