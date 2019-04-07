@@ -19,6 +19,10 @@ export class HeaderFooterComponent implements OnInit {
     facebook: new FormControl(''),
     twitter: new FormControl(''),
     instagram: new FormControl(''),
+    Street: new FormControl(''),
+    City: new FormControl(''),
+    State: new FormControl(''),
+    Pincode : new FormControl(''),
 
   });
   Footerdetail = new FormGroup({

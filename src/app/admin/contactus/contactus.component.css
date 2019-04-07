@@ -1,15 +1,34 @@
+label {
+    /* Other styling... */
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
 .container{
     display : ruby;
     padding : 4%;
-    
+   
+}
+
+a{
+    color: white;   
 }
 input,.form-group{
     width: 100%;
-    min-width:400px;
+    min-width:300px;
+    
 }
 .form-control{
     display: block;
     max-height: 90px;
+    
+}
+.btn-outline-success {
+    color: #3f51b5;
+    background-color: #f9000000;
+    background-image: none;
+    border-color: #f5fff8;
 }
 .fa{
     
@@ -17,10 +36,9 @@ input,.form-group{
     margin: 5px;
 }
 .fa:hover{
-       color: aqua;
-       border-radius: 50% 50%;;
        
-       
+       background-color: #3f51b5; 
+       border-radius: 0% 0%;
 }
 textarea{
     min-height: 90px;
@@ -30,11 +48,27 @@ button{
     border: white;
 }
 
-button:hover{
-    background-color: #0020d3
+button:hover, button.btn:active,button:visited,button:focus {
+    background: #263dc0;
+    border-color: black; 
+
     
 }
-.main-container{
+label {
+    float: left
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
+}
+.main-container:hover{
 background-color: rgb(77, 77, 77);
 color: aliceblue;
+}
+
+.main-container{
+    background-color: #3f51b5;
+    color: aliceblue;
+    
 }
