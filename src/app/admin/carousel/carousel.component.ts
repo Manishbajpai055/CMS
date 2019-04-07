@@ -8,17 +8,12 @@ import { CarouselService  } from '../../services/carousel.service'
 './carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  
   selecetdFile : File;
   imagePreview
     onFileUpload(event){
-    this.selecetdFile = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => {
-    this.imagePreview = reader.result;
-
-    };
-  reader.readAsDataURL(this.selecetdFile);
+    this.selecetdFile = event.target.files;
+  
+   
 }
   constructor( private carousleservice :CarouselService) { }
 
@@ -27,7 +22,8 @@ export class CarouselComponent implements OnInit {
 
 upload(){
   console.log("",this.imagePreview)
-    var data = {"img":this.imagePreview}
+  const data = new FormData();
+  data.append('image', this.selecetdFile[0]);
     this.carousleservice.carouselupload(data).subscribe(res=>{
       console.log(res)
     })

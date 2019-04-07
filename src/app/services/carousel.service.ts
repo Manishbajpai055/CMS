@@ -10,13 +10,13 @@ export class CarouselService {
   constructor(private http:HttpClient) { }
 
   crousellist(){
-    return this.http.get('http://localhost:3004/crousel/')
+    return this.http.get('http://127.0.0.1:8000/api/carousle/')
   }
   carouselupload(data){
-    return this.http.post('http://localhost:3004/crousel/',data)
+    return this.http.post('http://127.0.0.1:8000/api/carousle/upload/',data)
   }
   carouseldelet(id){
     console.log(id)
-    return this.http.delete('http://localhost:3004/crousel/'+id)
+    return this.http.delete('http://127.0.0.1:8000/api/carousle/'+id+'/')
   }
 }

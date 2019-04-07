@@ -13,7 +13,6 @@ export class BlogdetailComponent implements OnInit {
   slug 
   constructor(private rout:ActivatedRoute, private detail:BlogService,private elementRef: ElementRef,
     private renderer: Renderer2) {
-
    }
 
   ngOnInit() {
