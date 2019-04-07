@@ -9,9 +9,9 @@ import { CarouselService  } from '../../services/carousel.service'
 })
 export class CarouselComponent implements OnInit {
   selecetdFile : File;
-  imagePreview
   title
   description
+  error
     onFileUpload(event){
     this.selecetdFile = event.target.files[0];
 }
@@ -22,13 +22,23 @@ export class CarouselComponent implements OnInit {
 
 upload(){
   console.log("",this.title)
-  const data = new FormData();
-  data.append('image', this.selecetdFile);
-  data.append('title', this.title);
-  data.append('description',this.description);
-    this.carousleservice.carouselupload(data).subscribe(res=>{
-      console.log(res)
-    })
+  if (this.title == undefined ||''||null) {
+      console.warn("please enter title")
+      this.error="please enter title"
+  }
+  else if(this.selecetdFile==undefined||null){
+    this.error="please Select File"
+  }
+   else {
+    const data = new FormData();
+    data.append('image', this.selecetdFile);
+    data.append('title', this.title);
+    data.append('description',this.description);
+      this.carousleservice.carouselupload(data).subscribe(res=>{
+        console.log(res)
+      })
+  }
+ 
 }
 
 }
