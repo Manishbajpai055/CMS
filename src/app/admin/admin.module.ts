@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSummernoteModule } from 'ngx-summernote';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AlertModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminBlogComponent } from './blog/blog.component';
 import { BloglistComponent } from './blog/bloglist/bloglist.component';
 import { BlogeditorComponent } from './blog/blogeditor/blogeditor.component';
@@ -17,6 +19,7 @@ import {QuillModule} from 'ngx-quill';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { PageditorComponent } from './pages/pageditor/pageditor.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
@@ -37,6 +40,7 @@ import { AboutComponentadmin } from './about/about.component';
     ],
   imports: [
     CarouselModule,
+    ModalModule.forRoot(),
     CommonModule,
     RouterModule,
     HttpClientModule,
@@ -45,7 +49,7 @@ import { AboutComponentadmin } from './about/about.component';
         syntax: true,
       }
     }),
-    AngularEditorModule,
+      AlertModule.forRoot(),
       FormsModule,
       ReactiveFormsModule,
       NgxSummernoteModule,

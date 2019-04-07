@@ -5,8 +5,19 @@
             <div class="card-body">
               <h5 class="card-title">{{slide.title}}</h5>
               <p class="card-text">{{slide.description}}</p>
-              <button class="btn btn-primary" (click)="delet(slide.id)">Delete</button>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="delet(slide.id,template)">Delete</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

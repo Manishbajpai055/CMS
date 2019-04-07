@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,TemplateRef } from '@angular/core';
 import { CarouselService  } from '../../../services/carousel.service'
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-carousellist',
@@ -8,7 +9,11 @@ import { CarouselService  } from '../../../services/carousel.service'
 })
 export class CarousellistComponent implements OnInit {
   sliderArray
-  constructor(private carousel:CarouselService) { }
+  delteDilog = false
+  modalRef: BsModalRef;
+  wanttodelet= false  
+  id:number
+  constructor(private carousel:CarouselService,private modalService: BsModalService) { }
 
   ngOnInit() {
     this.carousel.crousellist()
@@ -16,9 +21,30 @@ export class CarousellistComponent implements OnInit {
       this.sliderArray = res
     })
   }
-  delet(id){
-      this.carousel.carouseldelet(id).subscribe(res =>{
-      })
+  delet(id,template){
+      this.id=id
+      this.openModal(template)   
   }
- 
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+  confirm(): void {
+    this.carousel.carouseldelet(this.id).subscribe(res =>{
+      console.log("dekete")
+    })
+    this.modalRef.hide();
+    this.refresh()
+  }
+  decline(): void {
+    this.modalRef.hide();
+    this.refresh()
+
+  }
+  refresh(){
+    this.carousel.crousellist()
+    this.carousel.crousellist().subscribe(res =>{
+      this.sliderArray = res
+    })
+  }
 }
