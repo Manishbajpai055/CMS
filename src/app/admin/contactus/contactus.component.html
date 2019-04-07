@@ -1,51 +1,56 @@
+<div class="main-container">
 <div class="container">
-  <form>
-      <h1>Contact Us</h1>
+  <form [formGroup]="subscribe" (ngSubmit)="onSubmit()" >
+    <h1>Subscribe</h1>
     <div class="form-group">
-      <label  for="name">Name</label>
-      <input type="text" class="form-control" id="name" required>
+      <label for="name">Name</label>
+      <input placeholder="Name" type="text" class="form-control" id="name" formControlName="Name" >
       <label for="Email">Email</label>
-      <input type="text" class="form-control" id="Email">
-    </div>
-
-    <div class="form-group">
-      <label for="Address">Address</label>
-      <input type="text" class="form-control" id="add">
-    </div>
-
-    <div class="form-group">
+      <input type="text" placeholder="Email" class="form-control" formControlName="Email" id="Email" >
+      <label for="phone">Phone No</label>
+      <input placeholder="Phone no" type="text" class="form-control" formControlName="Phone_no" id="phn">    
       <label for="description">Description</label>
-      <textarea type="text" class="form-control" id="Textarea"></textarea>
+      <textarea placeholder="Description" type="text" class="form-control" formControlName="Description" id="Textarea"></textarea>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
-
   </form>
 </div>
-
+<!-- Subscribe Form-->
 
 <div class="container">
-  
-  <form>
-      <h1>We are Here</h1>
-    <div class="form-group">
-      <label  for="name">Name</label>
-      <input type="text" class="form-control" id="name" required>
-      <label for="Email">Email</label>
-      <input type="text" class="form-control" id="Email">
+ 
+  <div class="col-md-6">
+      <!-- support info -->
+      <div class="contact-info-content">
+        <h2>We Are Here</h2>
+        <br>
+        <div class="address-info">
+          <ul>
+            <li><span><i class="fa fa-map-marker" aria-hidden="true"></i> address</span>
+              LUCKNOW : 122, Chandganj garden Sector-B Aliganj,Lucknow. (U.P.) India - 226024. <br />
+              CONTACT PERSON : ADV. PRATIYUSH CHAUBEY Nos: +91-9335140477,9415038493
+            </li>
+            <li>
+              MUMBAI : Bldg. 30, Flat No. 104, Sonam Shree, Phase - 12, New Golden Nest, Bhayander (E), Thane - 401105
+              <br />
+              CONTACT PERSON : ADV.SHUSHIL KUMAR <br />
+              No : +91-9819502781</li>
+            <li><span><i class="fa fa-phone" aria-hidden="true"></i> phone</span><a href="#">{{phone}}</a></li>
+            <li><span><i class="fa fa-print" aria-hidden="true"></i> Print</span>info@dschaube.com</li>
+            <li><span><i class="fa fa-envelope" aria-hidden="true"></i> email</span><a href="#">info@dschaube.com</a></li>
+            <li><span><i class="fa fa-globe" aria-hidden="true"></i> website</span><a href="#">www.dschaube.com
+              </a></li>
+
+          </ul>
+          <ul class="top-bar-text social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </ul>
+        </div>
+      </div>
+      <!-- /.support info -->
+ 
+ 
     </div>
 
-    <div class="form-group">
-      <label for="Address">Address</label>
-      <input type="text" class="form-control" id="add">
-    </div>
-
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea type="text" class="form-control" id="Textarea"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-
-  </form>
-</div>
-
-<br><br>

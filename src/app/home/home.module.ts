@@ -17,6 +17,7 @@ import { BlogliistComponent } from './blog/blogliist/blogliist.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
 import { ContactusComponent } from '../admin/contactus/contactus.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,6 +27,8 @@ import { NgxSummernoteModule, } from 'ngx-summernote';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule , 
+    ReactiveFormsModule,
     NgbModule,
     BlogModule,
     NgbPaginationModule, NgbAlertModule,
