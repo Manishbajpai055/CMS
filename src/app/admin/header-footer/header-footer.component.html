@@ -13,7 +13,23 @@
     <input formControlName="twitter" type="text" >  {{twitter}}<br>
     <label>Instagram :</label>
     <input formControlName="instagram" type="text" >   {{instagram}}<br>
+    
+
+<!-- Heder Info end-->
+
+<!-- CONTCT US START-->
+    <label>Street :</label>
+    <input formControlName="Street" type="text" >   <br>
+    <label>City :</label>
+    <input formControlName="City" type="text" >   <br>
+    <label>State :</label>
+    <input formControlName="State" type="text" >   <br>
+    <label>Pincode :</label>
+    <input formControlName="Pincode" type="text" >   <br>
     <button type="submit">Submit</button>
+
+
+    <!-- CONTCT US END-->
 </form>
 </div>
 
@@ -21,8 +37,14 @@
 <div class="container"> 
 <form [formGroup]="Footerdetail" (ngSubmit)="updatefooter()" >
     <label>Footer details :</label>
-    <input formControlName="footerdetail" type="text" >   {{footerdetail}}<br>
+    <input formControlName="footerdetail" type="text" > <br>
     <button type="submit">Submit</button>
 </form>
 </div>
+
+
+
+
+
+
 </div>

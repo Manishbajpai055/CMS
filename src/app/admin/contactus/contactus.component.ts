@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
+import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
 
 @Component({
@@ -10,8 +11,9 @@ import { ContactusService } from 'src/app/services/contactus.service';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
+  headerinfo: any;
 
-  constructor(private Contactus:ContactusService) { }
+  constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService) { }
 
   subscribe: FormGroup = new FormGroup({
     Name: new FormControl('' ),
@@ -25,6 +27,12 @@ onSubmit(){
   this.Contactus.postSubscriberinfo(this.subscribe.value)
 }
   ngOnInit() {
+    this.headerinfo = this.headerfooterservice.getHeader().subscribe(res => {
+      this.headerinfo = res
+      console.log(res)
+    })
+    
+
   }
 
 }

@@ -1,56 +1,55 @@
 <div class="main-container">
-<div class="container">
-  <form [formGroup]="subscribe" (ngSubmit)="onSubmit()" >
-    <h1>Subscribe</h1>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input placeholder="Name" type="text" class="form-control" id="name" formControlName="Name" >
-      <label for="Email">Email</label>
-      <input type="text" placeholder="Email" class="form-control" formControlName="Email" id="Email" >
-      <label for="phone">Phone No</label>
-      <input placeholder="Phone no" type="text" class="form-control" formControlName="Phone_no" id="phn">    
-      <label for="description">Description</label>
-      <textarea placeholder="Description" type="text" class="form-control" formControlName="Description" id="Textarea"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
-</div>
-<!-- Subscribe Form-->
+  <div class="container">
+    <form [formGroup]="subscribe" (ngSubmit)="onSubmit()">
+      <h2>Subscribe</h2>
+      <div class="form-group">
+        <label for="name">Name : </label>
+  <span> <input placeholder="Name" type="text" class="form-control" id="name" formControlName="Name"> </span> <br/>
+        <label for="Email">Email : </label>
+        <span><input type="text" placeholder="Email" class="form-control" formControlName="Email" id="Email"></span> <br/>
+        <label for="phone">Phone :</label>
+        <span><input placeholder="Phone no" type="text" class="form-control" formControlName="Phone_no" id="phn"></span> <br/>
+        <label for="description">Description</label>
+        <textarea placeholder="Description" type="text" class="form-control" formControlName="Description" id="Textarea"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  <!-- Subscribe Form-->
 
-<div class="container">
- 
-  <div class="col-md-6">
+  <div class="container">
+
+    <div class="col-md-6">
       <!-- support info -->
       <div class="contact-info-content">
-        <h2>We Are Here</h2>
+        <h2>Contact US</h2>
         <br>
         <div class="address-info">
           <ul>
-            <li><span><i class="fa fa-map-marker" aria-hidden="true"></i> address</span>
-              LUCKNOW : 122, Chandganj garden Sector-B Aliganj,Lucknow. (U.P.) India - 226024. <br />
-              CONTACT PERSON : ADV. PRATIYUSH CHAUBEY Nos: +91-9335140477,9415038493
+            <span><i class="fa fa-map-marker" aria-hidden="true"></i> address</span>
+            <br>
+            <li>
+              Street : {{headerinfo.Street}} <br />
             </li>
             <li>
-              MUMBAI : Bldg. 30, Flat No. 104, Sonam Shree, Phase - 12, New Golden Nest, Bhayander (E), Thane - 401105
-              <br />
-              CONTACT PERSON : ADV.SHUSHIL KUMAR <br />
-              No : +91-9819502781</li>
-            <li><span><i class="fa fa-phone" aria-hidden="true"></i> phone</span><a href="#">{{phone}}</a></li>
-            <li><span><i class="fa fa-print" aria-hidden="true"></i> Print</span>info@dschaube.com</li>
-            <li><span><i class="fa fa-envelope" aria-hidden="true"></i> email</span><a href="#">info@dschaube.com</a></li>
-            <li><span><i class="fa fa-globe" aria-hidden="true"></i> website</span><a href="#">www.dschaube.com
-              </a></li>
+              City : {{headerinfo.City}}
+            </li>
+            <li> State : {{headerinfo.State}} <br /></li>
+            <li>Pincode : {{headerinfo.Pincode}} <br /></li>
+
+            <li><span><i class="fa fa-phone" aria-hidden="true"></i>phone : </span><a href="#">{{headerinfo.contact}}</a></li>
+            <li><span><i class="fa fa-envelope" aria-hidden="true"></i>email : </span><a href="#">{{headerinfo.email}}</a></li>
+
 
           </ul>
           <ul class="top-bar-text social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="{{headerinfo.facebook}}"><i class="fa fa-facebook"></i></a>
+            <a href="{{headerinfo.twitter}}"><i class="fa fa-twitter"></i></a>
+            <a href="{{headerinfo.instagram}}"><i class="fa fa-instagram"></i></a>
           </ul>
         </div>
       </div>
       <!-- /.support info -->
- 
- 
-    </div>
 
+
+    </div>
