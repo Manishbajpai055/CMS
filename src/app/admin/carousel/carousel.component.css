@@ -25,18 +25,25 @@
     }
     input{
         background-color: #3f51b5;
-
         display: inline;
         margin-left: 0%;
         margin: 1%;
         border-color: aliceblue;
-        
+
     }
     label{
         color: aliceblue;
     }
 
 }
+
+.input{
+    color: aliceblue;
+    padding: 0 4px 4px 4px;
+    border-color: white;
+    border-radius: 0px 10px;  
+}
+
 input:hover{
     border-radius: 2px 2px;
         border-color: aliceblue;

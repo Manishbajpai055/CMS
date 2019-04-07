@@ -1,7 +1,7 @@
 <div class="container">
     <div class="carousel">
-            <input type="text" placeholder="Enter Title" [(ngModel)]="title" id="">
-            <input type="text"  placeholder="Enter description optionel" [(ngModel)]="description" id="">
+            <input class="input" type="text" placeholder="Enter Title" [(ngModel)]="title" id="">
+            <input class="input" type="text"  placeholder="Enter description" [(ngModel)]="description" id="">
             <input  type="input" class="btn btn-success" type="file" (change)="onFileUpload($event)">
             <button  type="submit" class="btn btn-success" (click)="upload()">Upload</button>
             <div  *ngIf="error"> <p class="text-warning .bg-warning" >{{error}}</p></div>

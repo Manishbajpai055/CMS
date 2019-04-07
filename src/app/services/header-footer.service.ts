@@ -6,23 +6,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeaderFooterService {
 
+  HeaderFooterurl : any = 'http://localhost:3004/'
+  FooterDetailurl : any = 'http://localhost:3004/'
   constructor(private http:HttpClient) { }
   postHeadeFooter(data){
-    return this.http.put('http://localhost:3004/headerfooter/1',data).subscribe(res=>{
+    return this.http.put(this.HeaderFooterurl + 'headerfooter/1',data).subscribe(res=>{
     })
   }
   getHeadeFooter(){
-    return this.http.get('http://localhost:3004/headerfooter/').subscribe(res=>{
-    })
-  }
-  updatefooter(data){
-    return this.http.put('http://localhost:3004/footerdetails/1',data).subscribe(res=>{
+    return this.http.get(this.HeaderFooterurl + 'headerfooter').subscribe(res=>{
     })
   }
   getHeader(){
-    return this.http.get('http://localhost:3004/headerfooter/1')
+    return this.http.get(this.HeaderFooterurl + 'headerfooter/1')
+  }
+
+  updatefooter(data){
+    return this.http.put(this.FooterDetailurl + 'footerdetails/1',data).subscribe(res=>{
+    })
   }
   getupdatefooter(){
-    return this.http.get('http://localhost:3004/footerdetails/1')
+    return this.http.get(this.FooterDetailurl + 'footerdetails/1')
   }
 }
