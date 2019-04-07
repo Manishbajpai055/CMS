@@ -10,10 +10,10 @@ import { CarouselService  } from '../../services/carousel.service'
 export class CarouselComponent implements OnInit {
   selecetdFile : File;
   imagePreview
+  title
+  description
     onFileUpload(event){
-    this.selecetdFile = event.target.files;
-  
-   
+    this.selecetdFile = event.target.files[0];
 }
   constructor( private carousleservice :CarouselService) { }
 
@@ -21,9 +21,11 @@ export class CarouselComponent implements OnInit {
   }
 
 upload(){
-  console.log("",this.imagePreview)
+  console.log("",this.title)
   const data = new FormData();
-  data.append('image', this.selecetdFile[0]);
+  data.append('image', this.selecetdFile);
+  data.append('title', this.title);
+  data.append('description',this.description);
     this.carousleservice.carouselupload(data).subscribe(res=>{
       console.log(res)
     })
