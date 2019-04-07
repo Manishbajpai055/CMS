@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-  contact = "94515151515"
-  Email= "www.nj"
+  constructor(private headerfooterservice:HeaderFooterService) { }
+  headerinfo
+
 
   ngOnInit() {
-  }
+  
+   this.headerinfo = this.headerfooterservice.getHeader().subscribe(res => {
+      this.headerinfo = res
+      console.log(res)
+    }
+    )
 
+}
 }
