@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AboutComponentadmin implements OnInit  {
   ngOnInit(){  
     this.AboutForm.get('body').setValue("hello!")
+  
       }
   editorInstance;
   html="html  "

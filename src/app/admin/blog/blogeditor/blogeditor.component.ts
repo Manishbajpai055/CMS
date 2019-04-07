@@ -11,9 +11,9 @@ declare var $: any;
 })
 export class BlogeditorComponent implements OnInit {
   NewPost = new FormGroup({
-    Keywords: new FormControl(''),
+    keywords: new FormControl(''),
     title: new FormControl(''),
-    body: new FormControl(''),
+    content: new FormControl(''),
   });
 
   config = {
@@ -21,14 +21,36 @@ export class BlogeditorComponent implements OnInit {
     uploadImagePath: '/api/upload',
     placeholder: 'Enter Text Here',
   };
-  constructor(private newblog: BlogService,private adminblog: AdminBlogComponent) { }
+  updateblogdetail: any;
+  constructor(private newblog: BlogService,private adminblog: AdminBlogComponent) { 
+    
+  }
 
   ngOnInit() {
+    if (this.adminblog.isupdateeditoractive===true){
+      this.newblog.blodetail(this.adminblog.slug).subscribe(res =>{
+        this.updateblogdetail = res
+        this.NewPost.get('title').setValue(this.updateblogdetail.title) 
+        this.NewPost.get('content').setValue(this.updateblogdetail.content)
+        this.NewPost.get('keywords').setValue(this.updateblogdetail.keywords)    })
+    }
+    
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.NewPost.value);
-    this.newblog.newblog(this.NewPost.value)
+    if (this.adminblog.isupdateeditoractive==true){
+      this.newblog.updateblog(this.adminblog.slug,this.NewPost.value).subscribe(res=>{
+        console.log(res)
+        this.adminblog.islistactive=true
+        this.adminblog.iseditoractive= false
+      })
+    }
+    else{
+      this.newblog.newblog(this.NewPost.value)
+      this.adminblog.islistactive=true
+      this.adminblog.iseditoractive= false
+    }
+    
   }
   goback(){
       this.adminblog.islistactive=true

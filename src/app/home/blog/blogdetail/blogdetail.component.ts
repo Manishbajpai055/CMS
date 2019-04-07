@@ -10,15 +10,15 @@ import * as marked from 'marked';
 })
 export class BlogdetailComponent implements OnInit {
   blodetail: Object;
-  id = 1 
+  slug 
   constructor(private rout:ActivatedRoute, private detail:BlogService,private elementRef: ElementRef,
     private renderer: Renderer2) {
 
    }
 
   ngOnInit() {
-    this.rout.params.subscribe( params => this.id = params.id);
-    this.detail.blodetail(this.id).subscribe(
+    this.rout.params.subscribe( params => this.slug = params.slug);
+    this.detail.blodetail(this.slug).subscribe(
       data => {
         console.log(data)
         this.blodetail = data;

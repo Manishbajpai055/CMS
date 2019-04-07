@@ -12,6 +12,7 @@ import { AdminBlogComponent } from '../blog.component';
 })
 export class BloglistComponent implements OnInit {
   bloglist;
+
   constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent) { }
 
   ngOnInit() {
@@ -28,11 +29,16 @@ export class BloglistComponent implements OnInit {
   }
 
   add_newPost() {
+    this.adminblog.isupdateeditoractive=false;
     this.adminblog.iseditoractive = true;
     this.adminblog.islistactive = false;
   }
 
-  Edit(id: any) {
-    console.log(id);
+  Edit(slug: any) {
+    this.adminblog.slug=slug
+    this.adminblog.iseditoractive = true;
+    this.adminblog.isupdateeditoractive=true;
+    this.adminblog.slug=slug
+    this.adminblog.islistactive = false;
   }
 }

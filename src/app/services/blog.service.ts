@@ -8,24 +8,23 @@ export class BlogService {
   constructor(private http:HttpClient) { }
 
   bloglist(){
-    return this.http.get('http://localhost:3004/Blogs/')
+    return this.http.get('http://127.0.0.1:8000/blog/')
    
   }
-  blodetail(id){
-    return this.http.get('http://localhost:3004/Blogs/'+id+'/')
+  blodetail(slug){
+    return this.http.get('http://127.0.0.1:8000/blog/'+slug+'/')
       
   }
   newblog(data){
-    return this.http.post('http://localhost:3004/Blogs/',data).subscribe(res=>{
+    return this.http.post('http://127.0.0.1:8000/blog/create/',data).subscribe(res=>{
     })
   
   }
   deleteblog(id){
-    return this.http.delete('http://localhost:3004/Blogs/'+id+'/').subscribe(res=>{
+    return this.http.delete('http://127.0.0.1:8000/blog/'+id+'/'+'delet/').subscribe(res=>{
     })
   }
-  edit(id,data){
-    return this.http.patch('http://localhost:3004/Blogs/'+id+'/',data).subscribe(res=>{
-    })
+  updateblog(id,data){
+    return this.http.put('http://127.0.0.1:8000/blog/'+id+'/update/',data)
   }
   }
