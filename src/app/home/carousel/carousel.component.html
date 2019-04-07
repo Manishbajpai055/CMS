@@ -1,16 +1,14 @@
 <!--*ngFor="let slide of sliderArray" [ngClass]="{ active: 1===slide.id}"-->
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      <li data-target="#carouselExampleCaptions" *ngFor="let slide of sliderArray;let k = index" [attr.data-slide-to]="k" class="active"></li>
     </ol>
     <div class="carousel-inner">
-      <div *ngFor="let slide of sliderArray " [ngClass]="{ active: 1===slide.id}" class="carousel-item ">
-        <img src="{{slide.img}}" class="d-block w-100" alt="...">
+      <div *ngFor="let slide of sliderArray;let i = index"  [ngClass]="{ active: i===0}" class="carousel-item active ">
+        <img src="{{slide.image}}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{slide.title}}</h5>
-          <p>{{slide.description}}</p>
+          <h5>{{slide.title}}{{i}}</h5>
+          <p>{{slide.description}}{{i}}</p>
         </div>
       </div>
         </div>
