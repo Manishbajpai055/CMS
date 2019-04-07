@@ -2,7 +2,7 @@
 .loginwindow{
     background-color: #3f51b5; 
     height: 670px;
-      width: 100%;
+    width: 100%;
 }
 
 @media screen and (min-device-width: 0px) and (max-device-width: 2180px){

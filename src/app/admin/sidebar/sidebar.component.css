@@ -1,12 +1,12 @@
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
  body {
     overflow-x: hidden;
   }
-  
+  .nav-link:hover{
+    background-color: #6478ec;
+    border-color: black;
+    border-radius: 5px 5px 5px 5px ;
+  }
+ 
   #sidebar-wrapper {
     min-height: 100vh;
     margin-left: -15rem;

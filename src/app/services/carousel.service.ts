@@ -18,6 +18,5 @@ export class CarouselService {
   carouseldelet(id){
     console.log(id)
     return this.http.delete('http://localhost:3004/crousel/'+id)
-
   }
 }

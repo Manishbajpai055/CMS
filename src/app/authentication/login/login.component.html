@@ -4,8 +4,9 @@
     
   <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" novalidate>
         <div class="form-group">
-            <label>Username:</label>
-            <input class="form-control" formControlName="username" type="text">
+            <span class="icon"><i class="fa fa-user"> </i> &nbsp; </span>
+            <label>Username </label>
+            <input class="form-control" placeholder="Username" formControlName="username" type="text">
         </div>
         <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" class="alert alert-danger">
             <div *ngIf="loginForm.controls['username'].errors.required">
@@ -13,8 +14,9 @@
             </div>
         </div>
          <div class="form-group">
-            <label>Password:</label>
-            <input class="form-control" formControlName="password" type="text">
+            <span class="icon"><i class="fa fa-lock"> </i> &nbsp; </span>
+            <label>Password</label>
+            <input class="form-control" placeholder="Password" formControlName="password" type="text">
         </div>
         <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
             <div *ngIf="loginForm.controls['password'].errors.required">
