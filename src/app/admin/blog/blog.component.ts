@@ -9,6 +9,8 @@ export class AdminBlogComponent implements OnInit {
   constructor( ) { }
   iseditoractive = false
   islistactive = true
+  isupdateeditoractive  = false
+  slug
   ngOnInit() {
 
   }

@@ -41,7 +41,7 @@ const routes: Routes = [
         path:'',component:BlogliistComponent
       },
       {
-          path : 'post/:id',
+          path : 'post/:slug',
           component:BlogdetailComponent
       }
       ]
