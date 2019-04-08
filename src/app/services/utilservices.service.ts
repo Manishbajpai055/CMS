@@ -11,12 +11,11 @@ export class UtilService {
   }
 
   getHeader() {
-    
     return this.getToken();
   }
 
   getDomain() {
-    const apiDomain = 'http://127.0.0.1:8000';
+    const apiDomain = 'http://127.0.0.1:8000/';
     return apiDomain;
   }
 
