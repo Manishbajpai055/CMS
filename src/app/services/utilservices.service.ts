@@ -1,5 +1,6 @@
 import {Injectable, isDevMode} from '@angular/core';
 import {Headers, RequestOptions, URLSearchParams} from '@angular/http';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class UtilService {
@@ -11,7 +12,13 @@ export class UtilService {
   }
 
   getHeader() {
-    return this.getToken();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Token '+localStorage.getItem('token')
+      })
+    };
+    return httpOptions;
   }
 
   getDomain() {
