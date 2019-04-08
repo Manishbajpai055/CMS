@@ -11,14 +11,8 @@ export class UtilService {
   }
 
   getHeader() {
-    const httpOptions = {
-      headers = ({
-        'Content-Type': 'application/json',
-        'Authorization': 'Token ' +this.getToken()
-      })
-    };
-    const options = new RequestOptions(httpOptions);
-    return options;
+    
+    return this.getToken();
   }
 
   getDomain() {
