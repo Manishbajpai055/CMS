@@ -5,36 +5,25 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
-import {QuillModule} from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { CarousellistComponent } from './admin/carousel/carousellist/carousellist.component';
-
-
+import { UtilService } from './services/utilservices.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     HomeModule,
-    QuillModule.forRoot({
-      modules: {
-        syntax: true,
-      }
-    }),
     AdminModule,
     FormsModule,
     AuthenticationModule
-    
-    
-  
   ],
-  providers: [CarousellistComponent],
+  providers: [CarousellistComponent,UtilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

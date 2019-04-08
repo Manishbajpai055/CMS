@@ -31,6 +31,7 @@
     "@tinymce/tinymce-angular": "^3.0.0",
     "angular-bootstrap-md": "^7.4.4",
     "angular-markdown-editor": "^2.0.2",
+    "angular2-jwt": "^0.2.3",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "jodit": "^3.2.44",
