@@ -7,24 +7,21 @@ import { PagesComponent } from './pages/pages.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSummernoteModule } from 'ngx-summernote';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AlertModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminBlogComponent } from './blog/blog.component';
 import { BloglistComponent } from './blog/bloglist/bloglist.component';
 import { BlogeditorComponent } from './blog/blogeditor/blogeditor.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
-import {QuillModule} from 'ngx-quill';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
 import { CarousellistComponent } from './carousel/carousellist/carousellist.component';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
 import { PageditorComponent } from './pages/pageditor/pageditor.component';
 import { PagelistComponent } from './pages/pagelist/pagelist.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { AboutComponentadmin } from './about/about.component';
+import { HttpintercepterService } from '../services/httpintercepter.service';
 
 
 @NgModule({
@@ -44,16 +41,17 @@ import { AboutComponentadmin } from './about/about.component';
     CommonModule,
     RouterModule,
     HttpClientModule,
-    QuillModule.forRoot({
-      modules: {
-        syntax: true,
-      }
-    }),
-      AlertModule.forRoot(),
-      FormsModule,
+    AlertModule.forRoot(),
+    FormsModule,
       ReactiveFormsModule,
       NgxSummernoteModule,
-
   ], 
+  providers:[
+   {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpintercepterService,
+      multi: true
+    }
+  ]
 })
 export class AdminModule { }

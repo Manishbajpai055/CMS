@@ -16,6 +16,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { HeaderFooterComponent } from './admin/header-footer/header-footer.component';
 import { CarouselComponent } from './admin/carousel/carousel.component';
 import { AboutComponentadmin } from './admin/about/about.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
     {
       path: 'admin',
       component: AdminComponent,
+      canActivate:[AuthGuard],
       children: [{
         path: 'admin',
         loadChildren: './admin/admin.module#AdminModule'
@@ -90,11 +92,15 @@ const routes: Routes = [
       component:AuthenticationComponent,
       children:[
         {
-          path: 'authh',
+          path: 'auth',
           loadChildren: './authentication/authentication.module#AuthenticationModule'
         },{
           path:'',
           component:LoginComponent
+        },
+        {
+          path:'logout',
+          redirectTo:'/auth'
         }
       ]
     }

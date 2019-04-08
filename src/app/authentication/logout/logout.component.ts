@@ -11,6 +11,7 @@ export class LogoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   
   }
 
 }

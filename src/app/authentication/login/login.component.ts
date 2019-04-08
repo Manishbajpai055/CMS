@@ -9,7 +9,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent   {
+export class LoginComponent implements OnInit  {
+  ngOnInit(){
+    localStorage.removeItem('user');
+    localStorage.removeItem('token' );
+    this.router.navigate(['auth']); 
+   }
 loginForm: FormGroup;
 constructor(private fb: FormBuilder ,private router:Router,private login:AuthenticationService) {
  this.createForm();
