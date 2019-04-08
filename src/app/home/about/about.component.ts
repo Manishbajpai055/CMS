@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AboutService} from '../../services/about.service';
-import { QUILL_CONFIG_TOKEN, QuillConfig, QuillModule } from 'ngx-quill';
 
 @Component({
   selector: 'app-about',
@@ -10,11 +9,11 @@ import { QUILL_CONFIG_TOKEN, QuillConfig, QuillModule } from 'ngx-quill';
 export class AboutComponent implements OnInit {
   Quill: any = null
   aboutdetail;
-  constructor(private about: AboutService,private quill:QuillModule) { }
-  quillEditor = new this.Quill()
+  constructor(private about: AboutService) { }
   ngOnInit() {
     this.about.About().subscribe(res => {
-      this.quillEditor.setText("wdjkqqwkhwd", 'silent') })
+      this.aboutdetail = res
+     })
   }
 
 }

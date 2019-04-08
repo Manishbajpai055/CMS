@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,RouterModule } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class LoginComponent   {
 loginForm: FormGroup;
-constructor(private fb: FormBuilder ,private router:Router) {
+constructor(private fb: FormBuilder ,private router:Router,private login:AuthenticationService) {
  this.createForm();
 }
 errorMassage = ''
@@ -21,11 +22,20 @@ createForm() {
  });}
  onSubmit(){
    console.log(this.loginForm.value.username,this.loginForm.value.password)
-   
- if (this.loginForm.value.username === 'admin' && this.loginForm.value.password ==='password' ) {
-        return this.router.navigate(['admin'])
- } else {
-      this.errorMassage = "Inavlid Username And Password"
- }
+    const data = new FormData
+    data.append('username',this.loginForm.value.username)
+    data.append('password',this.loginForm.value.password)
+   this.login.gettoken(data).subscribe(response => {
+    localStorage.setItem('user' ,  this.loginForm.value.username);
+    localStorage.setItem('token' , response['token']);
+    console.log(response['token'])
+    this.router.navigate(['admin']);
+  }, error => {
+    try {
+      this.errorMassage = error.error['message']
+    } catch (e) {
+      this.errorMassage =  "Network Problem";
+    }
+  });
  }
 }

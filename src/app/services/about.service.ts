@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
+import {Http} from '@angular/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AboutService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: Http,private util:UtilService) { }
 
   About() {
-    return this.http.get('http://localhost:3004/pages/1/');
+    return this.http.get('http://127.0.0.1:8000/api/about/1/update/');
 
   }
   editAbout(data) {
-    var id=1
-    return this.http.put('http://localhost:3004/pages/'+id, {"body":"hdshdhskdhakjdhkjadjkaskjdhakdkkajd","keyword":"kjfhuhhf"});
+      return this.http.put('http://127.0.0.1:8000/api/about/1/update/',data,this.util.getHeader());
 
   }
 

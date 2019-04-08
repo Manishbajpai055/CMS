@@ -8,43 +8,35 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./carousellist.component.css']
 })
 export class CarousellistComponent implements OnInit {
-  sliderArray
+  sliderArray 
   delteDilog = false
   modalRef: BsModalRef;
-  wanttodelet= false  
   id:number
   constructor(private carousel:CarouselService,private modalService: BsModalService) { }
 
   ngOnInit() {
-    this.carousel.crousellist()
-    this.carousel.crousellist().subscribe(res =>{
-      this.sliderArray = res
-    })
+      this.refresh()
   }
   delet(id,template){
       this.id=id
       this.openModal(template)   
   }
-
+  ///DilougBox
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
   confirm(): void {
     this.carousel.carouseldelet(this.id).subscribe(res =>{
       console.log("dekete")
+      this.refresh()
     })
     this.modalRef.hide();
     this.refresh()
   }
   decline(): void {
     this.modalRef.hide();
-    this.refresh()
-
   }
   refresh(){
-    this.carousel.crousellist()
-    this.carousel.crousellist().subscribe(res =>{
-      this.sliderArray = res
-    })
+    this.sliderArray = this.carousel.crousellist()
   }
 }

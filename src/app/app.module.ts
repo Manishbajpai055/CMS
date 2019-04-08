@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import {QuillModule} from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { CarousellistComponent } from './admin/carousel/carousellist/carousellist.component';
 
 
 
@@ -33,7 +34,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
     
   
   ],
-  providers: [],
+  providers: [CarousellistComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

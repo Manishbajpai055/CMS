@@ -1,3 +1,5 @@
 
-<div [formGroup]="AboutForm">
-  <div aria-placeholder="jhajhdh" formControlName="body" [ngxSummernote]="config"  ></div>
+<form [formGroup]="AboutForm" (ngSubmit)="onSubmit()">
+  <div  formControlName="siteAbout" [ngxSummernote]="config"  ></div>
+  <input type="submit" value="submit">
+</form>

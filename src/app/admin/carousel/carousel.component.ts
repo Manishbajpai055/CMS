@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService  } from '../../services/carousel.service'
+import { CarousellistComponent } from './carousellist/carousellist.component';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-carousel',
@@ -15,7 +17,7 @@ export class CarouselComponent implements OnInit {
     onFileUpload(event){
     this.selecetdFile = event.target.files[0];
 }
-  constructor( private carousleservice :CarouselService) { }
+  constructor( private carousleservice :CarouselService,private caoruslelist:CarousellistComponent) { }
 
   ngOnInit() {
   }
@@ -34,11 +36,13 @@ upload(){
     data.append('image', this.selecetdFile);
     data.append('title', this.title);
     data.append('description',this.description);
-      this.carousleservice.carouselupload(data).subscribe(res=>{
-        console.log(res)
-      })
+      this.carousleservice.carouselupload(data).pipe(
+        map(res => console.log(res)) // Do whatever here
+      )
+       
+      this.selecetdFile = null
+      this.caoruslelist.refresh()
   }
- 
 }
 
 }

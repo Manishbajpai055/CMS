@@ -5,7 +5,8 @@ import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogliistComponent } from './blogliist/blogliist.component';
-import { MarkdownModule } from 'ngx-markdown';
+import { NgxSummernoteModule, } from 'ngx-summernote';
+
 
 @NgModule({
   declarations: [BlogdetailComponent,BlogComponent,],
@@ -13,10 +14,7 @@ import { MarkdownModule } from 'ngx-markdown';
     CommonModule,
     RouterModule,
     NgbModule,
-    MarkdownModule.forChild()
-
-    
-    
+    NgxSummernoteModule
   ]
 })
 export class BlogModule { }
