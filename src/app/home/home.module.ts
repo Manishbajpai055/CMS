@@ -18,12 +18,13 @@ import { ContactusComponent } from '../admin/contactus/contactus.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './page/page.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 @NgModule({
   declarations: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
-     HeaderComponent, FooterComponent, PageComponent],
+     HeaderComponent, FooterComponent, PageComponent, GalleryComponent],
   imports: [
     CommonModule,
     RouterModule,
