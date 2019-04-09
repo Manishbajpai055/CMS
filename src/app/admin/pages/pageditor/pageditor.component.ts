@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { PageserviceService } from 'src/app/services/pageservice.service';
 import { PagesComponent } from '../pages.component';
 
@@ -10,7 +10,7 @@ import { PagesComponent } from '../pages.component';
 })
 export class PageditorComponent implements OnInit {
   updatepagedetail
-  constructor(private newpage:PageserviceService,private adminpage:PagesComponent ) { }
+  constructor(private newpage:PageserviceService,private adminpage:PagesComponent ,private fb: FormBuilder ) { }
 
   ngOnInit() {
     if (this.adminpage.isupdateeditoractive===true){
