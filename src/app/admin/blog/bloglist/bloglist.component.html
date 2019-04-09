@@ -13,8 +13,8 @@
       <tr *ngFor="let blog of bloglist">
         <th scope="row">{{blog.id}}</th>
         <td>{{blog.title}}</td>
-        <button class="btn btn-primary-modal" (click)="Edit(blog.slug)">Edit</button>
-        <button class="btn btn-primary-modal" (click)="delet(blog.slug,template)" > Delete</button>
+       <td><button class="btn btn-primary" (click)="Edit(blog.slug)">Edit</button></td>  
+       <td> <button class="btn btn-primary" (click)="delet(blog.slug,template)" > Delete</button></td>
       </tr>
     </tbody>
   </table>

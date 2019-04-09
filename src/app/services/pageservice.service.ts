@@ -21,13 +21,10 @@ export class PageserviceService {
     return this.http.get('http://127.0.0.1:8000/api/pages/'+slug+'/',httpOptions)
   }
   pageupdate(slug,data){
-    return this.http.get('http://127.0.0.1:8000/api/pages/'+slug+'/',data)
+    return this.http.put('http://127.0.0.1:8000/api/pages/'+slug+'/update/',data)
   }
   newpage(data){
-    return this.http.post('http://127.0.0.1:8000/api/pages/create/',data).subscribe(res=>{
-      console.log(res)
-    })
-  
+    return this.http.post('http://127.0.0.1:8000/api/pages/create/',data)
   }
   deletepage(slug){
     return this.http.delete('http://127.0.0.1:8000/api/pages/'+slug+'/delet/')
