@@ -11,15 +11,21 @@ export class PageComponent implements OnInit {
 
   pageinfo: Object;
   slug 
+  previousslug
   constructor(private route: ActivatedRoute, private page:PageserviceService) { }
-
   ngOnInit() {
-    this.route.params.subscribe( params => this.slug = params.slug);
-    this.page.pagedetail(this.slug).subscribe(
-      data => {
-        console.log(data)
-        this.pageinfo = data;
-      })
+    this.refresh()
   }
+  refresh(){
+    this.route.params.subscribe( params =>{
+       this.slug = params.slug
+       this.page.pagedetail(this.slug).subscribe(
+        data => {
+          console.log(data)
+          this.pageinfo = data;
+        })
+      });  
+  }
+
 
 }

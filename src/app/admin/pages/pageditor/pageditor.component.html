@@ -7,18 +7,16 @@
   </label> 
 
   <label>
-    Menu-Name 
-    <input type="text" formControlName="Menu_name">
-  </label>
-
-  <label>
     Page Body
     <br>
 <br>
 <!-- or use with formControl -->
-<div aria-placeholder="jhajhdh" formControlName="body" [ngxSummernote]="config"  ></div>
+<div aria-placeholder="jhajhdh" formControlName="content" [ngxSummernote]="config"  ></div>
 </label>
-  
+<label>
+  Menu-Name 
+  <input type="text" formControlName="menu_name">
+</label>
   <input class="btn btn-primary-modal" type="submit" value="Save" name="Save">
 
 </form>

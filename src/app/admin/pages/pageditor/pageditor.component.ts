@@ -15,9 +15,9 @@ export class PageditorComponent implements OnInit {
   ngOnInit() {
   }
   NewPost = new FormGroup({
-    Menu_name: new FormControl(''),
     title: new FormControl(''),
-    body: new FormControl(''),
+    content: new FormControl(''),
+    menu_name: new FormControl(''),
   });  
   config = {
     height: '200px',

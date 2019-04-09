@@ -12,22 +12,26 @@ export class PagelistComponent implements OnInit {
   constructor(private adminpage:PagesComponent,private list:PageserviceService) { }
 
   ngOnInit() {
-    this.list.pagelist().subscribe(
-      data => {
-        this.pagelist = data;
-        
-      })
+    this.refresh()
   }
   add_newPage(){
     this.adminpage.iseditoractive=true
     this.adminpage.islistactive=false
   }
-  Delete(id){
-    console.log(id)
-    this.list.deletepage(id)
+  Delete(slug){
+    console.log(slug)
+    this.list.deletepage(slug)
+    this.refresh()
   }
 
   Edit(id: any) {
     console.log(id)
+  }
+  refresh(){
+    this.list.pagelist().subscribe(
+      data => {
+        this.pagelist = data;
+        
+      })
   }
 }

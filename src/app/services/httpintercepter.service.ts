@@ -19,19 +19,14 @@ export class HttpintercepterService implements HttpInterceptor {
       console.log("skipd Login Page")
       return next.handle(request.clone({ headers }));
     }
-    if(this.util.getToken()===undefined||null) {
       console.log("Token Excuted")
-      return next.handle(request);
-    }
-    else{
-      request = request.clone({
+      request = request.clone({   
         setHeaders: {
           Authorization: `Token ${this.util.getToken()}`
         }
       });
-      console.log("skipd")
       return next.handle(request);
 
-    }
+    
   }
 }
