@@ -9,10 +9,18 @@ import { PagesComponent } from '../pages.component';
   styleUrls: ['./pageditor.component.css']
 })
 export class PageditorComponent implements OnInit {
-
+  updatepagedetail
   constructor(private newpage:PageserviceService,private adminpage:PagesComponent ) { }
 
   ngOnInit() {
+    if (this.adminpage.isupdateeditoractive===true){
+      this.newpage.pagedetail(this.adminpage.slug).subscribe(res =>{
+        this.updatepagedetail = res
+        this.NewPost.get('title').setValue(this.updatepagedetail.title) 
+        this.NewPost.get('content').setValue(this.updatepagedetail.content)
+        this.NewPost.get('menu_name').setValue(this.updatepagedetail.menu_name)   
+     })
+    }
   }
   NewPost = new FormGroup({
     title: new FormControl(''),
@@ -25,9 +33,20 @@ export class PageditorComponent implements OnInit {
     placeholder: 'Enter Text Here',
   };
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.NewPost.value);
-    this.newpage.newpage(this.NewPost.value)
+    if (this.adminpage.isupdateeditoractive==true){
+      this.newpage.pageupdate(this.adminpage.slug,this.NewPost.value).subscribe(res=>{
+        console.log(res)
+        this.adminpage.islistactive=true
+        this.adminpage.iseditoractive= false
+      })
+    }
+    else{
+      this.newpage.newpage(this.NewPost.value).subscribe(res=>{
+        console.log(res)
+        this.adminpage.islistactive=true
+      this.adminpage.iseditoractive= false
+      }) 
+    } 
   }
   goback(){
       this.adminpage.islistactive=true

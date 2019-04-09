@@ -1,8 +1,7 @@
-<button (click)="add_newPage()" >Add New Post</button>
+<button class="btn btn-primary" (click)="add_newPage()" >Add New Post</button>
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Title</th>
         <td scope="col">Edit</td>
         <td scope="col">Delete</td>
@@ -10,10 +9,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let page of pagelist">
-        <th scope="row">{{page.id}}</th>
         <td>{{page.title}}</td>
-        <td class="btn btn-primary-modal" (click)="Edit(page.id)">Edit</td>
-        <td class="btn btn-primary-modal" (click)="Delete(page.id)" > Delete</td>
+        <td><button class="btn btn-primary" (click)="Edit(page.slug)">Edit</button> </td>
+        <td ><button class="btn btn-primary" (click)="Delete(template,page.slug)">Delete</button> </td>
       </tr>
     </tbody>
   </table>
+
+  <!-- Modal -->
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

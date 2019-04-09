@@ -1,15 +1,14 @@
 <div id="editor"></div>
-<button class="btn btn-primary-modal" (click)="goback()">Go back To list</button>
+<button class="btn btn-primary" (click)="goback()">Go back To list</button>
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
   <label>
     Title Of The Page
     <input type="text" formControlName="title">
   </label> 
-
   <label>
     Page Body
     <br>
-<br>
+    <br>
 <!-- or use with formControl -->
 <div  formControlName="content" [ngxSummernote]="config"  ></div>
 </label>
@@ -17,7 +16,7 @@
   Menu-Name 
   <input type="text" formControlName="menu_name">
 </label>
-  <input class="btn btn-primary-modal" type="submit" value="Save" name="Save">
+  <input class="btn btn-primary" type="submit" value="Save" name="Save">
 
 </form>
 <!-- use with ngModel -->

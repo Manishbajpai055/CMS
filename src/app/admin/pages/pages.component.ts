@@ -9,6 +9,8 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 export class PagesComponent implements OnInit {
   iseditoractive = false
   islistactive = true
+  isupdateeditoractive  = false
+  slug
   constructor() { }
  ngOnInit() {
   }

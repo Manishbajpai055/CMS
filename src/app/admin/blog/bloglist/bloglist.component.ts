@@ -16,7 +16,6 @@ export class BloglistComponent implements OnInit {
   slug=''
   modalRef: BsModalRef;
   constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { }
-
   ngOnInit() {
    this.refresh()
   }
@@ -24,7 +23,6 @@ refresh(){
   this.list.bloglist().subscribe(
     data => {
       this.bloglist = data;
-
     });
 }
 delet(slug,template) {
@@ -32,7 +30,6 @@ delet(slug,template) {
     this.slug = slug
     this.openModal(template)   
   }
-
   add_newPost() {
     this.adminblog.isupdateeditoractive=false;
     this.adminblog.iseditoractive = true;

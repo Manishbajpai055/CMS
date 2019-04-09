@@ -3,7 +3,6 @@
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
   <label>
       <br>
-
       Title Of The Blog
     <input type="text" formControlName="title">
   </label>
@@ -12,7 +11,7 @@
     Blog Body
   </label>
     <br>
-    <div aria-placeholder="jhajhdh" formControlName="content" [ngxSummernote]="config"  ></div>
+    <div  formControlName="content" [ngxSummernote]="config"  ></div>
     <label>
     Keywords On this Blog For SEO
     <input type="text" formControlName="keywords">

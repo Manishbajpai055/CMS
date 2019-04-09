@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import {BlogService } from '../../../services/blog.service'
 import { AdminBlogComponent } from '../blog.component';
-declare var $: any;
 
 @Component({
   selector: 'app-blogeditor',
@@ -15,16 +14,13 @@ export class BlogeditorComponent implements OnInit {
     title: new FormControl(''),
     content: new FormControl(''),
   });
-
   config = {
     height: '200px',
     uploadImagePath: 'http://127.0.0.1:8000/blog/images/upload/',
     placeholder: 'Enter Text Here',
   };
   updateblogdetail: any;
-  constructor(private newblog: BlogService,private adminblog: AdminBlogComponent) { 
-    
-  }
+  constructor(private newblog: BlogService,private adminblog: AdminBlogComponent) { }
 
   ngOnInit() {
     if (this.adminblog.isupdateeditoractive===true){
@@ -32,9 +28,9 @@ export class BlogeditorComponent implements OnInit {
         this.updateblogdetail = res
         this.NewPost.get('title').setValue(this.updateblogdetail.title) 
         this.NewPost.get('content').setValue(this.updateblogdetail.content)
-        this.NewPost.get('keywords').setValue(this.updateblogdetail.keywords)    })
+        this.NewPost.get('keywords').setValue(this.updateblogdetail.keywords)   
+     })
     }
-    
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
@@ -46,11 +42,12 @@ export class BlogeditorComponent implements OnInit {
       })
     }
     else{
-      this.newblog.newblog(this.NewPost.value)
-      this.adminblog.islistactive=true
+      this.newblog.newblog(this.NewPost.value).subscribe(res=>{
+        console.log(res)
+        this.adminblog.islistactive=true
       this.adminblog.iseditoractive= false
-    }
-    
+      }) 
+    } 
   }
   goback(){
       this.adminblog.islistactive=true
