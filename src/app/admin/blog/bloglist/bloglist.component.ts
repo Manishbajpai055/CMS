@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import {BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
 import {ActivatedRoute} from '@angular/router';
 import { AdminBlogComponent } from '../blog.component';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -12,20 +13,24 @@ import { AdminBlogComponent } from '../blog.component';
 })
 export class BloglistComponent implements OnInit {
   bloglist;
-
-  constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent) { }
+  slug=''
+  modalRef: BsModalRef;
+  constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { }
 
   ngOnInit() {
-    this.list.bloglist().subscribe(
-      data => {
-        this.bloglist = data;
-
-      });
+   this.refresh()
   }
+refresh(){
+  this.list.bloglist().subscribe(
+    data => {
+      this.bloglist = data;
 
-  Delete(id) {
-    console.log(id);
-    this.list.deleteblog(id);
+    });
+}
+delet(slug,template) {
+    console.log(slug,);
+    this.slug = slug
+    this.openModal(template)   
   }
 
   add_newPost() {
@@ -40,5 +45,19 @@ export class BloglistComponent implements OnInit {
     this.adminblog.isupdateeditoractive=true;
     this.adminblog.slug=slug
     this.adminblog.islistactive = false;
+  }
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+  confirm(): void {
+    this.list.deleteblog(this.slug).subscribe(res =>{
+      console.log("dekete")
+      this.refresh()
+    })
+    this.modalRef.hide();
+    this.refresh()
+  }
+  decline(): void {
+    this.modalRef.hide();
   }
 }

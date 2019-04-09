@@ -14,7 +14,18 @@
         <th scope="row">{{blog.id}}</th>
         <td>{{blog.title}}</td>
         <button class="btn btn-primary-modal" (click)="Edit(blog.slug)">Edit</button>
-        <button class="btn btn-primary-modal" (click)="Delete(blog.slug)" > Delete</button>
+        <button class="btn btn-primary-modal" (click)="delet(blog.slug,template)" > Delete</button>
       </tr>
     </tbody>
   </table>
+
+<!-- Modal -->
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

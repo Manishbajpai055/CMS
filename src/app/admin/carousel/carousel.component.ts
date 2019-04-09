@@ -36,12 +36,12 @@ upload(){
     data.append('image', this.selecetdFile);
     data.append('title', this.title);
     data.append('description',this.description);
-      this.carousleservice.carouselupload(data).pipe(
-        map(res => console.log(res)) // Do whatever here
-      )
-       
-      this.selecetdFile = null
+      this.carousleservice.carouselupload(data).subscribe(res =>{
+        console.log("Carousle Errpr")
+      })
+
       this.caoruslelist.refresh()
+
   }
 }
 

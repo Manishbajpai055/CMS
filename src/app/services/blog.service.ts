@@ -25,13 +25,11 @@ export class BlogService {
       
   }
   newblog(data){
-    return this.http.post('http://127.0.0.1:8000/blog/create/',data).subscribe(res=>{
-    })
+    return this.http.post('http://127.0.0.1:8000/blog/create/',data)
   
   }
   deleteblog(id){
-    return this.http.delete('http://127.0.0.1:8000/blog/'+id+'/'+'delet/').subscribe(res=>{
-    })
+    return this.http.delete('http://127.0.0.1:8000/blog/'+id+'/'+'delet/')
   }
   updateblog(id,data){
     return this.http.put('http://127.0.0.1:8000/blog/'+id+'/update/',data)
