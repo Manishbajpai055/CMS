@@ -4,6 +4,11 @@
   <label>
     Title Of The Page
     <input type="text" formControlName="title">
+  </label> 
+
+  <label>
+    Menu-Name 
+    <input type="text" formControlName="Menu_name">
   </label>
 
   <label>
@@ -13,10 +18,7 @@
 <!-- or use with formControl -->
 <div aria-placeholder="jhajhdh" formControlName="body" [ngxSummernote]="config"  ></div>
 </label>
-  <label>
-    Keywords On this Page For SEO
-    <input type="text" formControlName="Keywords">
-  </label>
+  
   <input class="btn btn-primary-modal" type="submit" value="Save" name="Save">
 
 </form>

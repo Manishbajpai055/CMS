@@ -8,20 +8,20 @@ export class PageserviceService {
 
   constructor(private http:HttpClient) { }
   pagelist(){
-    return this.http.get('http://localhost:3004/pages/')
+    return this.http.get('http://localhost:8000/page/')
    
   }
-  blodetail(id){
-    return this.http.get('http://localhost:3004/pages/'+id+'/')
+  pagedetail(slug){
+    return this.http.get('http://127.0.0.1:8000/page/'+slug+'/')
       
   }
   newpage(data){
-    return this.http.post('http://localhost:3004/pages/',data).subscribe(res=>{
+    return this.http.post('http://localhost:8000/page/',data).subscribe(res=>{
     })
   
   }
   deletepage(id){
-    return this.http.delete('http://localhost:3004/pages/'+id+'/').subscribe(res=>{
+    return this.http.delete('http://localhost:8000/page/'+id+'/').subscribe(res=>{
     })
   }
 }

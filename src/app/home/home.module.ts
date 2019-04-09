@@ -14,16 +14,16 @@ import {NgbModule, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { BlogModule } from './blog/blog.module';
 import { BlogliistComponent } from './blog/blogliist/blogliist.component';
-import { PagelistComponent } from './pages/pagelist/pagelist.component';
 import { ContactusComponent } from '../admin/contactus/contactus.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageComponent } from './page/page.component';
 
 
 @NgModule({
   declarations: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
-     HeaderComponent, FooterComponent, PagelistComponent],
+     HeaderComponent, FooterComponent, PageComponent],
   imports: [
     CommonModule,
     RouterModule,

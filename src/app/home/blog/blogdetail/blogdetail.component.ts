@@ -11,12 +11,12 @@ import * as marked from 'marked';
 export class BlogdetailComponent implements OnInit {
   blodetail: Object;
   slug 
-  constructor(private rout:ActivatedRoute, private detail:BlogService,private elementRef: ElementRef,
+  constructor(private route:ActivatedRoute, private detail:BlogService,private elementRef: ElementRef,
     private renderer: Renderer2) {
    }
 
   ngOnInit() {
-    this.rout.params.subscribe( params => this.slug = params.slug);
+    this.route.params.subscribe( params => this.slug = params.slug);
     this.detail.blodetail(this.slug).subscribe(
       data => {
         console.log(data)

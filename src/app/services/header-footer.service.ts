@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'InterceptorSkipHeader': 'X-Skip-Interceptor'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +21,11 @@ export class HeaderFooterService {
     })
   }
   getHeadeFooter(){
-    return this.http.get(this.HeaderFooterurl).subscribe(res=>{
+    return this.http.get(this.HeaderFooterurl, httpOptions).subscribe(res=>{
     })
   }
   getHeader(){
-    return this.http.get(this.HeaderFooterurl)
+    return this.http.get(this.HeaderFooterurl ,httpOptions)
   }
 
   updatefooter(data){
@@ -26,6 +33,6 @@ export class HeaderFooterService {
     })
   }
   getupdatefooter(){
-    return this.http.get(this.FooterDetailurl )
+    return this.http.get(this.FooterDetailurl ,httpOptions)
   }
 }

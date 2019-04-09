@@ -17,6 +17,7 @@ import { HeaderFooterComponent } from './admin/header-footer/header-footer.compo
 import { CarouselComponent } from './admin/carousel/carousel.component';
 import { AboutComponentadmin } from './admin/about/about.component';
 import { AuthGuard } from './auth.guard';
+import { PageComponent } from './home/page/page.component';
 
 
 const routes: Routes = [
@@ -44,9 +45,14 @@ const routes: Routes = [
       {
           path : 'post/:slug',
           component:BlogdetailComponent
-      }
+      },
       ]
+
       
+    },
+    {
+      path : 'page/:slug',
+      component : PageComponent, 
     },
     
   {

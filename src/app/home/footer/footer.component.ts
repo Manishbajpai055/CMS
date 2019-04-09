@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
+declare var google: any;
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -15,7 +17,7 @@ export class FooterComponent implements OnInit {
      this.footernotes = res
    }
    )
-
+   
   }
 
 }
