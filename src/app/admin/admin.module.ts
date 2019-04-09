@@ -22,6 +22,7 @@ import { PagelistComponent } from './pages/pagelist/pagelist.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { AboutComponentadmin } from './about/about.component';
 import { HttpintercepterService } from '../services/httpintercepter.service';
+import { AdminGalleryComponent } from './admin-gallery/admin-gallery.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HttpintercepterService } from '../services/httpintercepter.service';
     PageditorComponent,
     PagelistComponent,
     AboutComponentadmin,
+    AdminGalleryComponent,
     
     ],
   imports: [
