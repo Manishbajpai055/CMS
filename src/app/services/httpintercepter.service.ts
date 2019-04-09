@@ -36,9 +36,8 @@ export class HttpintercepterService implements HttpInterceptor {
           }
         }, (err: any) => {
           if (err instanceof HttpErrorResponse) {
-            if (err.status === 401 || 403) {
+            if (err.status === 401) {
               console.log("Oh No")
-
               this.router.navigate(['/auth/logout']);
             }
           }

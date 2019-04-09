@@ -25,11 +25,11 @@ export class PageserviceService {
   }
   newpage(data){
     return this.http.post('http://127.0.0.1:8000/api/pages/create/',data).subscribe(res=>{
+      console.log(res)
     })
   
   }
   deletepage(slug){
-    return this.http.delete('http://127.0.0.1:8000/api/pages/'+slug+'/delet/').subscribe(res=>{
-    })
+    return this.http.delete('http://127.0.0.1:8000/api/pages/'+slug+'/delet/')
   }
 }
