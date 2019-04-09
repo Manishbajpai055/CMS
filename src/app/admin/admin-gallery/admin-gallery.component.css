@@ -1,0 +1,59 @@
+
+
+@media screen and (min-device-width: 0px) and (max-device-width: 2180px){
+
+    .container{
+        display : ruby;
+        padding: 0%;
+         
+    
+    }
+    .carousel{
+        background-color: #3f51b5;
+        width: 100%;
+        }
+    button{
+        background-color: #3f51b5;
+        border-radius: 0px 15%;
+        border-color: aliceblue;
+        display: inline;
+        margin-left: 0%;
+        margin: 1%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+    input{
+        background-color: #3f51b5;
+        display: inline;
+        margin-left: 0%;
+        margin: 1%;
+        border-color: aliceblue;
+
+    }
+    label{
+        color: aliceblue;
+    }
+
+}
+
+.input{
+    color: aliceblue;
+    padding: 0 4px 4px 4px;
+    border-color: white;
+    border-radius: 0px 10px;  
+}
+
+input:hover{
+    border-radius: 2px 2px;
+        border-color: aliceblue;
+    background-color: #404249;
+    
+}
+button:hover{
+    border-radius: 0px 15%;
+    border-color: aliceblue;
+    background-color: #404249;
+    
+
+}

@@ -1,0 +1,24 @@
+<button  class="btn btn-primary" (click)="refresh()">Refresh</button>
+<div class="row">
+    <div class="col-sm-6" *ngFor="let slide of sliderArray | async">
+        <div class="card">
+          <img class="card-img-top" src="{{slide.image}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{slide.title}}</h5>
+              <p class="card-text">{{slide.description}}</p>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="delet(slide.id,template)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

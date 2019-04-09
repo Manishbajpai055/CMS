@@ -18,6 +18,9 @@ import { CarouselComponent } from './admin/carousel/carousel.component';
 import { AboutComponentadmin } from './admin/about/about.component';
 import { AuthGuard } from './auth.guard';
 import { PageComponent } from './home/page/page.component';
+import { GalleryComponent } from './home/gallery/gallery.component';
+import { AdminGalleryComponent } from './admin/admin-gallery/admin-gallery.component';
+import { GallerylistComponent } from './admin/admin-gallery/gallerylist/gallerylist.component';
 
 
 const routes: Routes = [
@@ -72,6 +75,10 @@ const routes: Routes = [
       {
         path:'',component:AdmindashboardComponent
     },
+    {
+      path:'gallery',
+      component: GallerylistComponent
+    },
       {
         path : 'pages',
         component : PagesComponent
@@ -109,7 +116,7 @@ const routes: Routes = [
           redirectTo:'/auth'
         }
       ]
-    }
+    },
     
     
 ];
