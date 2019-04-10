@@ -28,10 +28,11 @@ import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
     AuthenticationModule,
     StudentModule
   ],
-  providers: [CarousellistComponent,UtilService,
+  providers: [CarousellistComponent,
+    UtilService,
     AuthGuard,
     GallerylistComponent,
-    AdminauthgaurdGuard
+    AdminauthgaurdGuard,
     
   ],
   bootstrap: [AppComponent]

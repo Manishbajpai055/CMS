@@ -91,7 +91,7 @@ const routes: Routes = [
      },
      {
       path : 'user',
-      component : UserlistComponent
+      component : UsersComponent
     },
     
      {

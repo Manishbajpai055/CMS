@@ -1,33 +1,45 @@
-<button style="margin-bottom:1%" class="btn btn-primary" (click)="add_newUser()" >Add New User</button>
-<br>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Student name</th>
-        <td scope="col">Email</td>
-        <td scope="col" >Mobile No </td>
-        <td scope="col">Username</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of UserList | paginate: { itemsPerPage: 10, currentPage: p }">
-        <th scope="row">{{blog.id}}</th>
-        <td>{{blog.title}}</td>
-       <td><button class="btn btn-primary" (click)="Edit(blog.slug)">Edit</button></td>  
-       <td> <button class="btn btn-primary" (click)="delet(blog.slug,template)" > Delete</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-<!-- Modal -->
-<br><br>
-<pre class="card card-block card-header">{{message}}</pre>
-<ng-template #template>
-  <div class="modal-body text-center">
-    <p>Do you want to Delet ?</p>
-    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
-    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
-  </div>
-</ng-template>
+<button style="margin-bottom:1%" class="btn btn-primary" (click)="goBack()">Go Back</button>
+<div class="footerlable">New Student Detail</div>
+<div class="container">
+    <form [formGroup]="NewUser" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+            <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                <div *ngIf="f.first_name.errors.required">First Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+            <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>

@@ -47,8 +47,6 @@ import { UserlistComponent } from './Student/users/userlist/userlist.component';
     AnswerssComponent,
     UsersComponent,
     UserlistComponent,
-    
-    
     ],
   imports: [
     CarouselModule,
