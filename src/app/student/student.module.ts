@@ -8,9 +8,11 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StudentNotesComponent } from './student-notes/student-notes.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NewstudentComponent } from './newstudent/newstudent.component';
+import { StudentlistComponent } from './newstudent/studentlist/studentlist.component';
 
 @NgModule({
-  declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent],
+  declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent, NewstudentComponent, StudentlistComponent],
   imports: [
     CommonModule,
     RouterModule,

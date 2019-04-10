@@ -1,0 +1,33 @@
+<button style="margin-bottom:1%" class="btn btn-primary" (click)="add_newUser()" >Add New User</button>
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Student name</th>
+        <td scope="col">Email</td>
+        <td scope="col" >Mobile No </td>
+        <td scope="col">Username</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of UserList | paginate: { itemsPerPage: 10, currentPage: p }">
+        <th scope="row">{{blog.id}}</th>
+        <td>{{blog.title}}</td>
+       <td><button class="btn btn-primary" (click)="Edit(blog.slug)">Edit</button></td>  
+       <td> <button class="btn btn-primary" (click)="delet(blog.slug,template)" > Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Modal -->
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

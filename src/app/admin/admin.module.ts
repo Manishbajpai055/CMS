@@ -24,6 +24,11 @@ import { AboutComponentadmin } from './about/about.component';
 import { HttpintercepterService } from '../services/httpintercepter.service';
 import { AdminGalleryComponent } from './admin-gallery/admin-gallery.component';
 import { GallerylistComponent } from './admin-gallery/gallerylist/gallerylist.component';
+import { NotesComponent } from './Student/notes/notes.component';
+import { QuestionsComponent } from './Student/questions/questions.component';
+import { AnswerssComponent } from './Student/answerss/answerss.component';
+import { UsersComponent } from './Student/users/users.component';
+import { UserlistComponent } from './Student/users/userlist/userlist.component';
 
 
 @NgModule({
@@ -37,6 +42,11 @@ import { GallerylistComponent } from './admin-gallery/gallerylist/gallerylist.co
     AboutComponentadmin,
     AdminGalleryComponent,
     GallerylistComponent,
+    NotesComponent,
+    QuestionsComponent,
+    AnswerssComponent,
+    UsersComponent,
+    UserlistComponent,
     
     
     ],

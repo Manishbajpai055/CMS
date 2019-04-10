@@ -21,7 +21,7 @@ export class GallerylistComponent implements OnInit {
       this.id=id
       this.openModal(template)   
   }
-  ///DilougBox
+  /*DialougBox*/
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }

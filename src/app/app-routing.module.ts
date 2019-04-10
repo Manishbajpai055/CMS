@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +25,11 @@ import { QuestionTabComponent } from './student/question-tab/question-tab.compon
 import { AnswerTabComponent } from './student/answer-tab/answer-tab.component';
 import { StudentNotesComponent } from './student/student-notes/student-notes.component';
 import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
+import { NotesComponent } from './admin/Student/notes/notes.component';
+import { QuestionsComponent } from './admin/Student/questions/questions.component';
+import { AnswerssComponent } from './admin/Student/answerss/answerss.component';
+import { UsersComponent } from './admin/Student/users/users.component';
+import { UserlistComponent } from './admin/Student/users/userlist/userlist.component';
 
 
 const routes: Routes = [
@@ -84,6 +89,23 @@ const routes: Routes = [
         path:'',
         component:AdmindashboardComponent
      },
+     {
+      path : 'user',
+      component : UserlistComponent
+    },
+    
+     {
+       path : 'notes',
+       component : NotesComponent
+     },
+     {
+      path : 'questions',
+      component : QuestionsComponent
+    },
+    {
+      path : 'answers',
+      component : AnswerssComponent
+    },
       {
         path:'gallery',
         component: AdminGalleryComponent
