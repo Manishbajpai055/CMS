@@ -15,10 +15,15 @@ export class BloglistComponent implements OnInit {
   bloglist;
   slug=''
   modalRef: BsModalRef;
-  constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { }
+  constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { 
+    
+  }
   ngOnInit() {
    this.refresh()
+   
   }
+
+  
 refresh(){
   this.list.bloglist().subscribe(
     data => {

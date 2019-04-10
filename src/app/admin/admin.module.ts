@@ -12,6 +12,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminBlogComponent } from './blog/blog.component';
 import { BloglistComponent } from './blog/bloglist/bloglist.component';
 import { BlogeditorComponent } from './blog/blogeditor/blogeditor.component';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CarouselComponent } from './carousel/carousel.component';
@@ -49,7 +50,8 @@ import { GallerylistComponent } from './admin-gallery/gallerylist/gallerylist.co
     FormsModule,
       ReactiveFormsModule,
       NgxSummernoteModule,
-  ], 
+      NgxPaginationModule
+      ], 
   providers:[
    {
       provide: HTTP_INTERCEPTORS,

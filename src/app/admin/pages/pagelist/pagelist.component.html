@@ -8,13 +8,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let page of pagelist">
+      <tr *ngFor="let page of pagelist | paginate: { itemsPerPage: 10, currentPage: p }">
         <td>{{page.title}}</td>
         <td><button class="btn btn-primary" (click)="Edit(page.slug)">Edit</button> </td>
         <td ><button class="btn btn-primary" (click)="Delete(template,page.slug)">Delete</button> </td>
       </tr>
     </tbody>
   </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
   <!-- Modal -->
 <br><br>
