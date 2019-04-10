@@ -19,12 +19,13 @@ import { NgxSummernoteModule, } from 'ngx-summernote';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './page/page.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
   declarations: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
-     HeaderComponent, FooterComponent, PageComponent, GalleryComponent],
+     HeaderComponent, FooterComponent, PageComponent, GalleryComponent, ContactUsComponent],
   imports: [
     CommonModule,
     RouterModule,
