@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-userlist',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userlist.component.css']
 })
 export class UserlistComponent implements OnInit {
-
-  constructor() { }
+  UserList
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
   }

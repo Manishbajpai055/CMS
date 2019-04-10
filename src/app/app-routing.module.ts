@@ -28,6 +28,7 @@ import { NotesComponent } from './admin/Student/notes/notes.component';
 import { QuestionsComponent } from './admin/Student/questions/questions.component';
 import { AnswerssComponent } from './admin/Student/answerss/answerss.component';
 import { UsersComponent } from './admin/Student/users/users.component';
+import { UserlistComponent } from './admin/Student/users/userlist/userlist.component';
 
 
 const routes: Routes = [
@@ -89,7 +90,7 @@ const routes: Routes = [
      },
      {
       path : 'user',
-      component : UsersComponent
+      component : UserlistComponent
     },
     
      {
