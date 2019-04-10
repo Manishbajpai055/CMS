@@ -15,13 +15,13 @@ export class GalleryserviceService {
   constructor(private http:HttpClient) { }
 
   gallerylist(){
-    return this.http.get('http://127.0.0.1:8000/api/carousle/',httpOptions)
+    return this.http.get('http://192.168.43.212:8000/api/carousle/',httpOptions)
   }
   gallryupload(data){
-    return this.http.post('http://127.0.0.1:8000/api/carousle/upload/',data)
+    return this.http.post('http://192.168.43.212:8000/api/carousle/upload/',data)
   }
   gallerydelete(id){
     console.log(id)
-    return this.http.delete('http://127.0.0.1:8000/api/carousle/'+id+'/')
+    return this.http.delete('http://192.168.43.212:8000/api/carousle/'+id+'/')
   }
 }

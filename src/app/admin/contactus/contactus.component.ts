@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder, RequiredValidator } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
@@ -11,12 +11,19 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
+  
   headerinfo: any;
+  
+
 
   constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService) { }
 
   subscribe: FormGroup = new FormGroup({
-    Name: new FormControl('' ),
+    Name: new FormControl( '', [
+      Validators.required,
+      Validators.minLength(4),
+      Validators.nullValidator
+    ]),
     Email: new FormControl(''),
     Phone_no : new FormControl(''),
     Description : new FormControl(''),
