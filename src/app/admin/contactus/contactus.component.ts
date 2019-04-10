@@ -13,26 +13,27 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
 export class ContactusComponent implements OnInit {
   headerinfo: any;
 
-  constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService) { }
-
-  subscribe: FormGroup = new FormGroup({
-    Name: new FormControl('' ),
-    Email: new FormControl(''),
-    Phone_no : new FormControl(''),
-    Description : new FormControl(''),
-});
+  constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService,private formBuilder: FormBuilder) { }
+  subscribeform: FormGroup 
+  submitted = false;
 
 onSubmit(){
-  console.log(this.subscribe.value)
-  this.Contactus.postSubscriberinfo(this.subscribe.value)
+  console.log(this.subscribeform.value)
+  this.submitted = true;
+    // stop here if form is invalid
+    if (this.subscribeform.invalid) {
+        return;
+    }
+    this.Contactus.postSubscriberinfo(this.subscribeform.value)
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.subscribeform.value))
 }
   ngOnInit() {
-    this.headerinfo = this.headerfooterservice.getHeader().subscribe(res => {
-      this.headerinfo = res
-      console.log(res)
-    })
-    
-
-  }
-
+    this.subscribeform = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone_no: ['', [Validators.required, Validators.minLength(10),Validators.maxLength(10)], Validators.pattern("^[0-9]*$"),],
+      description: ['', Validators.required]
+  })
+   }
+  get f() { return this.subscribeform.controls; }
 }

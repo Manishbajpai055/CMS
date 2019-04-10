@@ -27,7 +27,8 @@ import { GallerylistComponent } from './admin/admin-gallery/gallerylist/galleryl
   ],
   providers: [CarousellistComponent,UtilService,
     AuthGuard,
-    GallerylistComponent
+    GallerylistComponent,
+    
   ],
   bootstrap: [AppComponent]
 })

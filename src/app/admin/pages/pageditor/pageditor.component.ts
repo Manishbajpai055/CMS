@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { PageserviceService } from 'src/app/services/pageservice.service';
 import { PagesComponent } from '../pages.component';
 
@@ -10,9 +10,15 @@ import { PagesComponent } from '../pages.component';
 })
 export class PageditorComponent implements OnInit {
   updatepagedetail
-  constructor(private newpage:PageserviceService,private adminpage:PagesComponent ,private fb: FormBuilder ) { }
+  submitted: boolean;
+  constructor(private newpage:PageserviceService,private adminpage:PagesComponent ,private fb: FormBuilder,private formBuilder: FormBuilder ) { }
 
   ngOnInit() {
+    this.NewPost = this.formBuilder.group({
+      title: ['', Validators.required],
+     content: ['', Validators.required],
+     menu_name:['',Validators.required]
+  })
     if (this.adminpage.isupdateeditoractive===true){
       this.newpage.pagedetail(this.adminpage.slug).subscribe(res =>{
         this.updatepagedetail = res
@@ -22,17 +28,23 @@ export class PageditorComponent implements OnInit {
      })
     }
   }
-  NewPost = new FormGroup({
+  NewPost: FormGroup
+  /**({
     title: new FormControl(''),
     content: new FormControl(''),
     menu_name: new FormControl(''),
-  });  
+  });   */
   config = {
     height: '200px',
     uploadImagePath: '/api/upload',
     placeholder: 'Enter Text Here',
   };
   onSubmit() {
+
+    this.submitted = true;
+    if (this.NewPost.invalid) {
+      return;
+    }
     if (this.adminpage.isupdateeditoractive==true){
       this.newpage.pageupdate(this.adminpage.slug,this.NewPost.value).subscribe(res=>{
         console.log(res)
@@ -52,4 +64,6 @@ export class PageditorComponent implements OnInit {
       this.adminpage.islistactive=true
       this.adminpage.iseditoractive= false
   }
+  get f() { return this.NewPost.controls; }
+
 }
