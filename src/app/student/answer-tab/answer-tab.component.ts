@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./answer-tab.component.css']
 })
 export class AnswerTabComponent implements OnInit {
-
+  qustionList = [
+    {id:1,name:"New Qustion" }
+  ]
   constructor() { }
 
   ngOnInit() {

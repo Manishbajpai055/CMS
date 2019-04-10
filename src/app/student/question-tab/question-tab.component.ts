@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionTabComponent implements OnInit {
 
   constructor() { }
-
+  qustionList = [
+    {id:1,name:"New Qustion" }
+  ]
   ngOnInit() {
   }
-
 }
