@@ -19,7 +19,6 @@ import { AuthGuard } from './auth.guard';
 import { PageComponent } from './home/page/page.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { AdminGalleryComponent } from './admin/admin-gallery/admin-gallery.component';
-import { GallerylistComponent } from './admin/admin-gallery/gallerylist/gallerylist.component';
 
 
 const routes: Routes = [
@@ -81,7 +80,7 @@ const routes: Routes = [
      },
       {
         path:'gallery',
-        component: GallerylistComponent
+        component: AdminGalleryComponent
       },
       {
         path : 'pages',

@@ -19,7 +19,6 @@ export class GalleryComponent implements OnInit {
     this.galleryservice.gallerylist().subscribe(res =>{
       this.sliderArray= res
       this.index = Object.keys(res);;
- 
     })
   }
 
