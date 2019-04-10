@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { GalleryserviceService } from 'src/app/services/galleryservice.service';
+
 @Component({
   selector: 'app-gallerylist',
   templateUrl: './gallerylist.component.html',
