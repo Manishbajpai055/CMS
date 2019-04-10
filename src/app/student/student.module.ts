@@ -7,12 +7,14 @@ import { StudentComponent } from './student.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StudentNotesComponent } from './student-notes/student-notes.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ]
 })
 export class StudentModule { }

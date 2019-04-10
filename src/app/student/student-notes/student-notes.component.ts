@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-notes.component.css']
 })
 export class StudentNotesComponent implements OnInit {
-
+  qustionList = [
+    {id:1,name:"Answer" }
+  ]
   constructor() { }
 
   ngOnInit() {
