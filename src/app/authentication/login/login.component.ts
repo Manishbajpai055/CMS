@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit  {
   ngOnInit(){
     localStorage.removeItem('user');
     localStorage.removeItem('token' );
+    localStorage.removeItem('role' );
     this.router.navigate(['auth']); 
    }
 loginForm: FormGroup;
@@ -32,9 +33,15 @@ createForm() {
     data.append('password',this.loginForm.value.password)
    this.login.gettoken(data).subscribe(response => {
     localStorage.setItem('user' ,  this.loginForm.value.username);
+    localStorage.setItem('role',response['role'])
     localStorage.setItem('token' , response['token']);
-    console.log(response['token'])
-    this.router.navigate(['admin']);
+    console.log(response['token'],response['role'])
+    if (response['role']=='admin') {
+      console.log('admin routing')
+      this.router.navigate(['admin']);
+    } else {
+      this.router.navigate(['student']);
+    }
   }, error => {
     try {
       this.errorMassage = error.error['message']

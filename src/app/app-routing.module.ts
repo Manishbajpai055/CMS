@@ -24,6 +24,7 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { QuestionTabComponent } from './student/question-tab/question-tab.component';
 import { AnswerTabComponent } from './student/answer-tab/answer-tab.component';
 import { StudentNotesComponent } from './student/student-notes/student-notes.component';
+import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
 
 
 const routes: Routes = [
@@ -74,7 +75,7 @@ const routes: Routes = [
     {
       path: 'admin',
       component: AdminComponent,
-      canActivate:[AuthGuard],
+      canActivate:[AdminauthgaurdGuard],
       children: [{
         path: 'admin',
         loadChildren: './admin/admin.module#AdminModule'
@@ -128,6 +129,7 @@ const routes: Routes = [
     {
       path : 'student',
       component: StudentComponent,
+      canActivate:[AuthGuard],
       children: [{
         path: 'student',
         loadChildren: './student/student.module#StudentModule'

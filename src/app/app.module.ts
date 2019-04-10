@@ -12,6 +12,7 @@ import { UtilService } from './services/utilservices.service';
 import { AuthGuard } from './auth.guard';
 import { GallerylistComponent } from './admin/admin-gallery/gallerylist/gallerylist.component';
 import { StudentModule } from './student/student.module';
+import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { StudentModule } from './student/student.module';
   providers: [CarousellistComponent,UtilService,
     AuthGuard,
     GallerylistComponent,
+    AdminauthgaurdGuard
     
   ],
   bootstrap: [AppComponent]

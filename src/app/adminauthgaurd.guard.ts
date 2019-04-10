@@ -4,14 +4,20 @@ import { AuthenticationService } from './services/authentication.service';
 
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AdminauthgaurdGuard implements CanActivate {
 
   constructor(private router: Router, private loginService : AuthenticationService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
      if (localStorage.getItem('token')) {
-      console.log(localStorage.getItem('user'))
-       return true;
+        let role = localStorage.getItem('role')
+        if (role == 'admin') {
+          return true
+        } else {
+          this.router.navigate(['/auth'])
+        }
+        console.log(role)
+        return true
      }
      else {
        this.router.navigate(['/auth'], { queryParams: {}});
@@ -19,3 +25,4 @@ export class AuthGuard implements CanActivate {
      }
   }
 }
+
