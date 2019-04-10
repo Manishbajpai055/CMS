@@ -1,4 +1,23 @@
 <div class="main-container">
+<<<<<<< HEAD
+  <div class="container">
+    <form [formGroup]="subscribe" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+      <h2>Subscribe</h2>
+      <div class="form-group">
+        <label for="name">Name : </label>
+  <span> <input placeholder="Name" type="text" #name="ngModel" class="form-control" id="name" [(ngModel)]="model.name" required> </span> <br/>
+  
+        <label for="Email">Email : </label>
+        <span><input type="text" placeholder="Email" class="form-control" formControlName="Email" id="Email"></span> <br/>
+        <label for="phone">Phone :</label>
+        <span><input placeholder="Phone no" type="text" class="form-control" formControlName="Phone_no" id="phn"></span> <br/>
+        <label for="description">Description</label>
+        <textarea placeholder="Description" type="text" class="form-control" formControlName="Description" id="Textarea"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+=======
     <div class="col-md-6 offset-md-3">
         <form [formGroup]="subscribeform" (ngSubmit)="onSubmit()">
             <div class="form-group">
@@ -39,6 +58,7 @@
             </div>
         </form>
 </div>
+>>>>>>> e7f6f60d96b131e78ed8dc739fdea5fadcef4dd6
   <!-- Subscribe Form-->
 
   <div class="container">

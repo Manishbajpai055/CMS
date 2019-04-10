@@ -5,7 +5,7 @@ import { AdminComponent } from './admin.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PagesComponent } from './pages/pages.component';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { NgxSummernoteModule } from 'ngx-summernote';
 import { AlertModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -13,7 +13,6 @@ import { AdminBlogComponent } from './blog/blog.component';
 import { BloglistComponent } from './blog/bloglist/bloglist.component';
 import { BlogeditorComponent } from './blog/blogeditor/blogeditor.component';
 import {NgxPaginationModule} from 'ngx-pagination'; 
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap';
@@ -39,9 +38,11 @@ import { GallerylistComponent } from './admin-gallery/gallerylist/gallerylist.co
     AdminGalleryComponent,
     GallerylistComponent,
     
+    
     ],
   imports: [
     CarouselModule,
+    FormsModule,
     ModalModule.forRoot(),
     CommonModule,
     RouterModule,
