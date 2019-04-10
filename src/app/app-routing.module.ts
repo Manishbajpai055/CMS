@@ -19,6 +19,11 @@ import { AuthGuard } from './auth.guard';
 import { PageComponent } from './home/page/page.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { AdminGalleryComponent } from './admin/admin-gallery/admin-gallery.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { QuestionTabComponent } from './student/question-tab/question-tab.component';
+import { AnswerTabComponent } from './student/answer-tab/answer-tab.component';
+import { StudentNotesComponent } from './student/student-notes/student-notes.component';
 
 
 const routes: Routes = [
@@ -120,8 +125,29 @@ const routes: Routes = [
         }
       ]
     },
-    
-    
+    {
+      path : 'student',
+      component: StudentComponent,
+      children: [{
+        path: 'student',
+        loadChildren: './student/student.module#StudentModule'
+      },
+      {
+        path:'',
+        component:StudentDashboardComponent,
+      },{
+        path:'questions',
+        component:QuestionTabComponent
+      },
+      {
+        path:'answers',
+        component:AnswerTabComponent
+      },{
+        path:'notes',
+        component:StudentNotesComponent
+      }
+    ],
+    }
 ];
 
 @NgModule({

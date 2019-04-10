@@ -11,6 +11,7 @@ import { CarousellistComponent } from './admin/carousel/carousellist/carousellis
 import { UtilService } from './services/utilservices.service';
 import { AuthGuard } from './auth.guard';
 import { GallerylistComponent } from './admin/admin-gallery/gallerylist/gallerylist.component';
+import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GallerylistComponent } from './admin/admin-gallery/gallerylist/galleryl
     HomeModule,
     AdminModule,
     FormsModule,
-    AuthenticationModule
+    AuthenticationModule,
+    StudentModule
   ],
   providers: [CarousellistComponent,UtilService,
     AuthGuard,
