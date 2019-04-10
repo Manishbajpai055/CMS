@@ -21,8 +21,7 @@ export class HeaderFooterService {
     })
   }
   getHeadeFooter(){
-    return this.http.get(this.HeaderFooterurl, httpOptions).subscribe(res=>{
-    })
+    return this.http.get(this.HeaderFooterurl, httpOptions)
   }
   getHeader(){
     return this.http.get(this.HeaderFooterurl ,httpOptions)

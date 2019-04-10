@@ -1,20 +1,20 @@
 <div id="editor"></div>
 <button class="btn btn-primary" (click)="goback()">Go back To list</button>
-<form [formGroup]="NewPost" (ngSubmit)="onSubmit()">  
+<form [formGroup]="NewPost" (ngSubmit)="onSubmit()"  novalidate>  
   <label>
     Title Of The Page
-    <input type="text" formControlName="title">
+    <input class="form-control" type="text" formControlName="title">
   </label> 
   <label>
     Page Body
     <br>
     <br>
 <!-- or use with formControl -->
-<div  formControlName="content" [ngxSummernote]="config"  ></div>
+<div class="form-control" formControlName="content" [ngxSummernote]="config"  ></div>
 </label>
 <label>
   Menu-Name 
-  <input type="text" formControlName="menu_name">
+  <input class="form-control" type="text" formControlName="menu_name">
 </label>
   <input class="btn btn-primary" type="submit" value="Save" name="Save">
 

@@ -19,9 +19,9 @@ export class BlogliistComponent implements OnInit {
       console.log(data)
     })
   }
-  openPage(slug){
+  ViewDetail(slug){
     console.log(slug)
     this.router.navigate(['blog','post',slug]);
   }
-
+  
 }

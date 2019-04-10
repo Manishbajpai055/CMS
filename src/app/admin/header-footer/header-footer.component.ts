@@ -10,8 +10,16 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
 export class HeaderFooterComponent implements OnInit {
 
   constructor(private getHeadefooter:HeaderFooterService ) { }
-
+  header_footer
   ngOnInit() {
+      this.getHeadefooter.getHeadeFooter().subscribe(res=>{
+        this.header_footer = res
+        this.headerfooter.get('contact').setValue(this.header_footer.Contact) 
+        this.headerfooter.get('email').setValue(this.header_footer.Email) 
+        this.headerfooter.get('facebook').setValue(this.header_footer.facebook) 
+        this.headerfooter.get('instagram').setValue(this.header_footer.instagram) 
+        this.headerfooter.get('twitter').setValue(this.header_footer.twitter) 
+      })
   }
   headerfooter = new FormGroup({ 
     contact: new FormControl(''),
