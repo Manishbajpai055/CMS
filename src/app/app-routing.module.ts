@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +24,9 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { QuestionTabComponent } from './student/question-tab/question-tab.component';
 import { AnswerTabComponent } from './student/answer-tab/answer-tab.component';
 import { StudentNotesComponent } from './student/student-notes/student-notes.component';
+import { NotesComponent } from './admin/Student/notes/notes.component';
+import { QuestionsComponent } from './admin/Student/questions/questions.component';
+import { AnswerssComponent } from './admin/Student/answerss/answerss.component';
 
 
 const routes: Routes = [
@@ -83,6 +86,18 @@ const routes: Routes = [
         path:'',
         component:AdmindashboardComponent
      },
+     {
+       path : 'notes',
+       component : NotesComponent
+     },
+     {
+      path : 'questions',
+      component : QuestionsComponent
+    },
+    {
+      path : 'answers',
+      component : AnswerssComponent
+    },
       {
         path:'gallery',
         component: AdminGalleryComponent
