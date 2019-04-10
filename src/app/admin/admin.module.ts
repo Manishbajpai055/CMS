@@ -27,6 +27,8 @@ import { GallerylistComponent } from './admin-gallery/gallerylist/gallerylist.co
 import { NotesComponent } from './Student/notes/notes.component';
 import { QuestionsComponent } from './Student/questions/questions.component';
 import { AnswerssComponent } from './Student/answerss/answerss.component';
+import { UsersComponent } from './Student/users/users.component';
+import { UserlistComponent } from './Student/users/userlist/userlist.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { AnswerssComponent } from './Student/answerss/answerss.component';
     NotesComponent,
     QuestionsComponent,
     AnswerssComponent,
+    UsersComponent,
+    UserlistComponent,
     
     
     ],

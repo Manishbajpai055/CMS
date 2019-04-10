@@ -1,0 +1,18 @@
+
+<div class="footerlable">Header Deatails</div>
+<div class="header-footer">
+<div class="container">
+<form [formGroup]="headerfooter" (ngSubmit)="onSubmit()" >
+    <label>Student name :</label>
+    <input formControlName="student_name" type="Text" > {{student_name}} <br>
+    <label>  Email-Address :</label>
+    <input formControlName="email" type="Text">{{Email}}
+    <label>  Username :</label>
+    <input formControlName="username" type="text" > {{username}}<br>
+    <label>Password:</label>
+    <input formControlName="password" type="text" >  {{password}}<br>
+    <label>Instagram :</label>
+    
+  </form>
+</div>
+    

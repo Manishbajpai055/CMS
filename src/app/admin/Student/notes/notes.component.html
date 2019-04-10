@@ -1,3 +1,30 @@
-<p>
-  notes works!
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <td scope="col">View/Edit</td>
+      <td scope="col">Upload</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let qustion of qustionList | paginate: { itemsPerPage: 10, currentPage: p }">
+      <th scope="row">{{qustion.id}}</th>
+      <td>{{qustion.name}}</td>
+     <td><button class="btn btn-primary" (click)="Edit(qustion.id)">View/Edit</button></td>  
+     <td> <button class="btn btn-primary" (click)="delet(qustion.id,template)" > Uploadd</button></td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Modal -->
+<br><br>
+<pre class="card card-block card-header">{{message}}</pre>
+<ng-template #template>
+<div class="modal-body text-center">
+  <p>Do you want to Delet ?</p>
+  <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+  <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+</div>
+</ng-template>

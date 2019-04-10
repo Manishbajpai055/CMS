@@ -27,6 +27,7 @@ import { StudentNotesComponent } from './student/student-notes/student-notes.com
 import { NotesComponent } from './admin/Student/notes/notes.component';
 import { QuestionsComponent } from './admin/Student/questions/questions.component';
 import { AnswerssComponent } from './admin/Student/answerss/answerss.component';
+import { UsersComponent } from './admin/Student/users/users.component';
 
 
 const routes: Routes = [
@@ -86,6 +87,11 @@ const routes: Routes = [
         path:'',
         component:AdmindashboardComponent
      },
+     {
+      path : 'user',
+      component : UsersComponent
+    },
+    
      {
        path : 'notes',
        component : NotesComponent
