@@ -19,6 +19,13 @@ export class HeaderFooterComponent implements OnInit {
         this.headerfooter.get('facebook').setValue(this.header_footer.facebook) 
         this.headerfooter.get('instagram').setValue(this.header_footer.instagram) 
         this.headerfooter.get('twitter').setValue(this.header_footer.twitter) 
+        this.headerfooter.get('instagram').setValue(this.header_footer.instagram) 
+        this.headerfooter.get('street').setValue(this.header_footer.street) 
+        this.headerfooter.get('city').setValue(this.header_footer.city) 
+        this.headerfooter.get('state').setValue(this.header_footer.state) 
+        this.headerfooter.get('country').setValue(this.header_footer.country) 
+        this.headerfooter.get('pincode').setValue(this.header_footer.pincode) 
+
       })
   }
   headerfooter = new FormGroup({ 
@@ -27,11 +34,11 @@ export class HeaderFooterComponent implements OnInit {
     facebook: new FormControl(''),
     twitter: new FormControl(''),
     instagram: new FormControl(''),
-    Street: new FormControl(''),
-    City: new FormControl(''),
-    State: new FormControl(''),
-    Pincode : new FormControl(''),
-
+    street: new FormControl(''),
+    city: new FormControl(''),
+    state: new FormControl(''),
+    pincode : new FormControl(''),
+    country : new FormControl(''),
   });
   Footerdetail = new FormGroup({
     footerdetail : new FormControl('')

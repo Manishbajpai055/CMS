@@ -4,31 +4,30 @@
 <div class="container">
 <form [formGroup]="headerfooter" (ngSubmit)="onSubmit()" >
     <label>Contact No :</label>
-    <input formControlName="contact" type="Text" > {{contact}} <br>
+    <input formControlName="contact" type="Text" > <br>
     <label>  Email-Address :</label>
-    <input formControlName="email" type="Text">{{Email}}
+    <input formControlName="email" type="Text">
     <label>  facebook :</label>
-    <input formControlName="facebook" type="text" > {{facebook}}<br>
+    <input formControlName="facebook" type="text" > <br>
     <label>Twitter:</label>
-    <input formControlName="twitter" type="text" >  {{twitter}}<br>
+    <input formControlName="twitter" type="text" ><br>
     <label>Instagram :</label>
-    <input formControlName="instagram" type="text" >   {{instagram}}<br>
-    
-
+    <input formControlName="instagram" type="text" ><br>
 <!-- Heder Info end-->
 
 <!-- CONTCT US START-->
     <label>Street :</label>
-    <input formControlName="Street" type="text" >   <br>
+    <input formControlName="street" type="text" >   <br>
     <label>City :</label>
-    <input formControlName="City" type="text" >   <br>
+    <input formControlName="city" type="text" >   <br>
     <label>State :</label>
-    <input formControlName="State" type="text" >   <br>
+    <input formControlName="state" type="text" >   <br>
     <label>Pincode :</label>
-    <input formControlName="Pincode" type="text" >   <br>
+    <input formControlName="pincode" type="text" >   <br>
+    <label>Country</label>
+    <input formControlName="country" type="text" >   <br>
+
     <button type="submit">Submit</button>
-
-
     <!-- CONTCT US END-->
 </form>
 </div>
