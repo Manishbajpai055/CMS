@@ -35,7 +35,9 @@ export class UserlistComponent implements OnInit {
     }
     this.userservice.NewUser(this.NewUser.value).subscribe(res=>{
       this.usercomponent.useradd=false
+      this.usercomponent.refresh()
       this.usercomponent.userlist = true
+
     })
   }
   goBack(){

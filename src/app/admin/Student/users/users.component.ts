@@ -14,6 +14,7 @@ export class UsersComponent implements OnInit {
   UsersList
   modalRef: BsModalRef;
   id
+  currentuser = localStorage.getItem('user')
   constructor(private userservice:UserserviceService,private router: Router,private modalService: BsModalService) { }
  
   ngOnInit() {
@@ -23,7 +24,7 @@ export class UsersComponent implements OnInit {
     this.useradd = true
     this.userlist = false
   }
-  delet(id,template){
+  Delete(id,template,username){ 
      this.id=id
      this.openModal(template)
   }
@@ -33,14 +34,13 @@ export class UsersComponent implements OnInit {
   confirm(): void {
     this.userservice.DeleteUser(this.id).subscribe(res=>{
       console.log("deleted")
+      this.refresh()
+      this.modalRef.hide();
     })
-    this.modalRef.hide();
-    this.refresh()
   }
   refresh(){
     this.userservice.UsersList().subscribe(res =>{
       this.UsersList = res
-      console.log(res)
     })  
   }
   decline(): void {
