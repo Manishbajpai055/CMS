@@ -20,9 +20,7 @@ export class CarouselComponent implements OnInit {
             this.selecetdFile = event.target.files[0];
         } else {
           this.error="Please Upload Image Only"
-        }
-      
-     
+        }   
 }
   constructor( private carousleservice :CarouselService,private caoruslelist:CarousellistComponent) { }
 
@@ -48,7 +46,6 @@ upload(){
       })
 
       this.caoruslelist.refresh()
-
   }
 }
 

@@ -1,30 +1,11 @@
 <button style="margin-bottom:1%" class="btn btn-primary" (click)="goBack()">Go Back</button>
 <div class="footerlable">Add new Answers</div>
 <div class="container">
-    <form [formGroup]="NewAnswers" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label>Title</label>
-            <input type="text" formControlName="titile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.titile.errors }" />
-            <div *ngIf="submitted && f.titile.errors" class="invalid-feedback">
-                <div *ngIf="f.titile.errors.required">Title is required</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Description</label>
-            <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
-            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                <div *ngIf="f.description.errors.required">Description is required</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Select File</label>
-            <input  formControlName="answer" type="file" (change)="onFileUpload($event)" />
-            <div *ngIf="submitted && f.answer.errors" class="invalid-feedback">
-                <div *ngIf="f.answer.errors.required">Description is required</div>
-            </div>
-          </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary">
-        </div>
-    </form>
-</div>
+                <input  type="text" placeholder="Enter Title" [(ngModel)]="title" id="">
+                <input  type="text"  placeholder="Enter description" [(ngModel)]="description" id="">
+                <input  type="input" class="btn btn-success" type="file" (change)="onFileUpload($event)">
+                <button  type="submit" class="btn btn-success" (click)="upload()">Upload</button>
+                <div  *ngIf="error"> <p class="text-warning .bg-warning" >{{error}}</p></div>
+                <label> Uploade Pictures for updating carousel</label>
+
+    </div>
