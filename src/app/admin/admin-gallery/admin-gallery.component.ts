@@ -14,7 +14,10 @@ export class AdminGalleryComponent implements OnInit {
   error
     onFileUpload(event){
     this.selecetdFile = event.target.files[0];
+    allowedFileType: ["pdf", "xls"]
 }
+
+
   constructor( private galleryservice : GalleryserviceService ,private galleryelist:GallerylistComponent) { }
 
   ngOnInit() {
