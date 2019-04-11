@@ -3,28 +3,21 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Posted on</th>
         <td scope="col">View</td>
         <td scope="col">Download</td>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let answer of answerlist | paginate: { itemsPerPage: 10, currentPage: p }">
-        <th scope="row">{{answer.id}}</th>
+        <th scope="row"></th>
         <td>{{answer.title}}</td>
-       <td><button class="btn btn-primary" (click)="Edit(answer.id)">View</button></td>  
-       <td> <button class="btn btn-primary" (click)="delet(answer.id,template)" >Downoa</button></td>
+        <td>{{answer.desciption}}</td>
+        <td>{{answer.posted_on}}</td>
+       <td><button class="btn btn-primary" >View</button></td>  
+       <td> <button class="btn btn-primary" >Downoad</button></td>
       </tr>
     </tbody>
   </table>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-<!-- Modal -->
-<br><br>
-<pre class="card card-block card-header">{{message}}</pre>
-<ng-template #template>
-  <div class="modal-body text-center">
-    <p>Do you want to Delet ?</p>
-    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
-    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
-  </div>
-</ng-template>

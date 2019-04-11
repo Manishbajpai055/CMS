@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QustionServiceService } from 'src/app/services/student/qustion-service.service';
 
 @Component({
   selector: 'app-question-tab',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionTabComponent implements OnInit {
 
-  constructor() { }
-  qustionList = [
-    {id:1,name:"New Qustion" }
-  ]
+  constructor(private qustionservice:QustionServiceService) { }
+  qustionList
   ngOnInit() {
+    this.qustionservice.qustionsList().subscribe(res=>{
+      this.qustionList = res
+    })
   }
 }

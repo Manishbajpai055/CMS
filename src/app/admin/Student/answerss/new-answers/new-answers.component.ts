@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AnswersServiceService } from 'src/app/services/student/answers-service.service';
+import { AnswerssComponent } from '../answerss.component';
 
 @Component({
   selector: 'app-new-answers',
@@ -13,7 +14,7 @@ export class NewAnswersComponent implements OnInit {
   error: string;
   title
   desciption
-  constructor(private formBuilder:FormBuilder,private answerservice:AnswersServiceService) { }
+  constructor(private formBuilder:FormBuilder,private answerservice:AnswersServiceService,private adminanswer:AnswerssComponent) { }
   ngOnInit() {
   }
   onFileUpload(event){
@@ -40,6 +41,7 @@ upload(){
     data.append('desciption',this.desciption);
     data.append('answer', this.selecetdFile);
       this.answerservice.answerUpload(data).subscribe(res=>{
+        this.adminanswer.refresh()
         console.log(res)
       })
   }

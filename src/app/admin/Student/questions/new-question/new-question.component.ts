@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QustionServiceService } from 'src/app/services/student/qustion-service.service';
+import { QuestionsComponent } from '../questions.component';
 
 @Component({
   selector: 'app-new-question',
@@ -12,7 +13,7 @@ export class NewQuestionComponent implements OnInit {
   title: any;
   desciption: string | Blob;
 
-  constructor(private qustionservice:QustionServiceService) { }
+  constructor(private qustionservice:QustionServiceService,private adminqustion:QuestionsComponent) { }
 
   ngOnInit() {
   }
@@ -40,6 +41,7 @@ upload(){
     data.append('desciption',this.desciption);
     data.append('qustion', this.selecetdFile);
       this.qustionservice.qustionsUpload(data).subscribe(res=>{
+        this.adminqustion.refresh()
         console.log(res)
       })
   }
