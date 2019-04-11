@@ -29,9 +29,16 @@ export class UserlistComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     this.submitted = true;
+    console.log(this.NewUser.value)
     if (this.NewUser.invalid) {
       return;
     }
+    this.userservice.NewUser(this.NewUser.value).subscribe(res=>{
+      this.usercomponent.useradd=false
+      this.usercomponent.refresh()
+      this.usercomponent.userlist = true
+
+    })
   }
   goBack(){
    this.usercomponent.useradd=false

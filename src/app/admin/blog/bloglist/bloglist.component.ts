@@ -20,7 +20,6 @@ export class BloglistComponent implements OnInit {
   }
   ngOnInit() {
    this.refresh()
-   
   }
 
   

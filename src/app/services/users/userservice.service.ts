@@ -11,7 +11,10 @@ export class UserserviceService {
   UsersList() {
     return this.http.get(this.util.getDomain()+'api/userslist/');
   }
-  NewUser(){
-    return this.http.get(this.util.getDomain()+'api/user/new/');
+  NewUser(data){
+    return this.http.post(this.util.getDomain()+'api/user/new/',data);
+  }
+  DeleteUser(id){
+    return this.http.delete(this.util.getDomain()+'api/user/'+id+'/delete/');
   }
 }
