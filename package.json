@@ -29,6 +29,7 @@
     "@covalent/text-editor": "^2.0.0",
     "@kolkov/angular-editor": "^0.13.1",
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
+    "@progress/kendo-angular-upload": "^4.2.2",
     "@tinymce/tinymce-angular": "^3.0.0",
     "angular-bootstrap-md": "^7.4.4",
     "angular-markdown-editor": "^2.0.2",

@@ -29,6 +29,9 @@ import { QuestionsComponent } from './Student/questions/questions.component';
 import { AnswerssComponent } from './Student/answerss/answerss.component';
 import { UsersComponent } from './Student/users/users.component';
 import { UserlistComponent } from './Student/users/userlist/userlist.component';
+import { NewnotesComponent } from './Student/notes/newnotes/newnotes.component';
+import { NewQuestionComponent } from './Student/questions/new-question/new-question.component';
+import { NewAnswersComponent } from './Student/answerss/new-answers/new-answers.component';
 
 
 @NgModule({
@@ -47,6 +50,9 @@ import { UserlistComponent } from './Student/users/userlist/userlist.component';
     AnswerssComponent,
     UsersComponent,
     UserlistComponent,
+    NewnotesComponent,
+    NewQuestionComponent,
+    NewAnswersComponent,
     ],
   imports: [
     CarouselModule,

@@ -1,0 +1,29 @@
+<button style="margin-bottom:1%" class="btn btn-primary" (click)="goBack()">Go Back</button>
+<div class="footerlable">Add new Notes</div>
+<div class="container">
+    <form [formGroup]="NewUser" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" formControlName="titile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+            <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                <div *ngIf="f.first_name.errors.required">Title is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+            <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                <div *ngIf="f.last_name.errors.required">Description is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Select File</label>
+            <input type="file" (change)="onFileUpload($event)" />
+            
+          </div>
+        
+        <div class="form-group">
+            <button (click)="upload()" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
