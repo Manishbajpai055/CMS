@@ -1,3 +1,4 @@
+
 {
   "name": "cms",
   "version": "0.0.0",
@@ -29,12 +30,6 @@
     "@covalent/text-editor": "^2.0.0",
     "@kolkov/angular-editor": "^0.13.1",
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
-<<<<<<< HEAD
-    "@progress/kendo-angular-l10n": "^1.1.0",
-    "@progress/kendo-theme-default": "latest",
-=======
-    "@progress/kendo-angular-upload": "^4.2.2",
->>>>>>> 16965b018d4227453495d29bae880d061ba5bc43
     "@tinymce/tinymce-angular": "^3.0.0",
     "angular-bootstrap-md": "^7.4.4",
     "angular-markdown-editor": "^2.0.2",
