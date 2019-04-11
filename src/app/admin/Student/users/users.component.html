@@ -20,7 +20,7 @@
         <td>{{user.first_name}} {{user.last_name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.username}}</td>
-       <td> <button class="btn btn-primary" (click)="delet(blog.slug,template)" > Delete</button></td>
+       <td> <button class="btn btn-primary" (click)="delet(user.id,template)"> Delete</button></td>
       </tr>
     </tbody>
   </table>
@@ -28,10 +28,9 @@
 
 <!-- Modal -->
 <br><br>
-<pre class="card card-block card-header">{{message}}</pre>
 <ng-template #template>
   <div class="modal-body text-center">
-    <p>Do you want to Delet ?</p>
+    <p>Do you want to Delete ?</p>
     <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
     <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
   </div>
