@@ -18,11 +18,12 @@ export class NewAnswersComponent implements OnInit {
   }
   onFileUpload(event){
     let file = event.target.files[0];
-      if (file.type == ('image/jpeg' || 'image/jpg' ||'image/png'||'image/tif')) {
-          this.selecetdFile = event.target.files[0];
-      } else {
-        this.error="Please Upload Image Only"
-      }      
+    if (file.type == 'application/pdf' ) {
+      this.error = null
+     this.selecetdFile = event.target.files[0];
+ } else {
+   this.error="Please Upload Pdfs Only"
+ }     
 }
 upload(){
   console.log("",this.title)

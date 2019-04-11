@@ -1,19 +1,23 @@
-<app-new-answers></app-new-answers>
+<app-newnotes></app-newnotes>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Posted On</th>
       <td scope="col">View</td>
-      <td scope="col">Upload</td>
+      <td scope="col">Delete</td>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let notes of noteslist | paginate: { itemsPerPage: 10, currentPage: p }">
       <th scope="row">{{notes.id}}</th>
       <td>{{notes.title}}</td>
-     <td><button class="btn btn-primary" (click)="Edit(notes.id)">View</button></td>  
-     <td> <button class="btn btn-primary" (click)="delet(notes.id,template)">Download</button></td>
+      <td>{{notes.desciption}}</td>
+      <td>{{notes.posted_on}}</td>
+     <td><button class="btn btn-primary" (click)="Edit(notes.id)">Download</button></td>  
+     <td> <button class="btn btn-primary" (click)="delet(notes.id,template)">Delete</button></td>
     </tr>
   </tbody>
 </table>

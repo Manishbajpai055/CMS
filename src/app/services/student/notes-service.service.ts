@@ -14,7 +14,7 @@ export class NotesServiceService {
     return  this.http.post('http://127.0.0.1:8000/api/students/notes/create/',data)
   }
   notesDelete(id){
-    return  this.http.delete('http://127.0.0.1:8000/api/students/notes/'+id+'delete/')
+    return  this.http.delete('http://127.0.0.1:8000/api/students/notes/'+id+'/delete/')
 
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesServiceService } from 'src/app/services/student/notes-service.service';
+import { NotesComponent } from '../notes.component';
 
 @Component({
   selector: 'app-newnotes',
@@ -11,16 +12,17 @@ export class NewnotesComponent implements OnInit {
   error: string;
   title: string | Blob;
   desciption
-  constructor(private notesservice:NotesServiceService) { }
+  constructor(private notesservice:NotesServiceService,private notes:NotesComponent) { }
 
   ngOnInit() {
   }
   onFileUpload(event){
     let file = event.target.files[0];
-      if (file.type == ('image/jpeg' || 'image/jpg' ||'image/png'||'image/tif')) {
+      if (file.type == 'application/pdf' ) {
+           this.error = null
           this.selecetdFile = event.target.files[0];
       } else {
-        this.error="Please Upload Image Only"
+        this.error="Please Upload Pdfs Only"
       }      
 }
 upload(){
@@ -35,10 +37,13 @@ upload(){
    else {
     const data = new FormData();
     data.append('title', this.title);
-    data.append('description',this.desciption);
+    data.append('desciption',this.desciption);
     data.append('notes', this.selecetdFile);
-      this.notesservice.notsCreate(data)
+      this.notesservice.notsCreate(data).subscribe(res=>{
+        this.selecetdFile == null
+        this.notes.refresh()
+      })
+    }
   }
-}
  
 }

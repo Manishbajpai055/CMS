@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { AnswersServiceService } from 'src/app/services/student/answers-service.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-answerss',
@@ -8,7 +9,10 @@ import { AnswersServiceService } from 'src/app/services/student/answers-service.
 })
 export class AnswerssComponent implements OnInit {
   answerlist
-  constructor(private answeservice:AnswersServiceService) { }
+  id: any;
+  modalRef: BsModalRef;
+
+  constructor(private answeservice:AnswersServiceService,private modalService: BsModalService) { }
 
   ngOnInit() {
       this.refresh()
@@ -17,5 +21,24 @@ export class AnswerssComponent implements OnInit {
         this.answeservice.answersList().subscribe(res=>{
           this.answerlist = res
         })
+  }
+  delet(id,template) {
+    console.log(id,);
+    this.id = id
+    this.openModal(template)   
+  }
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+  confirm(): void {
+    this.answeservice.answerdelete(this.id).subscribe(res =>{
+      console.log("dekete",res)
+      this.refresh()
+    })
+    this.modalRef.hide();
+    this.refresh()
+  }
+  decline(): void {
+    this.modalRef.hide();
   }
 }

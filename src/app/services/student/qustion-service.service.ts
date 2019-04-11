@@ -14,5 +14,5 @@ export class QustionServiceService {
    return this.http.get('http://127.0.0.1:8000/api/students/qustions/',)
   }
   qustionsdelete(id){
-    return this.http.get('http://127.0.0.1:8000/api/students/qustions/'+id+'delete/')
+    return this.http.delete('http://127.0.0.1:8000/api/students/qustions/'+id+'/delete/')
   }}

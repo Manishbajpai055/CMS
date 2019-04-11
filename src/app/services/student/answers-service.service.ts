@@ -13,8 +13,8 @@ export class AnswersServiceService {
   answersList(){
    return this.http.get('http://127.0.0.1:8000/api/students/answers/',)
   }
-  delete(id){
-    return this.http.get('http://127.0.0.1:8000/api/students/answers/'+id+'delete/')
+  answerdelete(id){
+    return this.http.delete('http://127.0.0.1:8000/api/students/answers/'+id+'/delete/')
   }
 }
 

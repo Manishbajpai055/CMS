@@ -13,7 +13,7 @@ export class AnswerTabComponent implements OnInit {
 
   ngOnInit() {
     this.answerservice.answersList().subscribe(res=>{
-      this.answerlist=res
+      this.answerlist = res
     })
   }
 
