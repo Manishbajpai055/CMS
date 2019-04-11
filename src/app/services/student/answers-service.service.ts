@@ -8,7 +8,10 @@ export class AnswersServiceService {
 
   constructor(private http:HttpClient) { }
   answerUpload(data){
-        this.http.post('go.com',data)
+    return  this.http.post('http://127.0.0.1:8000/api/students/answers/create/',data)
+  }
+  answersList(){
+   return this.http.get('http://127.0.0.1:8000/api/students/answers/',)
   }
 }
 

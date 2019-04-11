@@ -12,7 +12,7 @@ export class NewAnswersComponent implements OnInit {
   selecetdFile: any;
   error: string;
   title
-  description
+  desciption
   constructor(private formBuilder:FormBuilder,private answerservice:AnswersServiceService) { }
   ngOnInit() {
   }
@@ -35,10 +35,12 @@ upload(){
   }
    else {
     const data = new FormData();
-    data.append('image', this.selecetdFile);
     data.append('title', this.title);
-    data.append('description',this.description);
-      this.answerservice.answerUpload(data)
+    data.append('desciption',this.desciption);
+    data.append('answer', this.selecetdFile);
+      this.answerservice.answerUpload(data).subscribe(res=>{
+        console.log(res)
+      })
   }
 }
 }
