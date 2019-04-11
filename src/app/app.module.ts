@@ -13,6 +13,9 @@ import { AuthGuard } from './auth.guard';
 import { GallerylistComponent } from './admin/admin-gallery/gallerylist/gallerylist.component';
 import { StudentModule } from './student/student.module';
 import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
     AdminModule,
     FormsModule,
     AuthenticationModule,
-    StudentModule
+    StudentModule,
+    BrowserAnimationsModule
   ],
   providers: [CarousellistComponent,
     UtilService,

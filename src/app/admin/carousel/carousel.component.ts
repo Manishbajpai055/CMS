@@ -15,7 +15,14 @@ export class CarouselComponent implements OnInit {
   description
   error
     onFileUpload(event){
-    this.selecetdFile = event.target.files[0];
+      let file = event.target.files[0];
+        if (file.type == ('image/jpeg' || 'image/jpg' ||'image/png'||'image/tif')) {
+            this.selecetdFile = event.target.files[0];
+        } else {
+          this.error="Please Upload Image Only"
+        }
+      
+     
 }
   constructor( private carousleservice :CarouselService,private caoruslelist:CarousellistComponent) { }
 
