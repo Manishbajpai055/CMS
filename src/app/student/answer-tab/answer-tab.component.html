@@ -8,11 +8,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let qustion of qustionList | paginate: { itemsPerPage: 10, currentPage: p }">
-        <th scope="row">{{qustion.id}}</th>
-        <td>{{qustion.name}}</td>
-       <td><button class="btn btn-primary" (click)="Edit(qustion.id)">View</button></td>  
-       <td> <button class="btn btn-primary" (click)="delet(qustion.id,template)" >Downoa</button></td>
+      <tr *ngFor="let answer of answerlist | paginate: { itemsPerPage: 10, currentPage: p }">
+        <th scope="row">{{answer.id}}</th>
+        <td>{{answer.title}}</td>
+       <td><button class="btn btn-primary" (click)="Edit(answer.id)">View</button></td>  
+       <td> <button class="btn btn-primary" (click)="delet(answer.id,template)" >Downoa</button></td>
       </tr>
     </tbody>
   </table>

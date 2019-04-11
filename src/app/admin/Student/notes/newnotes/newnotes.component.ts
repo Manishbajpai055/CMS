@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotesServiceService } from 'src/app/services/student/notes-service.service';
 
 @Component({
   selector: 'app-newnotes',
@@ -8,10 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class NewnotesComponent implements OnInit {
   selecetdFile: any;
   error: string;
-  answerservice: any;
   title: string | Blob;
   desciption
-  constructor() { }
+  constructor(private notesservice:NotesServiceService) { }
 
   ngOnInit() {
   }
@@ -36,8 +36,8 @@ upload(){
     const data = new FormData();
     data.append('title', this.title);
     data.append('description',this.desciption);
-    data.append('answer', this.selecetdFile);
-      this.answerservice.answerUpload(data)
+    data.append('notes', this.selecetdFile);
+      this.notesservice.notsCreate(data)
   }
 }
  
