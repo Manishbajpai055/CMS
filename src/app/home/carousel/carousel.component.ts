@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService  } from './../../services/carousel.service'
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ViewEncapsulation } from '@angular/compiler/src/core';
 
 
@@ -14,7 +13,7 @@ import { ViewEncapsulation } from '@angular/compiler/src/core';
 export class CarouselComponent implements OnInit {
   sliderArray ;
   index 
-  constructor(private carousel:CarouselService,private config:NgbCarouselConfig) { 
+  constructor(private carousel:CarouselService,) { 
   }
 
   ngOnInit() {

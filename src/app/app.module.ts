@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminauthgaurdGuard,
     
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

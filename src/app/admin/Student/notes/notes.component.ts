@@ -10,6 +10,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 export class NotesComponent implements OnInit {
   id: any;
   modalRef: BsModalRef;
+  p
   constructor(private noteservice:NotesServiceService,private modalService: BsModalService) { }
   noteslist
   ngOnInit() {

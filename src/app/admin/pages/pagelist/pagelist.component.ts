@@ -12,6 +12,7 @@ export class PagelistComponent implements OnInit {
   pagelist
   modalRef: BsModalRef;
   slug = ''
+  p
   constructor(private adminpage:PagesComponent,private list:PageserviceService,private modalService: BsModalService) { }
 
   ngOnInit() {

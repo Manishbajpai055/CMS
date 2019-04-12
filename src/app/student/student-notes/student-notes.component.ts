@@ -8,6 +8,7 @@ import { NotesServiceService } from 'src/app/services/student/notes-service.serv
 })
 export class StudentNotesComponent implements OnInit {
   noteslist
+  p
   constructor(private noteservice:NotesServiceService) { }
 
   ngOnInit() {

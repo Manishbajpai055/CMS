@@ -9,7 +9,7 @@ import * as marked from 'marked';
   styleUrls: ['./blogdetail.component.css']
 })
 export class BlogdetailComponent implements OnInit {
-  blodetail: Object;
+  blodetail
   slug 
   constructor(private route:ActivatedRoute, private detail:BlogService,private elementRef: ElementRef,
     private renderer: Renderer2) {

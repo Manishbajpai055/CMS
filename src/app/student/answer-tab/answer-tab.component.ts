@@ -10,7 +10,7 @@ import { AnswersServiceService } from 'src/app/services/student/answers-service.
 export class AnswerTabComponent implements OnInit {
   answerlist 
   constructor(private answerservice:AnswersServiceService ) { }
-
+  p
   ngOnInit() {
     this.answerservice.answersList().subscribe(res=>{
       this.answerlist = res

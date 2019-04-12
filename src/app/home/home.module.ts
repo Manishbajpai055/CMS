@@ -10,8 +10,6 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import {NgbModule, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { BlogModule } from './blog/blog.module';
 import { BlogliistComponent } from './blog/blogliist/blogliist.component';
 import { ContactusComponent } from '../admin/contactus/contactus.component';
@@ -31,13 +29,14 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     RouterModule,
     FormsModule , 
     ReactiveFormsModule,
-    NgbModule,
     BlogModule,
-    NgbPaginationModule, NgbAlertModule,
     NgxSummernoteModule,
     
   ],
+  exports: [ContactusComponent, 
+    HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
+     HeaderComponent, FooterComponent, PageComponent, GalleryComponent, ContactUsComponent],
   
-  providers: [NgbCarouselConfig] 
+  providers: [] 
 })
 export class HomeModule { }

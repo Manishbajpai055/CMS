@@ -9,7 +9,7 @@ import { PageserviceService } from 'src/app/services/pageservice.service';
 })
 export class PageComponent implements OnInit {
 
-  pageinfo: Object;
+  pageinfo
   slug 
   previousslug
   constructor(private route: ActivatedRoute, private page:PageserviceService) { }

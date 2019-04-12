@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BlogComponent } from './blog.component';
 import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogliistComponent } from './blogliist/blogliist.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 
@@ -13,7 +12,6 @@ import { NgxSummernoteModule, } from 'ngx-summernote';
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule,
     NgxSummernoteModule
   ]
 })

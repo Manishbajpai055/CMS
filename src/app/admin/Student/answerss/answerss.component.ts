@@ -11,7 +11,7 @@ export class AnswerssComponent implements OnInit {
   answerlist
   id: any;
   modalRef: BsModalRef;
-
+  p
   constructor(private answeservice:AnswersServiceService,private modalService: BsModalService) { }
 
   ngOnInit() {

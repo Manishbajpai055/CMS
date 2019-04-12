@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryserviceService } from 'src/app/services/galleryservice.service';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-gallery',
@@ -10,7 +9,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class GalleryComponent implements OnInit {
   sliderArray ;
   index 
-  constructor(private galleryservice:GalleryserviceService,private config:NgbCarouselConfig) { 
+  constructor(private galleryservice:GalleryserviceService,) { 
   }
 
   ngOnInit() {

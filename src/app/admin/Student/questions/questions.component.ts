@@ -10,6 +10,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 export class QuestionsComponent implements OnInit {
   qustionlist
   id
+  p
   modalRef: BsModalRef;
   constructor(private qustinservice:QustionServiceService,private modalService: BsModalService) { }
 

@@ -73,6 +73,7 @@ import { NewAnswersComponent } from './Student/answerss/new-answers/new-answers.
       useClass: HttpintercepterService,
       multi: true
     }
-  ]
+  ],
+
 })
 export class AdminModule { }

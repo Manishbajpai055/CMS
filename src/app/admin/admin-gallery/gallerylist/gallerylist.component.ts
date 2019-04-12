@@ -12,6 +12,7 @@ export class GallerylistComponent implements OnInit {
   delteDilog = false
   modalRef: BsModalRef;
   id:number
+  p
   constructor(private galleryservice:GalleryserviceService,private modalService: BsModalService) { }
 
   ngOnInit() {

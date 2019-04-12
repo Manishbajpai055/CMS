@@ -15,6 +15,7 @@ export class BloglistComponent implements OnInit {
   bloglist;
   slug=''
   modalRef: BsModalRef;
+  p
   constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { 
     
   }

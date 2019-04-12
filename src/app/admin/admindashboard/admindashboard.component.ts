@@ -13,6 +13,7 @@ export class AdmindashboardComponent implements OnInit {
   subscriberlist
   modalRef: BsModalRef;
   id
+  p
   ngOnInit() {
     this.letestSubscribers()
   }

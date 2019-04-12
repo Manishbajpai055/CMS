@@ -10,6 +10,7 @@ export class QuestionTabComponent implements OnInit {
 
   constructor(private qustionservice:QustionServiceService) { }
   qustionList
+  p
   ngOnInit() {
     this.qustionservice.qustionsList().subscribe(res=>{
       this.qustionList = res
