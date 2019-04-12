@@ -9,16 +9,15 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private headerfooterservice:HeaderFooterService) { }
-  headerinfo
+  headerinfos
 
 
   ngOnInit() {
   
-   this.headerinfo = this.headerfooterservice.getHeader().subscribe(res => {
-      this.headerinfo = res
+    this.headerfooterservice.getHeadeFooter().subscribe(res=>{
       console.log(res)
-    }
-    )
+      this.headerinfos =res
+    })
 
 }
 }

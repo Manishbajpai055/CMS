@@ -11,7 +11,7 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-  headerinfo: any;
+  headerinfo
 
   constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService,private formBuilder: FormBuilder) { }
   subscribeform: FormGroup 
@@ -20,7 +20,6 @@ export class ContactusComponent implements OnInit {
 onSubmit(){
   console.log(this.subscribeform.value)
   this.submitted = true;
-    // stop here if form is invalid
     if (this.subscribeform.invalid) {
         return;
     }
@@ -28,6 +27,7 @@ onSubmit(){
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.subscribeform.value))
 }
   ngOnInit() {
+    this.refresh()
     this.subscribeform = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -36,4 +36,10 @@ onSubmit(){
   })
    }
   get f() { return this.subscribeform.controls; }
+  refresh(){
+    this.headerfooterservice.getHeadeFooter().subscribe(res=>{
+      console.log(res)
+      this.headerinfo=res
+    })
+  }
 }

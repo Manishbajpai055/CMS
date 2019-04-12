@@ -13,23 +13,18 @@ const httpOptions = {
 })
 export class HeaderFooterService {
 
-  HeaderFooterurl : any = 'http://127.0.0.1:8000/api/siteheaderfoooter/1/update/'
-  FooterDetailurl : any = 'http://127.0.0.1:8000/api/siteheaderfoooter/1/update/'
+  HeaderFooterurl : any = ''
+  FooterDetailurl : any = 'http://127.0.0.1:8000/api/siteheaderfoooter/1/'
   constructor(private http:HttpClient) { }
   postHeadeFooter(data){
-    return this.http.put(this.HeaderFooterurl,data).subscribe(res=>{
+    return this.http.put('http://127.0.0.1:8000/api/siteheaderfoooter/1/update/',data).subscribe(res=>{
     })
   }
   getHeadeFooter(){
-    return this.http.get(this.HeaderFooterurl, httpOptions)
+    return this.http.get('http://127.0.0.1:8000/api/siteheaderfoooter/1/', httpOptions)
   }
   getHeader(){
     return this.http.get(this.HeaderFooterurl ,httpOptions)
-  }
-
-  updatefooter(data){
-    return this.http.put(this.FooterDetailurl,data).subscribe(res=>{
-    })
   }
   getupdatefooter(){
     return this.http.get(this.FooterDetailurl ,httpOptions)

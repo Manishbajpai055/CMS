@@ -17,13 +17,12 @@ export class AboutService {
   constructor(private http: HttpClient,private util:UtilService) { }
 
   About() {
-    return this.http.get(this.util.getDomain()+'api/about/1/update/',httpOptions);
+    return this.http.get(this.util.getDomain()+'api/sitemetadata/1/',httpOptions);
 
   }
   editAbout(data) {
-    console.log(this.util.getHeader())
-      return this.http.put(this.util.getDomain()+'api/about/1/update/',data,this.util.getHeader());
-
+    console.log(data)
+      return this.http.put('http://127.0.0.1:8000/api/sitemetadata/1/update/',data);
   }
 
 }

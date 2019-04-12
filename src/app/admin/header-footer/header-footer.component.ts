@@ -14,8 +14,8 @@ export class HeaderFooterComponent implements OnInit {
   ngOnInit() {
       this.getHeadefooter.getHeadeFooter().subscribe(res=>{
         this.header_footer = res
-        this.headerfooter.get('contact').setValue(this.header_footer.Contact) 
-        this.headerfooter.get('email').setValue(this.header_footer.Email) 
+        this.headerfooter.get('contact').setValue(this.header_footer.contact) 
+        this.headerfooter.get('email').setValue(this.header_footer.email) 
         this.headerfooter.get('facebook').setValue(this.header_footer.facebook) 
         this.headerfooter.get('instagram').setValue(this.header_footer.instagram) 
         this.headerfooter.get('twitter').setValue(this.header_footer.twitter) 
@@ -25,6 +25,7 @@ export class HeaderFooterComponent implements OnInit {
         this.headerfooter.get('state').setValue(this.header_footer.state) 
         this.headerfooter.get('country').setValue(this.header_footer.country) 
         this.headerfooter.get('pincode').setValue(this.header_footer.pincode) 
+        this.headerfooter.get('organizationname').setValue(this.header_footer.organizationname) 
 
       })
   }
@@ -39,19 +40,16 @@ export class HeaderFooterComponent implements OnInit {
     state: new FormControl(''),
     pincode : new FormControl(''),
     country : new FormControl(''),
+    organizationname : new FormControl('')
+
   });
-  Footerdetail = new FormGroup({
-    footerdetail : new FormControl('')
-  })
+ 
 
   onSubmit(){
     console.log(this.headerfooter.value)
     this.getHeadefooter.postHeadeFooter(this.headerfooter.value)
   }
-  updatefooter(){
-    this.getHeadefooter.updatefooter(this.Footerdetail.value)
-    console.log(this.Footerdetail.value)
-  }
+
   
 
 

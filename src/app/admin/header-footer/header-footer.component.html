@@ -26,24 +26,10 @@
     <input formControlName="pincode" type="text" >   <br>
     <label>Country</label>
     <input formControlName="country" type="text" >   <br>
-
+    <label>Footer details :</label>
+    <input formControlName="organizationname" type="text" > <br>
     <button type="submit">Submit</button>
     <!-- CONTCT US END-->
 </form>
 </div>
-
-<div class="footerlable">Footer Details</div>
-<div class="container"> 
-<form [formGroup]="Footerdetail" (ngSubmit)="updatefooter()" >
-    <label>Footer details :</label>
-    <input formControlName="footerdetail" type="text" > <br>
-    <button type="submit">Submit</button>
-</form>
-</div>
-
-
-
-
-
-
 </div>
