@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
+import { SubscriberService } from 'src/app/services/subscriber.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
 export class ContactusComponent implements OnInit {
   headerinfo
 
-  constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService,private formBuilder: FormBuilder) { }
+  constructor(private headerfooterservice:HeaderFooterService, private Contactus:ContactusService,private formBuilder: FormBuilder,private subscriberservice:SubscriberService) { }
   subscribeform: FormGroup 
   submitted = false;
 
