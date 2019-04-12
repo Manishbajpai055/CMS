@@ -23,9 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
-              },
+
               "node_modules/summernote/dist/summernote-lite.css"
             ],
             "scripts": [
@@ -86,9 +84,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              {
-                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
-              },
+
               "src/styles.css"
             ],
             "scripts": [],
