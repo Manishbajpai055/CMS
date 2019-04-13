@@ -1,25 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder,  } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { validate } from 'graphql';
-import { invalid } from '@angular/compiler/src/render3/view/util';
-import { Validators } from 'angular-reactive-validation';
-import { ValidationError } from 'angular-reactive-validation/validation-error';
+
 @Component({
-  selector: '[customValidator ,app-header-footer]',
+  selector: 'app-header-footer',
   templateUrl: './header-footer.component.html',
   styleUrls: ['./header-footer.component.css']
 })
 export class HeaderFooterComponent implements OnInit {
 
-  constructor(modalService: BsModalService , private formBuilder: FormBuilder, private getHeadefooter:HeaderFooterService ) { }
+  constructor(private getHeadefooter:HeaderFooterService ) { }
   header_footer
-  modalRef: BsModalRef;
-  submitted
-  formSubmitted = true;
-
-
   ngOnInit() {
       this.getHeadefooter.getHeadeFooter().subscribe(res=>{
         this.header_footer = res
@@ -37,31 +28,9 @@ export class HeaderFooterComponent implements OnInit {
         this.headerfooter.get('organizationname').setValue(this.header_footer.organizationname) 
 
       })
-      
-      this.buildForm();
-      
   }
-
-buildForm(){
-  this.headerfooter = this.formBuilder.group({
-    contact: [null, [Validators.required]],
-   last_name: ['', Validators.required],
-   email:['',Validators.required ],
-   facebook:['',Validators.required],
-   twitter:['',Validators.required],
-   instagram:['',Validators.required],
-   street:['',Validators.required],
-   city:['',Validators.required],
-   state:['',Validators.required],
-   pincode:['',Validators.required],
-   country:['',Validators.required],
-   organizationname:['',Validators.required],
-   
-})
-}
-
   headerfooter = new FormGroup({ 
-    contact: new FormControl('',),
+    contact: new FormControl(''),
     email: new FormControl(''),
     facebook: new FormControl(''),
     twitter: new FormControl(''),
@@ -72,25 +41,16 @@ buildForm(){
     pincode : new FormControl(''),
     country : new FormControl(''),
     organizationname : new FormControl('')
-    
 
   });
  
 
   onSubmit(){
-    this.formSubmitted = true;
-    if (this.headerfooter.invalid) {
-      console.log("error"); // Process your form
-    }
-    else{
-      console.log("working")
-      this.getHeadefooter.postHeadeFooter(this.headerfooter.value)
-      
-    }
-  }  
-  
+    console.log(this.headerfooter.value)
+    this.getHeadefooter.postHeadeFooter(this.headerfooter.value)
+  }
 
   
-  get f() { return this.headerfooter.controls; }
+
 
 }

@@ -23,7 +23,6 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "angular-reactive-validation": "^2.0.1",
     "angular2-jwt": "^0.2.3",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",

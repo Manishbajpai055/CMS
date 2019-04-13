@@ -33,8 +33,6 @@ import { NewnotesComponent } from './Student/notes/newnotes/newnotes.component';
 import { NewQuestionComponent } from './Student/questions/new-question/new-question.component';
 import { NewAnswersComponent } from './Student/answerss/new-answers/new-answers.component';
 
-import { ReactiveValidationModule } from 'angular-reactive-validation';
-
 
 @NgModule({
   declarations: [AdmindashboardComponent, AdminComponent, SidebarComponent,
@@ -57,7 +55,6 @@ import { ReactiveValidationModule } from 'angular-reactive-validation';
     NewAnswersComponent,
     ],
   imports: [
-    ReactiveValidationModule ,
     CarouselModule,
     FormsModule,
     ModalModule.forRoot(),
