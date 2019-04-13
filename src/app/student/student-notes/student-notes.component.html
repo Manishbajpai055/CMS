@@ -15,7 +15,8 @@
       <td>{{noteslist.title}}</td>
       <td>{{noteslist.desciption}}</td>
       <td>{{noteslist.posted_on}}</td>
-     <td><button class="btn btn-primary" >View</button></td>  
+     <td><button class="btn btn-primary" (click)="viewNotes(noteslist.notes)" >View</button></td>  
+
      <td> <button class="btn btn-primary" >Downoad</button></td>
     </tr>
   </tbody>
