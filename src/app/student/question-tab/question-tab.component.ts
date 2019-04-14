@@ -8,6 +8,8 @@ import { QustionServiceService } from 'src/app/services/student/qustion-service.
 })
 export class QuestionTabComponent implements OnInit {
 
+  Quesurl  = "https://docs.google.com/viewerng/viewer?url="
+
   constructor(private qustionservice:QustionServiceService) { }
   qustionList
   p
@@ -15,5 +17,10 @@ export class QuestionTabComponent implements OnInit {
     this.qustionservice.qustionsList().subscribe(res=>{
       this.qustionList = res
     })
+  }
+
+  viewQues(url){
+    var newurl = this.Quesurl+url
+    window.open(newurl)
   }
 }

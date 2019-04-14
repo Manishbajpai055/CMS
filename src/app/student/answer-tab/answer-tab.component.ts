@@ -9,12 +9,18 @@ import { AnswersServiceService } from 'src/app/services/student/answers-service.
 })
 export class AnswerTabComponent implements OnInit {
   answerlist 
+  Ansurl  = "https://docs.google.com/viewerng/viewer?url="
   constructor(private answerservice:AnswersServiceService ) { }
   p
   ngOnInit() {
     this.answerservice.answersList().subscribe(res=>{
       this.answerlist = res
     })
+  }
+
+  viewAns(url){
+    var newurl = this.Ansurl+url
+    window.open(newurl)
   }
 
 }

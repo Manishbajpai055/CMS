@@ -12,7 +12,7 @@ export class StudentNotesComponent implements OnInit {
   
   Notesurl  = "https://docs.google.com/viewerng/viewer?url="
   noteslist
-  p
+  
   constructor(private noteservice:NotesServiceService) { }
 
   ngOnInit() {
