@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesServiceService } from 'src/app/services/student/notes-service.service';
+import { saveAs } from 'file-saver';
+import { HttpClient } from '@angular/common/http';
+import { FileSaverService } from 'ngx-filesaver';
+import { UtilService } from 'src/app/services/utilservices.service';
 
 @Component({
   selector: 'app-student-notes',
@@ -7,13 +11,13 @@ import { NotesServiceService } from 'src/app/services/student/notes-service.serv
   styleUrls: ['./student-notes.component.css']
 })
 
-  
+
+
 export class StudentNotesComponent implements OnInit {
-  
   Notesurl  = "https://docs.google.com/viewerng/viewer?url="
   noteslist
-  
-  constructor(private noteservice:NotesServiceService) { }
+  downliading
+  constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService) { }
 
   ngOnInit() {
         this.noteservice.notslist().subscribe(res=>{
@@ -22,8 +26,15 @@ export class StudentNotesComponent implements OnInit {
   }
 
   viewNotes(url){
+    
     var newurl = this.Notesurl+url
     window.open(newurl)
+    
   }
+  download(url,filename){
+
+         this.util.download(url,filename)
+
+}
 
 }

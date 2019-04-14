@@ -17,8 +17,9 @@
       <td>{{noteslist.posted_on}}</td>
      <td><button class="btn btn-primary" (click)="viewNotes(noteslist.notes)" >View</button></td>  
 
-     <td> <button class="btn btn-primary" >Downoad</button></td>
+     <td> <button class="btn btn-primary" (click)="download(noteslist.notes,noteslist.title)" >Downoad</button></td>
     </tr>
   </tbody>
 </table>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
