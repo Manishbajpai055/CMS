@@ -27,14 +27,11 @@ button,input[type=text], select, textarea {
   /* Add a background color and some padding around the form */
   .footerlable{
     text-align: center;
-    color: aliceblue;
-    background-color: #3f51b5;
+    color: rgb(22, 22, 22);
+    
     padding: 1% 1% 1% 0%;
   }
-  .header-footer{
-    height: auto;
-    background-color: #3f51b5;
-  }
+  
 @media screen and (min-device-width: 0px) and (max-device-width: 760px){
 
   .container {

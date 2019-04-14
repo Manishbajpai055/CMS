@@ -16,9 +16,13 @@ header:hover{
   }
 i{
     float: right;
-    
     color: aliceblue;
     position: relative;
+    margin: 5px;
     top: -10px ;
-    
+
+}
+i:hover , .mail:hover, .contact:hover
+{
+    color: rgb(0, 234, 255);
 }
