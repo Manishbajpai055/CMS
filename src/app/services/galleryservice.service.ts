@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -12,16 +13,16 @@ const httpOptions = {
 })
 export class GalleryserviceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private util:UtilService) { }
 
   gallerylist(){
-    return this.http.get('http://localhost:8000/api/gallery/',httpOptions)
+    return this.http.get(this.util.getDomain()+'api/gallery/',httpOptions)
   }
   gallryupload(data){
-    return this.http.post('http://localhost:8000/api/gallery/upload/',data)
+    return this.http.post(this.util.getDomain()+'api/gallery/upload/',data)
   }
   gallerydelete(id){
     console.log(id)
-    return this.http.delete('http://localhost:8000/api/gallery/'+id+'/')
+    return this.http.delete(this.util.getDomain()+'api/gallery/'+id+'/')
   }
 }

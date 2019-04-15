@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
 
 
 const httpOptions = {
@@ -14,24 +15,24 @@ const httpOptions = {
 
 export class BlogService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private util:UtilService) { }
 
   bloglist(){
-    return this.http.get('http://127.0.0.1:8000/blog/',httpOptions)
+    return this.http.get(this.util.getDomain()+'blog/',httpOptions)
    
   }
   blodetail(slug){
-    return this.http.get('http://127.0.0.1:8000/blog/'+slug+'/',httpOptions)
+    return this.http.get(this.util.getDomain()+'blog/'+slug+'/',httpOptions)
       
   }
   newblog(data){
-    return this.http.post('http://127.0.0.1:8000/blog/create/',data)
+    return this.http.post(this.util.getDomain()+'blog/create/',data)
   
   }
-  deleteblog(id){
-    return this.http.delete('http://127.0.0.1:8000/blog/'+id+'/'+'delet/')
+  deleteblog(slug){
+    return this.http.delete(this.util.getDomain()+'blog/'+slug+'/'+'delet/')
   }
-  updateblog(id,data){
-    return this.http.put('http://127.0.0.1:8000/blog/'+id+'/update/',data)
+  updateblog(slug,data){
+    return this.http.put(this.util.getDomain()+'blog/'+slug+'/update/',data)
   }
   }

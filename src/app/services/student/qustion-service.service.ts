@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UtilService } from '../utilservices.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QustionServiceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private util:UtilService) { }
   qustionsUpload(data){
-    return  this.http.post('http://127.0.0.1:8000/api/students/qustions/create/',data)
+    return  this.http.post(this.util.getDomain()+'api/students/qustions/create/',data)
   }
   qustionsList(){
-   return this.http.get('http://127.0.0.1:8000/api/students/qustions/',)
+   return this.http.get(this.util.getDomain()+'api/students/qustions/',)
   }
   qustionsdelete(id){
-    return this.http.delete('http://127.0.0.1:8000/api/students/qustions/'+id+'/delete/')
+    return this.http.delete(this.util.getDomain()+'api/students/qustions/'+id+'/delete/')
   }}

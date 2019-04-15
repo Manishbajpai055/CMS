@@ -32,6 +32,7 @@ import { UserlistComponent } from './Student/users/userlist/userlist.component';
 import { NewnotesComponent } from './Student/notes/newnotes/newnotes.component';
 import { NewQuestionComponent } from './Student/questions/new-question/new-question.component';
 import { NewAnswersComponent } from './Student/answerss/new-answers/new-answers.component';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 
 @NgModule({
@@ -65,7 +66,9 @@ import { NewAnswersComponent } from './Student/answerss/new-answers/new-answers.
     FormsModule,
       ReactiveFormsModule,
       NgxSummernoteModule,
-      NgxPaginationModule
+      NgxPaginationModule,
+      ProgressbarModule.forRoot()
+
       ], 
   providers:[
    {

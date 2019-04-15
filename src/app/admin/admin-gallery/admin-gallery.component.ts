@@ -12,6 +12,7 @@ export class AdminGalleryComponent implements OnInit {
   title
   description
   error
+  loading: boolean;
     onFileUpload(event){
     this.selecetdFile = event.target.files[0];
     allowedFileType: ["pdf", "xls"]
@@ -33,15 +34,17 @@ upload(){
     this.error="please Select File"
   }
    else {
+    this.loading = true
+
     const data = new FormData();
     data.append('image', this.selecetdFile);
     data.append('title', this.title);
     data.append('description',this.description);
       this.galleryservice.gallryupload(data).subscribe(res =>{
-        console.log("Carousle Errpr")
+        this.galleryelist.refresh()
+        this.loading = false
       })
 
-      this.galleryelist.refresh()
 
   }
 }

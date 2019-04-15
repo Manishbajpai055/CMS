@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,16 +14,16 @@ const httpOptions = {
 export class CarouselService {
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private util:UtilService) { }
 
   crousellist(){
-    return this.http.get('http://127.0.0.1:8000/api/carousle/',httpOptions)
+    return this.http.get(this.util.getDomain()+'api/carousle/',httpOptions)
   }
   carouselupload(data){
-    return this.http.post('http://127.0.0.1:8000/api/carousle/upload/',data)
+    return this.http.post(this.util.getDomain()+'api/carousle/upload/',data)
   }
   carouseldelet(id){
     console.log(id)
-    return this.http.delete('http://127.0.0.1:8000/api/carousle/'+id+'/')
+    return this.http.delete(this.util.getDomain()+'api/carousle/'+id+'/')
   }
 }

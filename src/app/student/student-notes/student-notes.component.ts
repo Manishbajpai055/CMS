@@ -16,7 +16,7 @@ import { UtilService } from 'src/app/services/utilservices.service';
 export class StudentNotesComponent implements OnInit {
   Notesurl  = "https://docs.google.com/viewerng/viewer?url="
   noteslist
-  downliading
+  p
   constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService) { }
 
   ngOnInit() {
@@ -32,9 +32,7 @@ export class StudentNotesComponent implements OnInit {
     
   }
   download(url,filename){
-
          this.util.download(url,filename)
-
 }
 
 }

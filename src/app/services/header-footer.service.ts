@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
 
 
 const httpOptions = {
@@ -13,20 +14,18 @@ const httpOptions = {
 })
 export class HeaderFooterService {
 
-  HeaderFooterurl : any = ''
-  FooterDetailurl : any = 'http://127.0.0.1:8000/api/siteheaderfoooter/1/'
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private util:UtilService) { }
   postHeadeFooter(data){
-    return this.http.put('http://127.0.0.1:8000/api/siteheaderfoooter/1/update/',data).subscribe(res=>{
+    return this.http.put(this.util.getDomain()+'api/siteheaderfoooter/1/update/',data).subscribe(res=>{
     })
   }
   getHeadeFooter(){
-    return this.http.get('http://127.0.0.1:8000/api/siteheaderfoooter/1/', httpOptions)
+    return this.http.get(this.util.getDomain()+'api/siteheaderfoooter/1/', httpOptions)
   }
   getHeader(){
-    return this.http.get(this.HeaderFooterurl ,httpOptions)
+    return this.http.get(this.util.getDomain()+'api/siteheaderfoooter/1/' ,httpOptions)
   }
   getupdatefooter(){
-    return this.http.get(this.FooterDetailurl ,httpOptions)
+    return this.http.get(this.util.getDomain()+'api/siteheaderfoooter/1/' ,httpOptions)
   }
 }

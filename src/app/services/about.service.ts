@@ -22,7 +22,7 @@ export class AboutService {
   }
   editAbout(data) {
     console.log(data)
-      return this.http.put('http://127.0.0.1:8000/api/sitemetadata/1/update/',data);
+      return this.http.put(this.util.getDomain()+'api/sitemetadata/1/update/',data);
   }
 
 }

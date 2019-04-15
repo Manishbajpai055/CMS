@@ -14,6 +14,7 @@ export class CarouselComponent implements OnInit {
   title
   description
   error
+  spinner
     onFileUpload(event){
       let file = event.target.files[0];
         if (file.type == ('image/jpeg' || 'image/jpg' ||'image/png'||'image/tif')) {
@@ -28,6 +29,7 @@ export class CarouselComponent implements OnInit {
   }
 
 upload(){
+  this.spinner = true
   console.log("",this.title)
   if (this.title == undefined ||''||null) {
       console.warn("please enter title")
@@ -39,13 +41,13 @@ upload(){
    else {
     const data = new FormData();
     data.append('image', this.selecetdFile);
-    data.append('title', this.title);
+    data.append('title', this.title); 
     data.append('description',this.description);
       this.carousleservice.carouselupload(data).subscribe(res =>{
-        console.log("Carousle Errpr")
+        console.log("Loading")
+        this.caoruslelist.refresh()
+        this.spinner = false
       })
-
-      this.caoruslelist.refresh()
   }
 }
 }

@@ -10,10 +10,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private headerfooterservice:HeaderFooterService) { }
   headerinfos
-
-
   ngOnInit() {
-  
     this.headerfooterservice.getHeadeFooter().subscribe(res=>{
       console.log(res)
       this.headerinfos =res

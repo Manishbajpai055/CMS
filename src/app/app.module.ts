@@ -14,6 +14,7 @@ import { GallerylistComponent } from './admin/admin-gallery/gallerylist/galleryl
 import { StudentModule } from './student/student.module';
 import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgressbarModule } from 'ngx-bootstrap';
 
 
 
@@ -30,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     AuthenticationModule,
     StudentModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ProgressbarModule.forRoot()
+
   ],
   providers: [CarousellistComponent,
     UtilService,

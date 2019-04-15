@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,20 +14,20 @@ const httpOptions = {
 })
 export class PageserviceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private util:UtilService) { }
   pagelist(){
-    return this.http.get('http://127.0.0.1:8000/api/pages/',httpOptions)
+    return this.http.get(this.util.getDomain()+'api/pages/',httpOptions)
   }
   pagedetail(slug){
-    return this.http.get('http://127.0.0.1:8000/api/pages/'+slug+'/',httpOptions)
+    return this.http.get(this.util.getDomain()+'api/pages/'+slug+'/',httpOptions)
   }
   pageupdate(slug,data){
-    return this.http.put('http://127.0.0.1:8000/api/pages/'+slug+'/update/',data)
+    return this.http.put(this.util.getDomain()+'api/pages/'+slug+'/update/',data)
   }
   newpage(data){
-    return this.http.post('http://127.0.0.1:8000/api/pages/create/',data)
+    return this.http.post(this.util.getDomain()+'api/pages/create/',data)
   }
   deletepage(slug){
-    return this.http.delete('http://127.0.0.1:8000/api/pages/'+slug+'/delet/')
+    return this.http.delete(this.util.getDomain()+'api/pages/'+slug+'/delet/')
   }
 }
