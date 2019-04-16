@@ -16,6 +16,7 @@ import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressbarModule } from 'ngx-bootstrap';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { UsernameValidator } from './authentication/UsernameValidator';
 
 
 
@@ -41,6 +42,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     AuthGuard,
     GallerylistComponent,
     AdminauthgaurdGuard,
+    UsernameValidator,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
 

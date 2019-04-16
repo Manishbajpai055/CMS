@@ -17,4 +17,7 @@ export class UserserviceService {
   DeleteUser(id){
     return this.http.delete(this.util.getDomain()+'api/user/'+id+'/delete/');
   }
+  ValidatorService(data){
+    return this.http.post(this.util.getDomain()+'api/user/usernamevalidat/',data);
+  }
 }

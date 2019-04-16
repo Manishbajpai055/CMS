@@ -29,7 +29,6 @@ export class CarouselComponent implements OnInit {
   }
 
 upload(){
-   this.loading = true
   console.log("",this.title)
   if (this.title == undefined ||''||null) {
       console.warn("please enter title")
@@ -39,13 +38,14 @@ upload(){
     this.error="please Select File"
   }
    else {
+   this.loading = true
     const data = new FormData();
     data.append('image', this.selecetdFile);
     data.append('title', this.title); 
     data.append('description',this.description);
       this.carousleservice.carouselupload(data).subscribe(res =>{
         console.log("Loading")
-        
+        this.selecetdFile = null
         this.caoruslelist.refresh()
         this.loading = false
       })

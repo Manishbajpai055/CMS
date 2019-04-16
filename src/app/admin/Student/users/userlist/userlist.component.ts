@@ -3,6 +3,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { UserserviceService } from 'src/app/services/users/userservice.service';
 import { UsersComponent } from '../users.component';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { UsernameValidator } from 'src/app/authentication/UsernameValidator';
+import { validate } from 'graphql';
 
 @Component({
   selector: 'app-userlist',
@@ -13,32 +15,37 @@ export class UserlistComponent implements OnInit {
   UsersList
   modalRef: BsModalRef;
   submitted
-
-  constructor(private modalService: BsModalService,private userservice:UserserviceService,private usercomponent:UsersComponent,private formBuilder: FormBuilder) { }
+  loading
+  constructor(private modalService: BsModalService,private userservice:UserserviceService,private usercomponent:UsersComponent,private formBuilder: FormBuilder,public usernameValidator: UsernameValidator,) { }
   NewUser:FormGroup
   ngOnInit() {
     this.NewUser = this.formBuilder.group({
       first_name: ['', Validators.required],
      last_name: ['', Validators.required],
-     email:['',Validators.required,Validators.email],
-     username:['',Validators.required],
-     password:['',Validators.required],
+     email:['',[Validators.required,Validators.email]],
+     username: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required]), this.usernameValidator.checkUsername.bind(this.usernameValidator)],
+     password:['',[Validators.required,Validators.minLength(8)]],
+     
   
   })
   }
   onSubmit() {
-    // TODO: Use EventEmitter with form value
     this.submitted = true;
-    console.log(this.NewUser.value)
+    console.log(this.f.username.errors)
     if (this.NewUser.invalid) {
       return;
     }
+    else{
+      this.loading=true
     this.userservice.NewUser(this.NewUser.value).subscribe(res=>{
       this.usercomponent.useradd=false
       this.usercomponent.refresh()
       this.usercomponent.userlist = true
+    }, (err: any) => {
+      this.loading=false
 
     })
+    }
   }
   goBack(){
    this.usercomponent.useradd=false
