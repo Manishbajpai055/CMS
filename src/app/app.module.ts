@@ -15,6 +15,7 @@ import { StudentModule } from './student/student.module';
 import { AdminauthgaurdGuard } from './adminauthgaurd.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressbarModule } from 'ngx-bootstrap';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 
@@ -40,7 +41,7 @@ import { ProgressbarModule } from 'ngx-bootstrap';
     AuthGuard,
     GallerylistComponent,
     AdminauthgaurdGuard,
-    
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
 
   bootstrap: [AppComponent]

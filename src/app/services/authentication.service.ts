@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders ,HttpBackend} from '@angular/common/http';
+import { UtilService } from './utilservices.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -12,9 +13,9 @@ const httpOptions = {
 })
 export class AuthenticationService {
 
-  constructor(private http : HttpClient,private httpbackedn:HttpBackend) { }
+  constructor(private http : HttpClient,private httpbackedn:HttpBackend,private util:UtilService) { }
   gettoken(data){
-    return this.http.post('http://127.0.0.1:8000/api/login/',data,httpOptions)
+    return this.http.post(this.util.getDomain()+'api/login/',data,httpOptions)
   }
   logout(){}
 }
