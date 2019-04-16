@@ -1,5 +1,5 @@
 import {Injectable, isDevMode} from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FileSaverService } from 'ngx-filesaver';
 
 @Injectable()
@@ -26,10 +26,15 @@ export class UtilService {
     return apiDomain;
   }
 
-  download(url,filename){
-    this.http.get(url, { observe: 'response',responseType: 'blob'}).subscribe(res => {
+  download(url,filename):any{
+     this.http.get(url, { observe: 'response',responseType: 'blob'}).subscribe(res => {
       this._FileSaverService.save(res.body, filename+'.pdf');
-      return "done"
-    });
+      return true
+    },(err: any) => {
+      return false
+    })
+}
+downloadd(url,filename):any{
+  return this.http.get(url, { observe: 'response',responseType: 'blob'})
 }
 }

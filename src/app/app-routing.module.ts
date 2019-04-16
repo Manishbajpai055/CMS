@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { AdminBlogComponent } from './admin/blog/blog.component';
 import { AboutComponent } from './home/about/about.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { PagesComponent } from './admin/pages/pages.component';
 import { HomepageComponent } from './home/homepage/homepage.component';

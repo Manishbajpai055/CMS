@@ -1,3 +1,4 @@
+<div *ngIf="loading==true" class="spinner-border text-muted"></div>
 <table class="table">
   <thead>
     <tr>
@@ -17,7 +18,9 @@
       <td>{{noteslist.posted_on}}</td>
      <td><button class="btn btn-primary" (click)="viewNotes(noteslist.notes)" >View</button></td>  
 
-     <td> <button class="btn btn-primary" (click)="download(noteslist.notes,noteslist.title)" >Downoad</button></td>
+     <td>
+      <button class="btn btn-primary" (click)="download(noteslist.notes,noteslist.title)" >Downoad</button></td>
+     
     </tr>
   </tbody>
 </table>

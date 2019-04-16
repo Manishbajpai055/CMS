@@ -3,13 +3,13 @@
           <input class="input" type="text" placeholder="Enter Title" [(ngModel)]="title" id="">
           <input class="input" type="text"  placeholder="Enter description" [(ngModel)]="description" id="">
           <input  type="input" class="btn btn-success" type="file" (change)="onFileUpload($event)">
-          <button  type="submit" class="btn btn-success" (click)="upload()">Upload</button>
+          <button  type="submit" class="btn btn-success" [ngClass]="{ active: i===0}" (click)="upload()">Upload</button>
           <div  *ngIf="error"> <p class="text-warning .bg-warning" >{{error}}</p></div>
           <div *ngIf="loading==true" class="spinner-border text-dark"></div>
           <label> Uploade Pictures for updating Gallery</label>
   </div>
 </div>
-
+<h3>{{progress}}</h3>
 <br>
 <br>
 <app-gallerylist></app-gallerylist>

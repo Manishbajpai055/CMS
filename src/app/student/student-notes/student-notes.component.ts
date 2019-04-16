@@ -17,7 +17,9 @@ export class StudentNotesComponent implements OnInit {
   Notesurl  = "https://docs.google.com/viewerng/viewer?url="
   noteslist
   p
-  constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService) { }
+  loading
+  error
+  constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService,private _FileSaverService: FileSaverService) { }
 
   ngOnInit() {
         this.noteservice.notslist().subscribe(res=>{
@@ -32,7 +34,13 @@ export class StudentNotesComponent implements OnInit {
     
   }
   download(url,filename){
-         this.util.download(url,filename)
+    this.loading = true
+    this.util.downloadd(url,filename).subscribe(res => {
+      this._FileSaverService.save(res.body, filename+'.pdf');
+      this.loading = false
+    },(err: any) => {
+      this.loading = false
+    })
 }
 
 }

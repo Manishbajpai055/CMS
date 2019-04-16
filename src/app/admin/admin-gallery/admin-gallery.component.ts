@@ -40,11 +40,10 @@ upload(){
     data.append('image', this.selecetdFile);
     data.append('title', this.title);
     data.append('description',this.description);
-      this.galleryservice.gallryupload(data).subscribe(res =>{
-        this.galleryelist.refresh()
+      this.galleryservice.gallryupload(data).subscribe(res=>{
         this.loading = false
-      })
 
+      })
 
   }
 }

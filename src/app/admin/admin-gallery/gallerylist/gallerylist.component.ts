@@ -38,6 +38,8 @@ export class GallerylistComponent implements OnInit {
     this.modalRef.hide();
   }
   refresh(){
-    this.sliderArray = this.galleryservice.gallerylist()
+     this.galleryservice.gallerylist().subscribe(res=>{
+      this.sliderArray = res
+    })
   }
 }
