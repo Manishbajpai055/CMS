@@ -3,14 +3,16 @@
         <form [formGroup]="subscribeform" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                <input type="text" formControlName="name" class="form-control" minlength="4" maxlength="50" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                 <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
                     <div *ngIf="f.name.errors.required">Name is required</div>
+                    <div *ngIf="f.phone_no.errors.minlength">Name must be at least 4 characters</div>
+                    <div *ngIf="f.phone_no.errors.maxlength">Phone no can't be more then 50 characters</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Phone No</label>
-                <input type="text" formControlName="phone_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone_no.errors }" />
+                <input type="text" formControlName="phone_no" class="form-control" minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.phone_no.errors }" />
                 <div *ngIf="submitted && f.phone_no.errors" class="invalid-feedback">
                     <div *ngIf="f.phone_no.errors.required">Phone no is required</div>
                     <div *ngIf="f.phone_no.errors.minlength">Phone no must be at least 10 characters</div>
@@ -28,10 +30,10 @@
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea type="description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
+                <textarea type="description" formControlName="description" class="form-control" minlength="50" maxlength="400" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
                 <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
                     <div *ngIf="f.description.errors.required">description is required</div>
-                    <div *ngIf="f.description.errors.minlength">Description must be at least 6 characters</div>
+                    <div *ngIf="f.description.errors.minlength">Description must be at least 50 characters</div>
                 </div>
             </div>
             <div class="form-group">
