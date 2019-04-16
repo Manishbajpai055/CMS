@@ -24,7 +24,8 @@
             </div>
         </div>
         <p class="alert alert-danger" *ngIf="errorMassage">{{errorMassage}}</p>
-        <button type="submit"
+        <div style="align-item:center" *ngIf="loading" class="spinner-border text-dark"></div>
+        <button *ngIf="loading!=true"  type="submit"
             [disabled]="loginForm.pristine || loginForm.invalid" class="btn btn-success">
             Login
         </button>
