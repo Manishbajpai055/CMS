@@ -29,7 +29,7 @@ onSubmit(){
   ngOnInit() {
     this.refresh()
     this.subscribeform = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(50)], Validators.pattern("^[0-9]*$"),],
       email: ['', [Validators.required, Validators.email]],
       phone_no: ['', [Validators.required, Validators.minLength(10),Validators.maxLength(10)], Validators.pattern("^[0-9]*$"),],
       description: ['', Validators.required]
