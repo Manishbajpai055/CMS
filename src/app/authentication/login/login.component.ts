@@ -10,6 +10,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit  {
+  loading: boolean;
   ngOnInit(){
     localStorage.removeItem('user');
     localStorage.removeItem('token' );
@@ -27,6 +28,7 @@ createForm() {
     password: ['', Validators.required ]
  });}
  onSubmit(){
+  this.loading = true
    console.log(this.loginForm.value.username,this.loginForm.value.password)
     const data = new FormData
     data.append('username',this.loginForm.value.username)
@@ -43,6 +45,7 @@ createForm() {
       this.router.navigate(['student']);
     }
   }, error => {
+    this.loading = false
     try {
       this.errorMassage = error.error['message']
     } catch (e) {
