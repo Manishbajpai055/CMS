@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { UserserviceService } from '../services/users/userservice.service';
+import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class UsernameValidator {
@@ -16,11 +17,14 @@ export class UsernameValidator {
     clearTimeout(this.debouncer);
 
     return new Promise(resolve => {
-      
+
       this.debouncer = setTimeout(() => {
         console.log(control.value)
-        this.authProvider.ValidatorService(control.value).subscribe((res) => {
-          if(res['ok']){
+        const data = new FormData
+        data.append('username',control.value)
+        this.authProvider.ValidatorService(data).subscribe((res) => {
+          console.log(res)
+          if(res.ok){
             resolve(null);
           }
         }, (err) => {

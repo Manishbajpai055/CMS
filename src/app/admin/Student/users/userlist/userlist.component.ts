@@ -23,7 +23,7 @@ export class UserlistComponent implements OnInit {
       first_name: ['', Validators.required],
      last_name: ['', Validators.required],
      email:['',[Validators.required,Validators.email]],
-     username: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required]), this.usernameValidator.checkUsername.bind(this.usernameValidator)],
+     username: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z]*'), Validators.required,]),this.usernameValidator.checkUsername.bind(this.usernameValidator) ],
      password:['',[Validators.required,Validators.minLength(8)]],
      
   
@@ -32,6 +32,7 @@ export class UserlistComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     console.log(this.f.username.errors)
+    console.log(this.NewUser.value)
     if (this.NewUser.invalid) {
       return;
     }
