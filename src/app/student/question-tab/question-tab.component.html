@@ -1,3 +1,7 @@
+<h4>Letest Qustions</h4>
+<div>Downloading Your FIle Please Wait
+<div  *ngIf="loading" class="spinner-border text-dark"></div>
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -16,7 +20,7 @@
       <td>{{question.desciption}}</td>
       <td>{{question.posted_on}}</td>
      <td><button class="btn btn-primary" (click)="viewQues(question.qustion)" >View</button></td>  
-     <td> <button class="btn btn-primary" >Downoad</button></td>
+     <td> <button class="btn btn-primary" (click)="download(question.qustion,question.title)"  >Downoad</button></td>
     </tr>
   </tbody>
 </table>

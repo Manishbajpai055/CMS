@@ -31,11 +31,9 @@ export class NotesComponent implements OnInit {
   }
   confirm(): void {
     this.noteservice.notesDelete(this.id).subscribe(res =>{
-      console.log("dekete",res)
       this.refresh()
     })
     this.modalRef.hide();
-    this.refresh()
   }
   decline(): void {
     this.modalRef.hide();

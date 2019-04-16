@@ -15,7 +15,6 @@ export class AdminGalleryComponent implements OnInit {
   loading: boolean;
     onFileUpload(event){
     this.selecetdFile = event.target.files[0];
-    allowedFileType: ["pdf", "xls"]
 }
 
 
@@ -27,7 +26,6 @@ export class AdminGalleryComponent implements OnInit {
 upload(){
   console.log("",this.title)
   if (this.title == undefined ||''||null) {
-      console.warn("please enter title")
       this.error="please enter title"
   }
   else if(this.selecetdFile==undefined||null){
@@ -35,18 +33,16 @@ upload(){
   }
    else {
     this.loading = true
-
     const data = new FormData();
     data.append('image', this.selecetdFile);
     data.append('title', this.title);
     data.append('description',this.description);
       this.galleryservice.gallryupload(data).subscribe(res =>{
-        this.galleryelist.refresh()
+        this.galleryelist.sliderArray =  this.galleryservice.gallerylist()
+        this.selecetdFile= null
         this.loading = false
       })
-
-
   }
+  
 }
-
 }

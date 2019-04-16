@@ -1,26 +1,6 @@
 <div id="editor"></div>
 <button class="btn btn-primary" (click)="goback()">Go back To list</button>
-<!--form [formGroup]="NewPost" (ngSubmit)="f.form.valid && onSubmit()">  
-  <label>
-      <br>
-      Title Of The Blog
-    <input type="text" formControlName="title">
-  </label>
-    <br>
-  <label>
-    Blog Body
-  </label>
-    <br>
-    <div  formControlName="content" [ngxSummernote]="config"  ></div>
-    <label>
-    Keywords On this Blog For SEO
-    <input type="text" formControlName="keywords">
-  </label>
-    <br>
-  <input   class="btn btn-primary" type="submit" value="Save" name="Save">
 
-</form>-->
-<!-- use with ngModel -->
   <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>Title</label>
@@ -36,7 +16,9 @@
                 <div *ngIf="f.content.errors.required">Content is required</div>
             </div>
         </div>
-        <div class="form-group">
+        <div  *ngIf="loading" class="spinner-border text-dark"></div>
+
+        <div *ngIf="loading!=true" class="form-group">
             <button class="btn btn-primary">Save</button>
         </div>
     </form>

@@ -14,6 +14,7 @@ export class NewAnswersComponent implements OnInit {
   error: string;
   title
   desciption
+  loading:Boolean
   constructor(private formBuilder:FormBuilder,private answerservice:AnswersServiceService,private adminanswer:AnswerssComponent) { }
   ngOnInit() {
   }
@@ -36,13 +37,17 @@ upload(){
     this.error="please Select File"
   }
    else {
+     this.loading = true
     const data = new FormData();
     data.append('title', this.title);
     data.append('desciption',this.desciption);
     data.append('answer', this.selecetdFile);
       this.answerservice.answerUpload(data).subscribe(res=>{
+        this.title = ''
+        this.desciption = ''
+        this.selecetdFile = null
         this.adminanswer.refresh()
-        console.log(res)
+        this.loading=false
       })
   }
 }

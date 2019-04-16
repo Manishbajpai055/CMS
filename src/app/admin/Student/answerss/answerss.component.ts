@@ -23,7 +23,6 @@ export class AnswerssComponent implements OnInit {
         })
   }
   delet(id,template) {
-    console.log(id,);
     this.id = id
     this.openModal(template)   
   }
@@ -32,11 +31,9 @@ export class AnswerssComponent implements OnInit {
   }
   confirm(): void {
     this.answeservice.answerdelete(this.id).subscribe(res =>{
-      console.log("dekete",res)
       this.refresh()
+      this.modalRef.hide();
     })
-    this.modalRef.hide();
-    this.refresh()
   }
   decline(): void {
     this.modalRef.hide();

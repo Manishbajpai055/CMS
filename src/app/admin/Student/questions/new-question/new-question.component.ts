@@ -12,7 +12,7 @@ export class NewQuestionComponent implements OnInit {
   error: string;
   title: any;
   desciption: string | Blob;
-
+  loading:Boolean
   constructor(private qustionservice:QustionServiceService,private adminqustion:QuestionsComponent) { }
 
   ngOnInit() {
@@ -36,13 +36,17 @@ upload(){
     this.error="please Select File"
   }
    else {
+    this.loading = true
     const data = new FormData();
     data.append('title', this.title);
     data.append('desciption',this.desciption);
     data.append('qustion', this.selecetdFile);
       this.qustionservice.qustionsUpload(data).subscribe(res=>{
+        this.title = ''
+        this.desciption = ''
+        this.selecetdFile = null
         this.adminqustion.refresh()
-        console.log(res)
+        this.loading = false
       })
   }
 }

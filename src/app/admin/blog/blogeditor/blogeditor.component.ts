@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import {BlogService } from '../../../services/blog.service'
 import { AdminBlogComponent } from '../blog.component';
+import { UtilService } from 'src/app/services/utilservices.service';
 
 @Component({
   selector: 'app-blogeditor',
@@ -13,12 +14,13 @@ export class BlogeditorComponent implements OnInit {
   submitted
   config = {
     height: '200px',
-    uploadImagePath: 'http://127.0.0.1:8000/blog/images/upload/',
+    uploadImagePath: this.util.getDomain()+'/blog/images/upload/',
     placeholder: 'Enter Text Here',
   };
+  loading
   updateblogdetail: any;
 
-  constructor(private newblog: BlogService,private adminblog: AdminBlogComponent,private formBuilder: FormBuilder) { }
+  constructor(private newblog: BlogService,private adminblog: AdminBlogComponent,private formBuilder: FormBuilder,private util:UtilService) { }
 
   ngOnInit() {
     this.NewPost = this.formBuilder.group({
@@ -34,24 +36,23 @@ export class BlogeditorComponent implements OnInit {
     }
   }
   onSubmit() {
-    // TODO: Use EventEmitter with form value
     this.submitted = true;
     if (this.NewPost.invalid) {
       return;
     }
+    this.loading= true
     if (this.adminblog.isupdateeditoractive==true){
       this.newblog.updateblog(this.adminblog.slug,this.NewPost.value).subscribe(res=>{
-        console.log(res)
+        this.loading= false        
         this.adminblog.islistactive=true
         this.adminblog.iseditoractive= false
       })
     }
-      
       this.newblog.newblog(this.NewPost.value).subscribe(res=>{
-        console.log(res)
-        this.adminblog.islistactive=true
+      this.loading= false        
+      this.adminblog.islistactive=true
       this.adminblog.iseditoractive= false
-      }) 
+      })
   }
   goback(){
       this.adminblog.islistactive=true

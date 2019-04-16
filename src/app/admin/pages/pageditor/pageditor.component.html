@@ -1,25 +1,6 @@
 <div id="editor"></div>
 <button class="btn btn-primary" (click)="goback()">Go back To list</button>
-<!--
-<form [formGroup]="NewPost" (ngSubmit)="onSubmit()"  novalidate>  
-  <label>
-    Title Of The Page
-    <input class="form-control" type="text" formControlName="title">
-  </label> 
-  <label>
-    Page Body
-    <br>
-    <br>
-<div class="form-control" formControlName="content" [ngxSummernote]="config"  ></div>
-</label>
-<label>
-  Menu-Name 
-  <input class="form-control" type="text" formControlName="menu_name">
-</label>
-  <input class="btn btn-primary" type="submit" value="Save" name="Save">
 
-</form> -->
-<!-- use with ngModel -->
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>Title</label>
@@ -43,7 +24,9 @@
                 <div *ngIf="f.menu_name.errors.required">Menu Name is required</div>
             </div>
         </div>
-        <div class="form-group">
+        <div  *ngIf="loading" class="spinner-border text-dark"></div>
+
+        <div *ngIf="!loading" class="form-group">
             <button class="btn btn-primary">Save</button>
         </div>
 </form>

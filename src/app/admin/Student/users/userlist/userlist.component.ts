@@ -5,6 +5,7 @@ import { UsersComponent } from '../users.component';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { UsernameValidator } from 'src/app/authentication/UsernameValidator';
 import { validate } from 'graphql';
+import { count } from 'rxjs/operators';
 
 @Component({
   selector: 'app-userlist',
@@ -33,7 +34,8 @@ export class UserlistComponent implements OnInit {
     this.submitted = true;
     console.log(this.f.username.errors)
     console.log(this.NewUser.value)
-    if (this.NewUser.invalid) {
+    var passlenght = this.NewUser.value.password
+    if (this.NewUser.invalid || passlenght.length<8){
       return;
     }
     else{

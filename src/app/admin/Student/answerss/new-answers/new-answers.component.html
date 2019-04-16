@@ -1,5 +1,8 @@
 <div class="footerlable">Add new Answers</div>
-<div class="container">
+    <div *ngIf="loading">Uploading Answer Please Wait
+        <div class="spinner-border text-muted"></div>
+        </div>
+<div *ngIf="!loading" class="container">
                 <input  type="text" placeholder="Enter Title" [(ngModel)]="title" id=""><br>
                 <input  type="text"  placeholder="Enter description" [(ngModel)]="desciption" id=""><br>
                 <input  type="input"  type="file" (change)="onFileUpload($event)"><br>

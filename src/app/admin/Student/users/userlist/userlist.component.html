@@ -1,7 +1,10 @@
 <button style="margin-bottom:1%" class="btn btn-primary" (click)="goBack()">Go Back</button>
 <div class="footerlable">New Student Detail</div>
 <div class="container">
-    <form [formGroup]="NewUser" (ngSubmit)="onSubmit()">
+        <div   *ngIf="loading"><h4>Please Wait</h4>
+          <div *ngIf="loading" style="width: 3rem; height: 3rem;" class="spinner-border text-dark"></div>
+            </div> 
+    <form *ngIf="loading!=true" [formGroup]="NewUser" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>First Name</label>
             <input type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
@@ -35,17 +38,15 @@
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input  type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <input minlength="8"  type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
                 <div *ngIf="f.password.errors.minlength">At least 8 digit required</div>
 
             </div>
         </div>
-        <div *ngIf="loading"><h4>Please Wait</h4>
-            <div  *ngIf="loading" class="spinner-border text-dark"></div>
-            </div>
-        <div *ngIf="loading!=true" class="form-group">
+        
+        <div  class="form-group">
             <button class="btn btn-primary">Save</button>
         </div>
     </form>
