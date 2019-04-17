@@ -20,6 +20,7 @@ export class StudentNotesComponent implements OnInit {
   p
   loading: boolean;
   progress
+  errormessege: any;
   constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService,private fileservice:FileSaverService) { }
 
   ngOnInit() {
@@ -42,7 +43,11 @@ export class StudentNotesComponent implements OnInit {
               this.loading=false
               this.progress = 0
           }
-  });
+  },(err: any) => {
+      this.loading=false
+      this.progress = 0
+      this.errormessege = "Check YOu Netwrok Connnection"
+    }) ;
 }
 
 }

@@ -13,6 +13,7 @@ import { FileSaverService } from 'ngx-filesaver';
 export class AnswerTabComponent implements OnInit {
   answerlist 
   Ansurl  = "https://docs.google.com/viewerng/viewer?url="
+  errormessege: string;
   constructor(private answerservice:AnswersServiceService,private util:UtilService,private fileservice:FileSaverService ) { }
   p
   loading: boolean;
@@ -38,6 +39,10 @@ export class AnswerTabComponent implements OnInit {
          this.loading=false
          this.progress = 0
      }
+},(err: any) => {
+  this.loading=false
+  this.progress = 0
+  this.errormessege = "Check YOu Netwrok Connnection"
 });
 }
 }

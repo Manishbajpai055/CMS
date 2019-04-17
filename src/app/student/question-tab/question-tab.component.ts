@@ -16,6 +16,7 @@ export class QuestionTabComponent implements OnInit {
   qustionList
   p
   loading = false
+  errormessege: string;
   constructor(private qustionservice:QustionServiceService,private util:UtilService,private fileservice: FileSaverService) { }
   
   ngOnInit() {
@@ -39,6 +40,10 @@ export class QuestionTabComponent implements OnInit {
          this.loading=false
          this.progress = 0
      }
+},(err: any) => {
+  this.loading=false
+  this.progress = 0
+  this.errormessege = "Check YOu Netwrok Connnection"
 });
 }
 }
