@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GallerylistComponent } from './gallerylist/gallerylist.component';
 import { GalleryserviceService } from 'src/app/services/galleryservice.service';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin-gallery',
@@ -13,12 +14,11 @@ export class AdminGalleryComponent implements OnInit {
   description
   error
   loading: boolean;
+  progress: number;
+  errormessege: string;
     onFileUpload(event){
     this.selecetdFile = event.target.files[0];
-    allowedFileType: ["pdf", "xls"]
 }
-
-
   constructor( private galleryservice : GalleryserviceService ,private galleryelist:GallerylistComponent) { }
 
   ngOnInit() {
@@ -27,7 +27,6 @@ export class AdminGalleryComponent implements OnInit {
 upload(){
   console.log("",this.title)
   if (this.title == undefined ||''||null) {
-      console.warn("please enter title")
       this.error="please enter title"
   }
   else if(this.selecetdFile==undefined||null){
@@ -35,18 +34,29 @@ upload(){
   }
    else {
     this.loading = true
-
     const data = new FormData();
     data.append('image', this.selecetdFile);
     data.append('title', this.title);
     data.append('description',this.description);
-      this.galleryservice.gallryupload(data).subscribe(res =>{
-        this.galleryelist.refresh()
-        this.loading = false
-      })
-
-
+    this.uploadfile(data)
   }
+  
 }
-
+uploadfile(data){
+  this.loading=true
+  this.galleryservice.gallryupload(data).subscribe(event => {
+   if (event.type === HttpEventType.UploadProgress) {
+     this.progress = Math.round(100 * event.loaded / event.total);
+     }
+   if (event.type === HttpEventType.Response) {
+     this.galleryelist.refresh()
+    this.loading=false
+    console.log(event.body)
+     }
+    },(err: any) => {
+  this.loading=false
+  this.progress = 0
+  this.errormessege = "Check YOu Netwrok Connnection"
+  });
+  }
 }

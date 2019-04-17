@@ -42,6 +42,8 @@ upload(){
     data.append('desciption',this.desciption);
     data.append('notes', this.selecetdFile);
       this.notesservice.notsCreate(data).subscribe(res=>{
+        this.title = ''
+        this.desciption = ''
         this.selecetdFile = null
         this.notes.refresh()
         this.loading = false

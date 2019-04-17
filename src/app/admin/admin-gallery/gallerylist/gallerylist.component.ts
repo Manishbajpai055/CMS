@@ -28,16 +28,16 @@ export class GallerylistComponent implements OnInit {
   }
   confirm(): void {
     this.galleryservice.gallerydelete(this.id).subscribe(res =>{
-      console.log("dekete")
+      console.log("Deleted")
       this.refresh()
     })
     this.modalRef.hide();
-    this.refresh()
   }
   decline(): void {
     this.modalRef.hide();
   }
   refresh(){
-    this.sliderArray = this.galleryservice.gallerylist()
+    this.sliderArray  = this.galleryservice.gallerylist()
+    console.log("Refreshed ")
   }
 }

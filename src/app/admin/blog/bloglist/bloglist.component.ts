@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, OnDestroy } from '@angular/core';
 import {BlogService } from '../../../services/blog.service';
 import { Router } from '@angular/router';
 import {ActivatedRoute} from '@angular/router';
@@ -11,24 +11,19 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   templateUrl: './bloglist.component.html',
   styleUrls: ['./bloglist.component.css']
 })
-export class BloglistComponent implements OnInit {
+export class BloglistComponent implements OnInit, OnDestroy {
   bloglist;
   slug=''
   modalRef: BsModalRef;
   p
-  constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { 
-    
-  }
+  constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { }
   ngOnInit() {
    this.refresh()
   }
 
   
 refresh(){
-  this.list.bloglist().subscribe(
-    data => {
-      this.bloglist = data;
-    });
+  this.bloglist = this.list.bloglist()
 }
 delet(slug,template) {
     console.log(slug,);
@@ -55,11 +50,12 @@ delet(slug,template) {
     this.list.deleteblog(this.slug).subscribe(res =>{
       console.log("dekete")
       this.refresh()
-    })
+    }).unsubscribe
     this.modalRef.hide();
-    this.refresh()
   }
   decline(): void {
     this.modalRef.hide();
+  }
+  ngOnDestroy() {
   }
 }

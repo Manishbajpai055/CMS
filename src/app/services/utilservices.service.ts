@@ -1,11 +1,13 @@
 import {Injectable, isDevMode} from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpEvent, HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
 import { FileSaverService } from 'ngx-filesaver';
 
 @Injectable()
 export class UtilService {
 
-  constructor(private http:HttpClient,private _FileSaverService: FileSaverService) {}
+  constructor(private http:HttpClient,private fileservice:FileSaverService) {}
 
   getToken() {
     return localStorage.getItem('token');
@@ -26,10 +28,17 @@ export class UtilService {
     return apiDomain;
   }
 
-  download(url,filename){
-    this.http.get(url, { observe: 'response',responseType: 'blob'}).subscribe(res => {
-      this._FileSaverService.save(res.body, filename+'.pdf');
-      return "done"
+ 
+  download(url): Observable<HttpEvent<any>>{
+    return this.http.get(url , {
+      responseType: "blob", reportProgress: true, observe: "events", headers: new HttpHeaders(
+        { 'Content-Type': 'application/json' },
+      )
     });
+  }
+  
+
+
 }
-}
+
+

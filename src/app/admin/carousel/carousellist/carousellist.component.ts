@@ -37,6 +37,8 @@ export class CarousellistComponent implements OnInit {
     this.modalRef.hide();
   }
   refresh(){
-    this.sliderArray = this.carousel.crousellist()
+     this.carousel.crousellist().subscribe(res=>{
+      this.sliderArray =res
+    })
   }
 }

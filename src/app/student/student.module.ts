@@ -10,13 +10,15 @@ import { StudentNotesComponent } from './student-notes/student-notes.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NewstudentComponent } from './newstudent/newstudent.component';
 import { StudentlistComponent } from './newstudent/studentlist/studentlist.component';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 @NgModule({
   declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent, NewstudentComponent, StudentlistComponent],
   imports: [
     CommonModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ProgressbarModule
   ]
 })
 export class StudentModule { }
