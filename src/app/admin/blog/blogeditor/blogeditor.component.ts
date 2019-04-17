@@ -19,6 +19,7 @@ export class BlogeditorComponent implements OnInit {
   };
   loading
   updateblogdetail: any;
+  erromassage: string;
 
   constructor(private newblog: BlogService,private adminblog: AdminBlogComponent,private formBuilder: FormBuilder,private util:UtilService) { }
 
@@ -32,7 +33,7 @@ export class BlogeditorComponent implements OnInit {
         this.updateblogdetail = res
         this.NewPost.get('title').setValue(this.updateblogdetail.title) 
         this.NewPost.get('content').setValue(this.updateblogdetail.content)
-     })
+     }).unsubscribe
     }
   }
   onSubmit() {
@@ -46,13 +47,19 @@ export class BlogeditorComponent implements OnInit {
         this.loading= false        
         this.adminblog.islistactive=true
         this.adminblog.iseditoractive= false
+      },(err) =>{
+        this.loading = false
+        this.erromassage = "Network Probelm Check your Network Connection"
       })
     }
       this.newblog.newblog(this.NewPost.value).subscribe(res=>{
       this.loading= false        
       this.adminblog.islistactive=true
       this.adminblog.iseditoractive= false
-      })
+      } ,(err) =>{
+        this.loading = false
+        this.erromassage = "Network Probelm Check your Network Connection"
+      }).unsubscribe
   }
   goback(){
       this.adminblog.islistactive=true

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarouselService  } from '../../services/carousel.service'
 import { CarousellistComponent } from './carousellist/carousellist.component';
 import { map } from 'rxjs/operators';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-carousel',
@@ -15,6 +16,8 @@ export class CarouselComponent implements OnInit {
   description
   error
   loading
+  progress: number;
+  errormessege: string;
     onFileUpload(event){
       let file = event.target.files[0];
         if (file.type == ('image/jpeg' || 'image/jpg' ||'image/png'||'image/tif')) {
@@ -44,11 +47,26 @@ upload(){
     data.append('title', this.title); 
     data.append('description',this.description);
       this.carousleservice.carouselupload(data).subscribe(res =>{
-        console.log("Loading")
-        this.selecetdFile = null
-        this.caoruslelist.refresh()
-        this.loading = false
+       this.uploadfile(data)
       })
   }
 }
+uploadfile(data){
+  this.loading=true
+  this.carousleservice.carouselupload(data).subscribe(event => {
+   if (event.type === HttpEventType.UploadProgress) {
+     this.progress = Math.round(100 * event.loaded / event.total);
+     }
+   if (event.type === HttpEventType.Response) {
+        this.selecetdFile = null
+        this.caoruslelist.refresh()
+        this.loading = false
+    console.log(event.body)
+     }
+    },(err: any) => {
+  this.loading=false
+  this.progress = 0
+  this.errormessege = "Check YOu Netwrok Connnection"
+  });
+  }
 }

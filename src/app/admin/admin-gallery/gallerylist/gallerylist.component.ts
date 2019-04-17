@@ -37,7 +37,7 @@ export class GallerylistComponent implements OnInit {
     this.modalRef.hide();
   }
   refresh(){
-    this.sliderArray = this.galleryservice.gallerylist()
+    this.sliderArray  = this.galleryservice.gallerylist()
     console.log("Refreshed ")
   }
 }

@@ -1,6 +1,6 @@
 <div id="editor"></div>
 <button class="btn btn-primary" (click)="goback()">Go back To list</button>
-
+<p *ngIf="erromassage">{{erromassage}}</p>
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>Title</label>

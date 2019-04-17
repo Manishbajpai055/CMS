@@ -13,6 +13,7 @@ export class PageditorComponent implements OnInit {
   updatepagedetail
   submitted: boolean;
   loading:boolean;
+  erromassage: any;
   constructor(private newpage:PageserviceService,private adminpage:PagesComponent ,private fb: FormBuilder,private formBuilder: FormBuilder,private uti:UtilService ) { }
 
   ngOnInit() {
@@ -55,8 +56,11 @@ export class PageditorComponent implements OnInit {
         this.loading = false
         this.adminpage.islistactive=true
       this.adminpage.iseditoractive= false
+      },(err) =>{
+        this.loading = false
+        this.erromassage = "Network Probelm Chheck your Network Connection"
       }) 
-    } 
+    }
   }
   goback(){
       this.adminpage.islistactive=true
