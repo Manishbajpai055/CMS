@@ -46,9 +46,7 @@ upload(){
     data.append('image', this.selecetdFile);
     data.append('title', this.title); 
     data.append('description',this.description);
-      this.carousleservice.carouselupload(data).subscribe(res =>{
-       this.uploadfile(data)
-      })
+    this.uploadfile(data)
   }
 }
 uploadfile(data){
