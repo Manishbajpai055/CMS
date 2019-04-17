@@ -5,9 +5,10 @@ label {
     float:left;
     margin-right:15px;
 }
-.container{
+.col-md-6,.container{
     display : ruby;
-    padding : 4%;
+    margin: 2%;
+    padding-left: 5%;
    
 }
 
@@ -70,5 +71,6 @@ color: aliceblue;
 .main-container{
     background-color: #3f51b5;
     color: aliceblue;
+    
     
 }
