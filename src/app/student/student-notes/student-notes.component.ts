@@ -21,6 +21,7 @@ export class StudentNotesComponent implements OnInit {
   loading: boolean;
   progress
   errormessege: any;
+  downloading
   constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService,private fileservice:FileSaverService) { }
 
   ngOnInit() {
@@ -34,14 +35,23 @@ export class StudentNotesComponent implements OnInit {
   }
   download(url,filename){
          this.loading=true
+         if (this.downloading == true) {
+          this.errormessege = "! Dowload In Progress Please Wait TO Finish"
+          return
+         } else {
+          this.downloading = true
+         }
          this.util.download(url).subscribe(event => {
           if (event.type === HttpEventType.DownloadProgress) {
             this.progress = Math.round(100 * event.loaded / event.total);
             }
           if (event.type === HttpEventType.Response) {
+            this.downloading = false
               this.fileservice.save(event.body,filename)
               this.loading=false
+              this.errormessege = ''
               this.progress = 0
+
           }
   },(err: any) => {
       this.loading=false

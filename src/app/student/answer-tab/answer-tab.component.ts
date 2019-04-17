@@ -14,6 +14,7 @@ export class AnswerTabComponent implements OnInit {
   answerlist 
   Ansurl  = "https://docs.google.com/viewerng/viewer?url="
   errormessege: string;
+  downloading: boolean;
   constructor(private answerservice:AnswersServiceService,private util:UtilService,private fileservice:FileSaverService ) { }
   p
   loading: boolean;
@@ -30,6 +31,12 @@ export class AnswerTabComponent implements OnInit {
   }
   download(url,filename){
     this.loading=true
+    if (this.downloading == true) {
+      this.errormessege = "! Dowload In Progress Please Wait TO Finish"
+      return
+     } else {
+      this.downloading = true
+     }
     this.util.download(url).subscribe(event => {
      if (event.type === HttpEventType.DownloadProgress) {
        this.progress = Math.round(100 * event.loaded / event.total);
@@ -38,6 +45,8 @@ export class AnswerTabComponent implements OnInit {
          this.fileservice.save(event.body,filename)
          this.loading=false
          this.progress = 0
+         this.errormessege = ''
+         this.downloading = false
      }
 },(err: any) => {
   this.loading=false

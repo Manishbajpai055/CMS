@@ -16,7 +16,8 @@ export class QuestionTabComponent implements OnInit {
   qustionList
   p
   loading = false
-  errormessege: string;
+  errormessege: string
+  downloading
   constructor(private qustionservice:QustionServiceService,private util:UtilService,private fileservice: FileSaverService) { }
   
   ngOnInit() {
@@ -30,6 +31,12 @@ export class QuestionTabComponent implements OnInit {
     window.open(newurl)
   }
   download(url,filename){
+    if (this.downloading == true) {
+      this.errormessege = "! Dowload In Progress Please Wait TO Finish"
+        return
+    } else {
+      this.downloading=true
+    }
     this.loading=true
     this.util.download(url).subscribe(event => {
      if (event.type === HttpEventType.DownloadProgress) {
@@ -39,11 +46,14 @@ export class QuestionTabComponent implements OnInit {
          this.fileservice.save(event.body,filename)
          this.loading=false
          this.progress = 0
+         this.errormessege =''
+         this.downloading = false
      }
 },(err: any) => {
   this.loading=false
   this.progress = 0
   this.errormessege = "Check YOu Netwrok Connnection"
+  this.downloading = false
 });
 }
 }
