@@ -24,14 +24,14 @@ onSubmit(){
         return;
     }
     this.Contactus.postSubscriberinfo(this.subscribeform.value)
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.subscribeform.value))
+    alert('Success :) ')
 }
   ngOnInit() {
     this.refresh()
     this.subscribeform = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(4),Validators.maxLength(100), Validators.pattern("^[A-Z a-z]*$")],],
       email: ['', [Validators.required, Validators.email]],
-      phone_no: ['', [Validators.required, Validators.minLength(10),Validators.maxLength(10)], Validators.pattern("^[0-9]*$"),],
+      phone_no: ['', [Validators.required, Validators.minLength(10),Validators.maxLength(10), Validators.pattern("^[0-9]*$")],],
       description: ['', Validators.required]
   })
    }

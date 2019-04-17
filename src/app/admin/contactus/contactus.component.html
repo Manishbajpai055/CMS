@@ -3,19 +3,23 @@
         <form [formGroup]="subscribeform" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                <input type="text" formControlName="name" class="form-control" minlength="4" maxlength="100" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                 <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
                     <div *ngIf="f.name.errors.required">Name is required</div>
+                    <div *ngIf="f.name.errors.minlength">Phone no must be at least 4 characters</div>
+                    <div *ngIf="f.name.errors.maxlength">Phone no cant be more then 100 characters</div>
+                    <div *ngIf="f.name.errors.pattern">Please enter Charecters Only</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>Phone No</label>
-                <input type="text" formControlName="phone_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone_no.errors }" />
+                <input type="text" formControlName="phone_no" class="form-control" minlength="10" maxlength="10"
+                    [ngClass]="{ 'is-invalid': submitted && f.phone_no.errors }" />
                 <div *ngIf="submitted && f.phone_no.errors" class="invalid-feedback">
                     <div *ngIf="f.phone_no.errors.required">Phone no is required</div>
                     <div *ngIf="f.phone_no.errors.minlength">Phone no must be at least 10 characters</div>
                     <div *ngIf="f.phone_no.errors.maxlength">Phone no cant be more then 10 characters</div>
-                    <div *ngIf="f.phone_no.errors.pattern" >Please enterNumber Only</div>
+                    <div *ngIf="f.phone_no.errors.pattern">Please enter Numbers Only</div>
                 </div>
             </div>
             <div class="form-group">
@@ -28,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea type="description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
+                <textarea type="description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
                 <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
                     <div *ngIf="f.description.errors.required">description is required</div>
                     <div *ngIf="f.description.errors.minlength">Description must be at least 6 characters</div>
@@ -38,42 +42,41 @@
                 <button class="btn btn-primary">Register</button>
             </div>
         </form>
-</div>
-  <!-- Subscribe Form-->
-
-  <div class="container">
-
-    <div class="col-md-6">
-      <!-- support info -->
-      <div class="contact-info-content">
-        <h2>Contact US</h2>
-        <br>
-        <div class="address-info">
-          <ul>
-            <span><i class="fa fa-map-marker" aria-hidden="true"></i>Address</span>
-            <br>
-            <li>
-              Street: {{headerinfo.street}} <br />
-            </li>
-            <li>
-              City: {{headerinfo.city}}
-            </li>
-            <li> State: {{headerinfo.state}} <br /></li>
-            <li>Pincode: {{headerinfo.pincode}} <br /></li>
-
-            <li><span><i class="fa fa-phone" aria-hidden="true"></i>phone : </span><a href="#">{{headerinfo.contact}}</a></li>
-            <li><span><i class="fa fa-envelope" aria-hidden="true"></i>email : </span><a href="#">{{headerinfo.email}}</a></li>
-
-
-          </ul>
-          <ul class="top-bar-text social">
-            <a href="{{headerinfo.facebook}}"><i class="fa fa-facebook"></i></a>
-            <a href="{{headerinfo.twitter}}"><i class="fa fa-twitter"></i></a>
-            <a href="{{headerinfo.instagram}}"><i class="fa fa-instagram"></i></a>
-          </ul>
         </div>
-      </div>
-      <!-- /.support info -->
+    
+    <!-- Subscribe Form-->
+
+    <div class="col-md-6 offset-md-3">
+            <!-- support info -->
+            <div class="contact-info-content">
+                <h2>Contact US</h2>
+                <br>
+                <div class="address-info">
+                    <ul>
+                        <span><i class="fa fa-map-marker" aria-hidden="true"></i>Address</span>
+                        <br>
+                        <li>
+                            Street: {{headerinfo.street}} <br />
+                        </li>
+                        <li>
+                            City: {{headerinfo.city}}
+                        </li>
+                        <li> State: {{headerinfo.state}} <br /></li>
+                        <li>Pincode: {{headerinfo.pincode}} <br /></li>
+
+                        <li><span><i class="fa fa-phone" aria-hidden="true"></i>phone : <a href="#">{{headerinfo.contact}}</a></span> </li>
+                        <li><span><i class="fa fa-envelope" aria-hidden="true"></i>email : <a href="#">{{headerinfo.email}}</a> </span> </li>
 
 
-    </div>
+                    </ul>
+                    <ul class="top-bar-text social">
+                        <a href="{{headerinfo.facebook}}"><i class="fa fa-facebook"></i></a>
+                        <a href="{{headerinfo.twitter}}"><i class="fa fa-twitter"></i></a>
+                        <a href="{{headerinfo.instagram}}"><i class="fa fa-instagram"></i></a>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.support info -->
+
+
+        </div>
