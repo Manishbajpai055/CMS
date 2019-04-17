@@ -28,15 +28,7 @@ export class UtilService {
     return apiDomain;
   }
 
- /* download(url,filename){
-     this.http.get<any>(url, {
-      reportProgress: true,
-      observe: 'events',
-    }).subscribe(events=>{
-      console.log(events.type)
-    })
-    return this.http.get(url, { observe: 'response',responseType: 'blob'})
-  }*/
+ 
   download(url): Observable<HttpEvent<any>>{
 
     return this.http.get(url , {

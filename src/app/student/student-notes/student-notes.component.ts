@@ -19,6 +19,7 @@ export class StudentNotesComponent implements OnInit {
   noteslist
   p
   loading: boolean;
+  progress
   constructor(private noteservice:NotesServiceService,private http:HttpClient,private util:UtilService,private fileservice:FileSaverService) { }
 
   ngOnInit() {
@@ -34,10 +35,12 @@ export class StudentNotesComponent implements OnInit {
          this.loading=true
          this.util.download(url).subscribe(event => {
           if (event.type === HttpEventType.DownloadProgress) {
-              console.log("download progress");
-          }
+            this.progress = Math.round(100 * event.loaded / event.total);
+            }
           if (event.type === HttpEventType.Response) {
               this.fileservice.save(event.body,filename)
+              this.loading=false
+              this.progress = 0
           }
   });
 }

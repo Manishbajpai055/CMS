@@ -12,11 +12,12 @@ import { HttpEventType } from '@angular/common/http';
 export class QuestionTabComponent implements OnInit {
 
   Quesurl  = "https://docs.google.com/viewerng/viewer?url="
-
-  constructor(private qustionservice:QustionServiceService,private util:UtilService,private _FileSaverService: FileSaverService) { }
+  progress: number;
   qustionList
   p
-  loading
+  loading = false
+  constructor(private qustionservice:QustionServiceService,private util:UtilService,private fileservice: FileSaverService) { }
+  
   ngOnInit() {
     this.qustionservice.qustionsList().subscribe(res=>{
       this.qustionList = res
@@ -30,14 +31,14 @@ export class QuestionTabComponent implements OnInit {
   download(url,filename){
     this.loading=true
     this.util.download(url).subscribe(event => {
-       if (event.type === HttpEventType.DownloadProgress) {
-           console.log(event.loaded);
+     if (event.type === HttpEventType.DownloadProgress) {
+       this.progress = Math.round(100 * event.loaded / event.total);
        }
-       if (event.type === HttpEventType.Response) {
-           this._FileSaverService.save(event.body,filename)
-           this.loading=false
-
-       }
+     if (event.type === HttpEventType.Response) {
+         this.fileservice.save(event.body,filename)
+         this.loading=false
+         this.progress = 0
+     }
 });
 }
 }

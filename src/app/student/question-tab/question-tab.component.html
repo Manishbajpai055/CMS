@@ -1,7 +1,12 @@
 <h4>Letest Qustions</h4>
-<div>Downloading Your FIle Please Wait
-<div  *ngIf="loading" class="spinner-border text-dark"></div>
-</div>
+<div  *ngIf="loading"> Downloading Your FIle Please Wait
+    <div class="col-sm-4">
+        <div class="mb-2">
+          <progressbar [value]="progress">{{progress}}%</progressbar>
+        </div>
+      </div>
+  <div  class="spinner-border text-dark"></div>
+  </div>
 <table class="table">
   <thead>
     <tr>

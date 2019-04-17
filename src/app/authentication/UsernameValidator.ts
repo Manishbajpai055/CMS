@@ -16,7 +16,6 @@ export class UsernameValidator {
     return new Promise(resolve => {
 
       this.debouncer = setTimeout(() => {
-        console.log(control.value)
         const data = new FormData
         data.append('username',control.value)
         this.authProvider.ValidatorService(data).subscribe((res) => {
@@ -26,7 +25,6 @@ export class UsernameValidator {
             resolve(null);
           }
         }, (err) => {
-          console.log(err)
           resolve({'usernameInUse': true});
         });
 

@@ -1,3 +1,12 @@
+<h3>Letest Answers</h3>
+<div  *ngIf="loading"> Downloading Your FIle Please Wait
+    <div class="col-sm-4">
+        <div class="mb-2">
+          <progressbar [value]="progress">{{progress}}%</progressbar>
+        </div>
+      </div>
+  <div  class="spinner-border text-dark"></div>
+  </div>
 <table class="table">
     <thead>
       <tr>
@@ -16,7 +25,7 @@
         <td>{{answer.desciption}}</td>
         <td>{{answer.posted_on}}</td>
        <td><button class="btn btn-primary" (click)="viewAns(answer.answer)" >View</button></td>  
-       <td> <button class="btn btn-primary" >Downoad</button></td>
+       <td> <button class="btn btn-primary"  (click)="download(answer.answer,answer.title)"  >Downoad</button></td>
       </tr>
     </tbody>
   </table>
