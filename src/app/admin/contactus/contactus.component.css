@@ -5,12 +5,7 @@ label {
     float:left;
     margin-right:15px;
 }
-.col-md-6,.container{
-    display : ruby;
-    margin: 2%;
-    padding-left: 5%;
-   
-}
+
 
 a{
     color: white;   
@@ -74,3 +69,27 @@ color: aliceblue;
     
     
 }
+
+
+@media only screen and (max-width: 2180px) and (min-width: 1024px){
+    .col-md-6{
+        display: inline-flex;
+        margin: 2%;
+        padding-left: 5%;
+      }
+    
+      .container{
+        display: ruby-base-container;
+        position: relative;
+        bottom: 100px;
+      }
+        .one{
+            text-align : center;
+            background-color: #f5fff8;
+            margin-left: 40%;;
+
+        }
+    
+       
+    }
+

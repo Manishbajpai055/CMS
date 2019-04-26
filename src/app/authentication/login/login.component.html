@@ -16,7 +16,7 @@
          <div class="form-group">
             <span class="icon"><i class="fa fa-lock"> </i> &nbsp; </span>
             <label>Password</label>
-            <input class="form-control" placeholder="Password" formControlName="password" type="text">
+            <input class="form-control" placeholder="Password" formControlName="password" type="password">
         </div>
         <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
             <div *ngIf="loginForm.controls['password'].errors.required">
