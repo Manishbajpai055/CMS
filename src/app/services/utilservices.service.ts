@@ -24,7 +24,7 @@ export class UtilService {
   }
 
   getDomain() {
-    const apiDomain= 'https://thegeekcms.herokuapp.com/';
+    const apiDomain= isDevMode() ? 'http://localhost:8000/' : 'https://thegeekcms.herokuapp.com/';
     return apiDomain;
   }
 

@@ -27,7 +27,7 @@ export class CarousellistComponent implements OnInit {
   }
   confirm(): void {
     this.carousel.carouseldelet(this.id).subscribe(res =>{
-      console.log("dekete")
+      
       this.refresh()
     })
     this.modalRef.hide();

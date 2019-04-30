@@ -18,17 +18,32 @@ export class CarouselComponent implements OnInit {
   loading
   progress: number;
   errormessege: string;
+  ref
     onFileUpload(event){
       let file = event.target.files[0];
-        if (file.type == ('image/jpeg' || 'image/jpg' ||'image/png'||'image/tif')) {
+      console.log('type' , file.type)
+        if (file.type == 'image/png'){
+          this.selecetdFile = event.target.files[0];
+        }
+        else
+        if (file.type == 'image/jpeg' ) {
             this.selecetdFile = event.target.files[0];
-        } else {
+        } 
+        else
+        if (file.type == 'image/jpg' ) {
+            this.selecetdFile = event.target.files[0];
+        } 
+      
+        else {
           this.error="Please Upload Image Only"
         }   
+      
+        
 }
   constructor( private carousleservice :CarouselService,private caoruslelist:CarousellistComponent) { }
 
   ngOnInit() {
+  
   }
 
 upload(){
@@ -56,7 +71,7 @@ uploadfile(data){
      this.progress = Math.round(100 * event.loaded / event.total);
      }
    if (event.type === HttpEventType.Response) {
-        this.selecetdFile = null
+        this.selecetdFile = null;
         this.caoruslelist.refresh()
         this.loading = false
     console.log(event.body)

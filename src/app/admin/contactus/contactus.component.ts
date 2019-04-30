@@ -40,9 +40,8 @@ export class ContactusComponent implements OnInit {
     var d1 = this.elementRef.nativeElement.querySelector('.one');
     d1.insertAdjacentHTML('beforeend', '<div class="two">two</div>');
 
-    if (window.screen.width <= 760) { // 768px portrait
+
       this.htmlToAdd = '<span class="divider">&nbsp;</span>'
-    }
 
 }
   get f() { return this.subscribeform.controls; }
