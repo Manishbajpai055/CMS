@@ -30,6 +30,7 @@ export class UtilService {
 
  
   download(url): Observable<HttpEvent<any>>{
+      url = url.replace('http://','https://')
     return this.http.get(url , {
       responseType: "blob", reportProgress: true, observe: "events", headers: new HttpHeaders(
         { 'Content-Type': 'application/json' },
