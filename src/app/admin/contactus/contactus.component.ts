@@ -11,7 +11,7 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
-  headerinfo
+  headerinfo : any;
   htmlToAdd: string;
 
   constructor(private elementRef: ElementRef, private headerfooterservice: HeaderFooterService, private Contactus: ContactusService, private formBuilder: FormBuilder) { }

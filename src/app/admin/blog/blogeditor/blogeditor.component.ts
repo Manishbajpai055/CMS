@@ -52,6 +52,7 @@ export class BlogeditorComponent implements OnInit {
         this.erromassage = "Network Probelm Check your Network Connection"
       })
     }
+    else{
       this.newblog.newblog(this.NewPost.value).subscribe(res=>{
       this.loading= false        
       this.adminblog.islistactive=true
@@ -61,6 +62,7 @@ export class BlogeditorComponent implements OnInit {
         this.erromassage = "Network Probelm Check your Network Connection"
       }).unsubscribe
   }
+}
   goback(){
       this.adminblog.islistactive=true
       this.adminblog.iseditoractive= false
