@@ -35,6 +35,7 @@
     "ngx-filesaver": "^2.2.1",
     "ngx-pagination": "^3.2.1",
     "ngx-summernote": "^0.6.4",
+    "ngx-toastr": "^10.0.4",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",
     "summernote": "^0.8.11",

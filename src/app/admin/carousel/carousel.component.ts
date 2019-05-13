@@ -3,6 +3,7 @@ import { CarouselService  } from '../../services/carousel.service'
 import { CarousellistComponent } from './carousellist/carousellist.component';
 import { map } from 'rxjs/operators';
 import { HttpEventType } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-carousel',
@@ -40,7 +41,7 @@ export class CarouselComponent implements OnInit {
       
         
 }
-  constructor( private carousleservice :CarouselService,private caoruslelist:CarousellistComponent) { }
+  constructor( private carousleservice :CarouselService,private caoruslelist:CarousellistComponent,private toastr: ToastrService) { }
 
   ngOnInit() {
   
@@ -49,11 +50,16 @@ export class CarouselComponent implements OnInit {
 upload(){
   console.log("",this.title)
   if (this.title == undefined ||''||null) {
-      console.warn("please enter title")
-      this.error="please enter title"
+    this.toastr.error('Please enter title','',{
+      timeOut: 1000
+    });
+    this.error="please enter title"
   }
   else if(this.selecetdFile==undefined||null){
     this.error="please Select File"
+    this.toastr.error('Please Select File','',{
+      timeOut: 1000
+    });
   }
    else {
    this.loading = true
@@ -72,8 +78,8 @@ uploadfile(data){
      }
    if (event.type === HttpEventType.Response) {
         this.selecetdFile = null;
-        this.caoruslelist.refresh()
         this.loading = false
+        this.toastr.success('Image Uploaded successfully');
     console.log(event.body)
      }
     },(err: any) => {

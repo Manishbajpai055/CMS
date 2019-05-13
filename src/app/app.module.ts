@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressbarModule } from 'ngx-bootstrap';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { UsernameValidator } from './authentication/UsernameValidator';
-
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import { UsernameValidator } from './authentication/UsernameValidator';
     AuthenticationModule,
     StudentModule,
     BrowserAnimationsModule,
-    ProgressbarModule.forRoot()
+    ProgressbarModule.forRoot(),
+    ToastrModule.forRoot()
 
   ],
   providers: [CarousellistComponent,
