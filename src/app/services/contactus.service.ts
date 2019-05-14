@@ -19,4 +19,5 @@ subscriberlist(){
 subscriberDelete(id){
   return this.http.delete(this.util.getDomain()+'api/subscribe/'+id+'/delete/')
 }
+
 }

@@ -1,5 +1,5 @@
 <div class="main-container">
-    <div class="col-md-6 offset-md-3">
+    <div *ngIf="!varified" class="col-md-6 offset-md-3">
         <form [formGroup]="subscribeform" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label>Name</label>
@@ -46,9 +46,8 @@
         <div class="one" [innerHtml]="htmlToAdd"></div>
 
         </div>
-    
+    <h6 *ngIf="varified" >Thanks for Submitting we will get back to you</h6>
     <!-- Subscribe Form-->
-
     
 
     <div class="container" style="position:relative; text-align:left " >

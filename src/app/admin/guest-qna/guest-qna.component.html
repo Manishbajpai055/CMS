@@ -1,34 +1,36 @@
 <div class="footerlable">Add new Question</div>
 <div *ngIf="loading">Uploading Question Please Wait
-        <div class="spinner-border text-muted"></div>
-        </div>
+  <div class="spinner-border text-muted"></div>
+</div>
 <div *ngIf="!loading" class="container">
-                <input  type="text" placeholder="Enter Title" [(ngModel)]="title" id=""><br>
-                <input  type="text"  placeholder="Enter description" [(ngModel)]="desciption" id=""><br>
-                <input  type="input"  type="file" (change)="onFileUpload($event)"><br>
-                <button  type="submit"  class="btn btn-primary" (click)="upload()">Save</button><br>
-                <div  *ngIf="error"> <p class="text-warning .bg-warning" >{{error}}</p></div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" (ngModel)]="ques" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="exampleRadios1">
-                    Question
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" (ngModel)]="Answ" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
-                    Answers
-                  </label>
-                </div>
-                <div class="form-check disabled">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
-                  <label class="form-check-label" for="exampleRadios3">
-                    Notes
-                  </label>
-                </div>
-    </div>
-
-
+  <input type="text" placeholder="Enter Title" [(ngModel)]="title" id=""><br>
+  <input type="text" placeholder="Enter description" [(ngModel)]="desciption" id=""><br>
+  <input type="input" type="file" (change)="onFileUpload($event)"><br>
+  <button type="submit" class="btn btn-primary" (click)="upload()">Save</button><br>
+  <div *ngIf="error">
+    <p class="text-warning .bg-warning">{{error}}</p>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" [(ngModel)]="qna" name="exampleRadios" id="exampleRadios1"
+      value="qna" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      Question
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" [(ngModel)]="qna" name="exampleRadios" id="exampleRadios2"
+      value="answer">
+    <label class="form-check-label" for="exampleRadios2">
+      Answers
+    </label>
+  </div>
+  <div class="form-check disabled">
+    <input class="form-check-input" [(ngModel)]="qna" type="radio" name="exampleRadios" id="exampleRadios3" value="notes">
+    <label class="form-check-label" for="exampleRadios3">
+      Notes
+    </label>
+  </div>
+</div>
 
 
 <table class="table">
@@ -43,13 +45,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let qustion of qustionlist | paginate: { itemsPerPage: 10, currentPage: p }">
-      <th scope="row">{{qustion.id}}</th>
-      <td>{{qustion.title}}</td>
-      <td>{{qustion.desciption}}</td>
-      <td>{{qustion.posted_on}}</td>
-     <td><button class="btn btn-primary" (click)="Edit(qustion.id)">Download</button></td>  
-     <td> <button class="btn btn-primary" (click)="delet(qustion.id,template)">Delete</button></td>
+    <tr *ngFor="let qna of qnalist | paginate: { itemsPerPage: 10, currentPage: p }">
+      <th scope="row">{{qna.id}}</th>
+      <td>{{qna.title}}</td>
+      <td>{{qna.desciption}}</td>
+      <td>{{qna.posted_on}}</td>
+      <td><button class="btn btn-primary" >{{qna.type}}</button></td>
+      <td> <button class="btn btn-primary" (click)="delet(qna.id,template)">Delete</button></td>
     </tr>
   </tbody>
 </table>
@@ -58,9 +60,9 @@
 <!-- Modal -->
 <br><br>
 <ng-template #template>
-<div class="modal-body text-center">
-  <p>Do you want to Delet ?</p>
-  <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
-  <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
-</div>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+  </div>
 </ng-template>

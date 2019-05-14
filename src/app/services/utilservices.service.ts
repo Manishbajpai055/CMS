@@ -24,13 +24,12 @@ export class UtilService {
   }
 
   getDomain() {
-    const apiDomain= isDevMode() ? 'https://shardaias.herokuapp.com/' : 'https://shardaias.herokuapp.com/';
+    const apiDomain= isDevMode() ? 'http://127.0.0.1:8000/' : 'https://shardaias.herokuapp.com/';
     return apiDomain;
   }
 
- 
   download(url): Observable<HttpEvent<any>>{
-      url = url.replace('http://','https://')
+      url = url.replace('http://','http://')
     return this.http.get(url , {
       responseType: "blob", reportProgress: true, observe: "events", headers: new HttpHeaders(
         { 'Content-Type': 'application/json' },

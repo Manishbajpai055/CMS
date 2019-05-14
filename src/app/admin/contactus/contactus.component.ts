@@ -11,6 +11,8 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
   styleUrls: ['./contactus.component.css']
 })
 export class ContactusComponent implements OnInit {
+
+  varified
   headerinfo : any;
   htmlToAdd: string;
 
@@ -24,11 +26,22 @@ export class ContactusComponent implements OnInit {
     if (this.subscribeform.invalid) {
       return;
     }
-    this.Contactus.postSubscriberinfo(this.subscribeform.value)
-    alert('Success :) ')
+    else{
+       this.Contactus.postSubscriberinfo(this.subscribeform.value)
+       localStorage.setItem("varified","true")
+       this.varified= true
+
+   
   }
+}
   ngOnInit() {
     this.refresh()
+    this.varified = localStorage.getItem("varified")
+    if (this.varified == "true") {
+      this.varified= true
+    } else {
+      this.varified = false
+    }
     this.subscribeform = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(100), Validators.pattern("^[A-Z a-z]*$")],],
       email: ['', [Validators.required, Validators.email]],
@@ -36,11 +49,8 @@ export class ContactusComponent implements OnInit {
       description: ['', Validators.required]
     })
 
-
     var d1 = this.elementRef.nativeElement.querySelector('.one');
     d1.insertAdjacentHTML('beforeend', '<div class="two">two</div>');
-
-
       this.htmlToAdd = '<span class="divider">&nbsp;</span>'
 
 }

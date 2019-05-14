@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { CarousellistComponent } from './admin/carousel/carousellist/carousellist.component';
@@ -19,6 +19,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { UsernameValidator } from './authentication/UsernameValidator';
 import { ToastrModule } from 'ngx-toastr';
 import { GuestComponent } from './guest/guest.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -37,7 +38,10 @@ import { GuestComponent } from './guest/guest.component';
     StudentModule,
     BrowserAnimationsModule,
     ProgressbarModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxPaginationModule,
+    ReactiveFormsModule,
+
 
   ],
   providers: [CarousellistComponent,
