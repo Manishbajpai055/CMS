@@ -30,6 +30,7 @@ import { QuestionsComponent } from './admin/Student/questions/questions.componen
 import { AnswerssComponent } from './admin/Student/answerss/answerss.component';
 import { UsersComponent } from './admin/Student/users/users.component';
 import { UserlistComponent } from './admin/Student/users/userlist/userlist.component';
+import { GuestQNAComponent } from './admin/guest-qna/guest-qna.component';
 
 
 const routes: Routes = [
@@ -98,6 +99,10 @@ const routes: Routes = [
        path : 'notes',
        component : NotesComponent
      },
+     {
+      path : 'guest',
+      component : GuestQNAComponent
+    },
      {
       path : 'questions',
       component : QuestionsComponent

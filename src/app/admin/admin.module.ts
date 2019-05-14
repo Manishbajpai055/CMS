@@ -33,6 +33,7 @@ import { NewnotesComponent } from './Student/notes/newnotes/newnotes.component';
 import { NewQuestionComponent } from './Student/questions/new-question/new-question.component';
 import { NewAnswersComponent } from './Student/answerss/new-answers/new-answers.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { GuestQNAComponent } from './guest-qna/guest-qna.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
     NewnotesComponent,
     NewQuestionComponent,
     NewAnswersComponent,
+    GuestQNAComponent,
     ],
   imports: [
     CarouselModule,

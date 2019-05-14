@@ -18,11 +18,13 @@ import { ProgressbarModule } from 'ngx-bootstrap';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { UsernameValidator } from './authentication/UsernameValidator';
 import { ToastrModule } from 'ngx-toastr';
+import { GuestComponent } from './guest/guest.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    GuestComponent,
   ],
   imports: [
     BrowserModule,
