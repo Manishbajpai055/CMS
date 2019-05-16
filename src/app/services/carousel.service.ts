@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpEvent } from '@angular/common/http';
+import { UtilService } from './utilservices.service';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'InterceptorSkipHeader': 'X-Skip-Interceptor'
+  })
+};
+
+@Injectable({
+  providedIn: 'root'
+})  
+export class CarouselService {
+
+
+  constructor(private http:HttpClient,private util:UtilService) { }
+
+  crousellist(){
+    return this.http.get(this.util.getDomain()+'api/carousle/',httpOptions)
+  }
+  carouselupload(data): Observable<HttpEvent<any>> {
+    return this.http.post(this.util.getDomain()+'api/carousle/upload/',data,{ reportProgress: true, observe: "events"})
+  }
+  carouseldelet(id){
+    console.log(id)
+    return this.http.delete(this.util.getDomain()+'api/carousle/'+id+'/')
+  }
+}

@@ -1,0 +1,34 @@
+<app-new-question></app-new-question>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Posted On</th>
+      <td scope="col">View</td>
+      <td scope="col">Delete</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let qustion of qustionlist | paginate: { itemsPerPage: 10, currentPage: p }">
+      <th scope="row">{{qustion.id}}</th>
+      <td>{{qustion.title}}</td>
+      <td>{{qustion.desciption}}</td>
+      <td>{{qustion.posted_on}}</td>
+     <td><button class="btn btn-primary" (click)="Edit(qustion.id)">Download</button></td>  
+     <td> <button class="btn btn-primary" (click)="delet(qustion.id,template)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Modal -->
+<br><br>
+<ng-template #template>
+<div class="modal-body text-center">
+  <p>Do you want to Delet ?</p>
+  <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+  <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+</div>
+</ng-template>

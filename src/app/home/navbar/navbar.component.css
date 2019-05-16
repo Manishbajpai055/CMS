@@ -1,0 +1,17 @@
+.navbar{
+    -webkit-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+        box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+}
+
+
+@media (min-width:990px){
+
+    #auth{
+        position: absolute;
+        
+        left: 90%;
+        
+        
+    }
+}

@@ -1,0 +1,31 @@
+<button style="margin-bottom:1%" class="btn btn-primary" (click)="add_newPost()" >Add New Post</button>
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <td scope="col">Edit</td>
+        <td scope="col">Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let blog of bloglist |async | paginate: { itemsPerPage: 10, currentPage: p }">
+        <th scope="row">{{blog.id}}</th>
+        <td>{{blog.title}}</td>
+       <td><button class="btn btn-primary" (click)="Edit(blog.slug)">Edit</button></td>  
+       <td> <button class="btn btn-primary" (click)="delet(blog.slug,template)" > Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Modal -->
+<br><br>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

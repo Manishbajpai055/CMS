@@ -1,0 +1,34 @@
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <td scope="col">Email </td>
+        <td scope="col">Contact No</td>
+        <td scope="col">Subscribed On  </td>
+        <td scope="col">Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subscriber of subscriberlist | paginate: { itemsPerPage: 10, currentPage: p }">
+        <th scope="row">{{subscriber.id}}</th>
+        <td>{{subscriber.name}}</td>
+        <td>{{subscriber.email}}</td>
+        <td>{{subscriber.phone_no}}</td>
+        <td>{{subscriber.subscribed_on}}</td>
+       <td> <button class="btn btn-primary" (click)="delete(subscriber.id,template)" > Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!-- Modal -->
+<br><br>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to Delet ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>

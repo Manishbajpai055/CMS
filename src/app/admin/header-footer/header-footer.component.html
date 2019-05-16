@@ -1,0 +1,35 @@
+
+<div class="footerlable">Header Deatails</div>
+<div class="header-footer">
+<div class="container">
+<form [formGroup]="headerfooter" (ngSubmit)="onSubmit()" >
+    <label>Contact No :</label>
+    <input formControlName="contact" type="Text" > <br>
+    <label>  Email-Address :</label>
+    <input formControlName="email" type="Text">
+    <label>  facebook :</label>
+    <input formControlName="facebook" type="text" > <br>
+    <label>Twitter:</label>
+    <input formControlName="twitter" type="text" ><br>
+    <label>Instagram :</label>
+    <input formControlName="instagram" type="text" ><br>
+<!-- Heder Info end-->
+
+<!-- CONTCT US START-->
+    <label>Street :</label>
+    <input formControlName="street" type="text" >   <br>
+    <label>City :</label>
+    <input formControlName="city" type="text" >   <br>
+    <label>State :</label>
+    <input formControlName="state" type="text" >   <br>
+    <label>Pincode :</label>
+    <input formControlName="pincode" type="text" >   <br>
+    <label>Country</label>
+    <input formControlName="country" type="text" >   <br>
+    <label>Footer details :</label>
+    <input formControlName="organizationname" type="text" > <br>
+    <button type="submit">Submit</button>
+    <!-- CONTCT US END-->
+</form>
+</div>
+</div>

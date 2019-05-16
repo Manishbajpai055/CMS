@@ -1,0 +1,93 @@
+
+<div *ngIf="qnavarified">
+<h3>Letest QNAS</h3>
+<div  *ngIf="loading"> Downloading Your FIle Please Wait
+    <div class="col-sm-4">
+        <div class="mb-2">
+          <progressbar [value]="progress">{{progress}}%</progressbar>
+        </div>
+      </div>
+  <div  class="spinner-border text-dark"></div>
+  </div>
+  <p *ngIf="errormessege">{{errormessege}}</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col" > Type</th>
+        <th scope="col">Posted on</th>
+        <td scope="col">View</td>
+        <td scope="col">Download</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let qna of qnalist | paginate: { itemsPerPage: 10, currentPage: p }">
+        <th scope="row"></th>
+        <td>{{qna.title}}</td>
+        <td>{{qna.desciption}}</td>
+        <td>{{qna.type}}</td>
+        <td>{{qna.posted_on}}</td>
+       <td><button class="btn btn-primary" (click)="viewAns(qna.qnafile)" >View</button></td>  
+       <td> <button class="btn btn-primary"  (click)="download(qna.qnafile,qna.title)"  >Downoad</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h6 class="modal-title pull-left">Please Enter Your Detail To get The acces Of Test Series</h6>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="!qnavarified" class="col-md-6 offset-md-3">
+      <form [formGroup]="subscribeform" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label>Name</label>
+              <input type="text" formControlName="name" class="form-control" minlength="4" maxlength="100" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">Name is required</div>
+                  <div *ngIf="f.name.errors.minlength">Phone no must be at least 4 characters</div>
+                  <div *ngIf="f.name.errors.maxlength">Phone no cant be more then 100 characters</div>
+                  <div *ngIf="f.name.errors.pattern">Please enter Charecters Only</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Phone No</label>
+              <input type="text" formControlName="phone_no" class="form-control" minlength="10" maxlength="10"
+                  [ngClass]="{ 'is-invalid': submitted && f.phone_no.errors }" />
+              <div *ngIf="submitted && f.phone_no.errors" class="invalid-feedback">
+                  <div *ngIf="f.phone_no.errors.required">Phone no is required</div>
+                  <div *ngIf="f.phone_no.errors.minlength">Phone no must be at least 10 characters</div>
+                  <div *ngIf="f.phone_no.errors.maxlength">Phone no cant be more then 10 characters</div>
+                  <div *ngIf="f.phone_no.errors.pattern">Please enter Numbers Only</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Email</label>
+              <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Description</label>
+              <textarea type="description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+              <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                  <div *ngIf="f.description.errors.required">description is required</div>
+                  <div *ngIf="f.description.errors.minlength">Description must be at least 6 characters</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <button class="btn btn-primary">Register</button>
+          </div>
+      </form>
+      </div>
+  </div>
+</ng-template>
