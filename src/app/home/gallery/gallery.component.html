@@ -24,16 +24,23 @@
 -->
 
 <div class="container gallery-container">
-  <p class="page-description text-center">Gallery s</p>
+  <p class="page-description text-center">Gallery </p>
   <div class="tz-gallery">
-      <div class="row">
-          <div *ngFor="let slide of sliderArray" class="col-sm-6 col-md-4">
-              <a class="lightbox" href="{{slide.image}}">
-                  <img src="{{slide.image}}" alt="Park">
-              </a>
-          </div>
+    <div class="row">
+      <div *ngFor="let slide of sliderArray" class="col-sm-6 col-md-4">
+        <div (click)="openModal(template)" class="lightbox">
+          <img src="{{slide.image}}" alt="Park">
+          <ng-template #template>
+            <div class="modal-header">
+              <div class="col-sm-6 preview">
+                <img src="{{slide.image}}" alt="Park">
+              </div>
+              <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              </button>
+            </div>
+          </ng-template>
+        </div>
       </div>
-
+    </div>
   </div>
-
 </div>

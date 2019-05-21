@@ -95,7 +95,7 @@ export class GuestComponent implements OnInit {
   },(err: any) => {
     this.loading=false
     this.progress = 0
-    this.errormessege = "Check YOu Netwrok Connnection"
+    this.errormessege = "Check You Network Connection"
   });
   }
 }

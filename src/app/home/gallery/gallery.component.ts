@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { GalleryserviceService } from 'src/app/services/galleryservice.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-gallery',
@@ -9,7 +10,8 @@ import { GalleryserviceService } from 'src/app/services/galleryservice.service';
 export class GalleryComponent implements OnInit {
   sliderArray ;
   index 
-  constructor(private galleryservice:GalleryserviceService,) { 
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService,private galleryservice:GalleryserviceService,) { 
   }
 
   ngOnInit() {
@@ -21,4 +23,7 @@ export class GalleryComponent implements OnInit {
     })
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 }

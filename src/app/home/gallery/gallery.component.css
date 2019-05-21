@@ -5,6 +5,23 @@
 }
 
 }
+.col-sm-6.preview{
+    height: 100%;
+    width: 100%;
+}
+.modal-header {
+    display: -ms-flexbox;
+    height: 0;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding:0;
+    border-bottom: 0px solid #dee2e600;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
 
 body {
     background-image: linear-gradient(to top, #ecedee 0%, #eceeef 75%, #e7e8e9 100%);
@@ -74,5 +91,8 @@ body {
 
     .container.gallery-container {
         border-radius: 0;
+    }
+    img{
+        width: 100%;
     }
 }

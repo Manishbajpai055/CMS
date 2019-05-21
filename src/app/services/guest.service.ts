@@ -9,12 +9,12 @@ export class GuestService {
 
   constructor(private http:HttpClient,private util:UtilService) { }
   creatguestquestions(data){
-    return this.http.post(this.util.getDomain()+'api/students/qna/create/',data)
+    return this.http.post('https://shardaias.herokuapp.com/api/students/qna/create/',data)
   }
   guestqnaList(){
-    return this.http.get(this.util.getDomain()+'api/students/qna/',)
+    return this.http.get('https://shardaias.herokuapp.com/api/students/qna/',)
    }
    guestqnadelete(id){
-     return this.http.delete(this.util.getDomain()+'api/students/qna/'+id+'/delete/')
+     return this.http.delete('https://shardaias.herokuapp.com/api/students/qna/'+id+'/delete/')
    }
 }

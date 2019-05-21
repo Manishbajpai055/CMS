@@ -40,12 +40,12 @@ textarea{
     min-height: 90px;
 }
 button{
-    background-color: #3f51b5;
+    background-color: #007bff;
     border: white;
 }
 
 button:hover, button.btn:active,button:visited,button:focus {
-    background: #263dc0;
+    background: #007bff;
     border-color: black; 
 
     
@@ -64,7 +64,7 @@ color: aliceblue;
 }
 
 .main-container{
-    background-color: #3f51b5;
+    background-color: #007bff;
     color: aliceblue;
     
     
@@ -83,7 +83,7 @@ color: aliceblue;
         position: relative;
         bottom: 100px;
       }
-        .one{
+        .divider{
             text-align : center;
             background-color: #f5fff8;
             margin-left: 25%;;
