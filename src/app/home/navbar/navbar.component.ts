@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   pagelist
+  username = 's'
+  loged_in:Boolean
+  admin 
+  student = false
   constructor(private list:PageserviceService,private router:Router) { }
 
   ngOnInit() {
@@ -20,6 +24,18 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['page',slug]);
   }
   refresh(){
+    if (localStorage.getItem('token')) {
+      this.loged_in = true
+      this.username = localStorage.getItem('user')
+        if (localStorage.getItem('role') === 'admin') {
+          this.admin=true
+          this.student=false
+        } else {
+          this.student=true
+          this.admin = false
+        }
+
+    }
     this.list.pagelist().subscribe(
       data => {
         this.pagelist = data;

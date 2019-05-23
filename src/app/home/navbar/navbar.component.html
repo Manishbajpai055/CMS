@@ -6,30 +6,44 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+      <li [routerLinkActive]="['active']" class="nav-item active">
+        <a class="nav-link"  [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/blog']">Blogs</a>
       </li>
-      <li class="nav-item">
+      <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
-      <li class="nav-item">
+      <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/gallery']">Gallery</a>
       </li>
-      <li class="nav-item" *ngFor="let page of pagelist" >
+      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist" >
         <a class="nav-link" [routerLink]="['/page',page.slug]" >{{page.menu_name}}</a>
         <!--(click)="openPage(page.slug)-->
       </li>
   
-      <li class="nav-item">
+      <li  [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link" id="guest" [routerLink]="['/notes']">Notes</a>
+      </li>
+
+      <li *ngIf="!loged_in" [routerLinkActive]="['active']" class="nav-item">
           <a class="nav-link" id="auth" [routerLink]="['/auth']">Login</a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" id="guest" [routerLink]="['/notes']">Notes</a>
+        <li *ngIf="loged_in" id="auth" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            hey {{username}}
+          </a>
+          <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li  class="dropdown-item"   [routerLinkActive]="['active']" class="nav-item">
+                <a  *ngIf="admin" class="nav-link" [routerLink]="['/admin']">Dashboard</a>
+              <a  *ngIf="student" class="nav-link" [routerLink]="['/student']">Dashboard</a>
+              <a class="nav-link" [routerLink]="['/auth']">logout</a>
+            </li>
+          </div>
         </li>
+      
+        
 
     </ul>
     

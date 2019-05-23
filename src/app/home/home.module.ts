@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './page/page.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { trigger, transition, group, query, style, animate, animateChild } from '@angular/animations';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ReactiveFormsModule,
     BlogModule,
     NgxSummernoteModule,
+    
     
   ],
   exports: [ContactusComponent, 

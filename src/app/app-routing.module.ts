@@ -32,7 +32,14 @@ import { UsersComponent } from './admin/Student/users/users.component';
 import { UserlistComponent } from './admin/Student/users/userlist/userlist.component';
 import { GuestQNAComponent } from './admin/guest-qna/guest-qna.component';
 import { GuestComponent } from './guest/guest.component';
-
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 const routes: Routes = [
   {
