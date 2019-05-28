@@ -41,7 +41,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ToastrModule.forRoot(),
     NgxPaginationModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
 
 
   ],

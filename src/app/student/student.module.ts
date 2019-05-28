@@ -11,6 +11,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NewstudentComponent } from './newstudent/newstudent.component';
 import { StudentlistComponent } from './newstudent/studentlist/studentlist.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent, NewstudentComponent, StudentlistComponent],
@@ -18,7 +19,8 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
     CommonModule,
     RouterModule,
     NgxPaginationModule,
-    ProgressbarModule
+    ProgressbarModule,
+    PdfViewerModule
   ]
 })
 export class StudentModule { }
