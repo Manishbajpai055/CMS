@@ -1,19 +1,28 @@
 
 
+
+.card{
+    border-color: #007bff;
+    margin-top: 4%;
+    -webkit-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+    box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+}
+
+::placeholder {
+    color: whitesmoke;
+}
 @media screen and (min-device-width: 0px) and (max-device-width: 2180px){
 
-    .container{
-        display : ruby;
-        padding: 0%;
-         
     
-    }
+
     .carousel{
-        background-color: #3f51b5;
+        background-color: #007bff;
         width: 100%;
+        border-radius: 11px 11px 11px 11px;
         }
     button{
-        background-color: #3f51b5;
+        background-color: #007bff;
         border-radius: 0px 15%;
         border-color: aliceblue;
         display: inline;
@@ -24,7 +33,7 @@
         
     }
     input{
-        background-color: #3f51b5;
+        background-color: #007bff;
         display: inline;
         margin-left: 0%;
         margin: 1%;

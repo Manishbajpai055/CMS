@@ -1,7 +1,10 @@
 <div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div style="margin-right:4%;margin-left: 4%;align-content: center">
 
   <div *ngIf="loading!=true" class="carousel">
-      <label> Uploade Pictures for updating Gallery</label>
+      <label> &nbsp; Upload Pictures for updating Gallery</label>
 
           <input class="input" type="text" placeholder="Enter Title" [(ngModel)]="title" id="">
           <input class="input" type="text"  placeholder="Enter description" [(ngModel)]="description" id="">
@@ -9,7 +12,7 @@
           <button  type="submit" class="btn btn-success" (click)="upload()">Upload</button>
           <div  *ngIf="error"> <p class="text-warning .bg-warning" >{{error}}</p></div>
   </div>
-  <div  *ngIf="loading"> Uploading Your FIle Please Wait
+  <div  *ngIf="loading"> Uploading Your File Please Wait
       <div class="col-sm-4">
           <div class="mb-2">
             <progressbar [value]="progress">{{progress}}%</progressbar>
@@ -23,3 +26,7 @@
 <br>
 <br>
 <app-gallerylist  *ngIf="loading!=true" ></app-gallerylist>
+
+</div>
+</div>
+</div>

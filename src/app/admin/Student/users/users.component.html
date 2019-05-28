@@ -1,3 +1,7 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div style="margin-right:4%;margin-left: 4%;align-content: center">
 <div *ngIf="useradd">
   <app-userlist></app-userlist>
 </div>
@@ -24,9 +28,11 @@
   </table>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
+  </div>
+  </div>
+  </div>
 <!-- Modal -->
 <br><br>
-<pre class="card card-block card-header">{{message}}</pre>
 <ng-template #template>
   <div class="modal-body text-center">
     <p>Do you want to Delet ?</p>
@@ -35,3 +41,4 @@
   </div>
 </ng-template>
 </div>
+

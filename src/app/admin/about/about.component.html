@@ -1,13 +1,18 @@
-
-<form [formGroup]="AboutForm" (ngSubmit)="onSubmit()">
-  <label>SiteName:</label>
-  <input type="text" formControlName="sitename" placeholder="Your WebSite Name" id=""><br>
-  <label>siteDescription:</label>
-  <input type="text" formControlName="siteDescription" placeholder="Your WebSite Slogan" id=""><br>
-  <label>Site Auther Name</label>
-  <input type="text" formControlName="siteAuther" placeholder="Your WebSite Auther name" id=""><br>
-  <div  formControlName="siteAbout" [ngxSummernote]="config"  ></div>
-  <input type="submit" value="submit">
-</form>   
-
-
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div style="margin-right:4%;margin-left: 4%;align-content: center">
+                <form [formGroup]="AboutForm" (ngSubmit)="onSubmit()">
+                  <label>SiteName:</label>
+                  <input type="text" formControlName="sitename" placeholder="Your WebSite Name" id=""><br>
+                  <label>siteDescription:</label>
+                  <input type="text" formControlName="siteDescription" placeholder="Your WebSite Slogan" id=""><br>
+                  <label>Site Auther Name</label>
+                  <input type="text" formControlName="siteAuther" placeholder="Your WebSite Auther name" id=""><br>
+                  <div  formControlName="siteAbout" [ngxSummernote]="config"  ></div>
+                  <input type="submit" value="submit">
+                </form>   
+              </div>
+          </div>
+        </div>
+      </div>

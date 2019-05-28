@@ -22,12 +22,14 @@ import { GuestComponent } from './guest/guest.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     GuestComponent,
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

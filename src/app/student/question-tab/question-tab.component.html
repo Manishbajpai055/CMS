@@ -25,7 +25,21 @@
       <td>{{question.title}}</td>
       <td>{{question.desciption}}</td>
       <td>{{question.posted_on}}</td>
-     <td><button class="btn btn-primary" (click)="viewQues(question.qustion)" >View</button></td>  
+      <button type="button" class="btn btn-primary" (click)="openModal(template)">View</button>
+ 
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <ngx-extended-pdf-viewer src="https://docs.google.com/viewerng/viewer?url=http://shardaias.herokuapp.com/media/public/files/Answers/2019/05/14/BACHELOR-OF-COMP.-APPLICATION-B.C.A._ohn7htje9d19e82ffbb_VBeoQHk.pdf" height="75vh" delayFirstView="250" useBrowserLocale="true"></ngx-extended-pdf-viewer> 
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
      <td> <button class="btn btn-primary" (click)="download(question.qustion,question.title)"  >Downoad</button></td>
     </tr>
   </tbody>
