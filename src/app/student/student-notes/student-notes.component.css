@@ -1,0 +1,19 @@
+.modal-header {
+    display: -ms-flexbox;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding:0;
+    border-bottom: 0px solid #dee2e600;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+pdf-viewer{
+    width: 700px;;
+}

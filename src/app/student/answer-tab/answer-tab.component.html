@@ -25,9 +25,24 @@
         <td>{{answer.title}}</td>
         <td>{{answer.desciption}}</td>
         <td>{{answer.posted_on}}</td>
-       <td><button class="btn btn-primary" (click)="viewAns(answer.answer)" >View</button></td>  
+       <td><button class="btn btn-primary" (click)="openModal(template,answer.answer)" >View</button></td>  
        <td> <button class="btn btn-primary"  (click)="download(answer.answer,answer.title)"  >Downoad</button></td>
       </tr>
     </tbody>
   </table>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+  
+  
+  <ng-template style="width:1000%" #template>
+    <div  class="modal-header">
+      <h4 class="modal-title pull-left">Viwer</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div style="width:100%" class="modal-body">
+      <pdf-viewer [src]="src" [autoresize]="true" [fit-to-page]="true" [render-text]="true" >
+      </pdf-viewer>
+    </div>
+  </ng-template>

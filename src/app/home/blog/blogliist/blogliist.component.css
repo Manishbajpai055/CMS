@@ -1,3 +1,7 @@
+img{
+    width: 100px;
+    height: 100px;;
+}
 .row{
 width: 100%;
 margin-left: 0;
@@ -13,3 +17,5 @@ margin-right: 0;
     -moz-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
     box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
 }
+
+

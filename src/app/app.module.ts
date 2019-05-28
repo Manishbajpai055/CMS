@@ -22,17 +22,21 @@ import { GuestComponent } from './guest/guest.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { BlogsummeryComponent } from './home/blog/blogsummery/blogsummery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GuestComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     HomeModule,
+    PdfViewerModule,
     AdminModule,
     FormsModule,
     AuthenticationModule,

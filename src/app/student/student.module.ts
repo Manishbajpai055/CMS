@@ -12,15 +12,21 @@ import { NewstudentComponent } from './newstudent/newstudent.component';
 import { StudentlistComponent } from './newstudent/studentlist/studentlist.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PdfviewerComponent } from './pdfviewer/pdfviewer.component';
 
 @NgModule({
-  declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent, NewstudentComponent, StudentlistComponent],
+  declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent, NewstudentComponent, StudentlistComponent, PdfviewerComponent],
   imports: [
     CommonModule,
     RouterModule,
     NgxPaginationModule,
     NgxExtendedPdfViewerModule,
-    ProgressbarModule
+    ProgressbarModule,
+    PdfViewerModule,
+    ModalModule.forRoot(),
+
   ]
 })
 export class StudentModule { }

@@ -1,11 +1,13 @@
 <div class="row">
-    <div *ngFor="let blog of bloglist" class="col-sm-6">
+    <div *ngFor="let blog of bloglist | paginate: { itemsPerPage: 10, currentPage: p }" class="col-sm-6">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{blog.title}}</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a (click)="ViewDetail(blog.slug)" class="btn btn-primary">Read</a>
+          <app-blogsummery [content]="blog.content"></app-blogsummery>
+           <a (click)="ViewDetail(blog.slug)" class="btn btn-primary">Read</a>
         </div>
       </div>
    </div>
+   <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 </div>

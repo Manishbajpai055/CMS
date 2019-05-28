@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BlogliistComponent implements OnInit {
   bloglist
+  p : any
   constructor(private list: BlogService,private router:Router) { }
 
   ngOnInit() {

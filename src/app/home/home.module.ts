@@ -18,12 +18,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './page/page.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
 
 
 @NgModule({
   declarations: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
-     HeaderComponent, FooterComponent, PageComponent, GalleryComponent, ContactUsComponent],
+     HeaderComponent, FooterComponent, PageComponent, GalleryComponent, ContactUsComponent,BlogsummeryComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -31,6 +33,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ReactiveFormsModule,
     BlogModule,
     NgxSummernoteModule,
+    NgxPaginationModule
     
   ],
   exports: [ContactusComponent, 

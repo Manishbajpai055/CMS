@@ -5,6 +5,7 @@ import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { RouterModule } from '@angular/router';
 import { BlogliistComponent } from './blogliist/blogliist.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -12,7 +13,9 @@ import { NgxSummernoteModule, } from 'ngx-summernote';
   imports: [
     CommonModule,
     RouterModule,
-    NgxSummernoteModule
+    NgxSummernoteModule,
+    NgxPaginationModule
+    
   ]
 })
 export class BlogModule { }

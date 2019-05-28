@@ -14,7 +14,7 @@ export class BlogeditorComponent implements OnInit {
   submitted
   config = {
     height: '200px',
-    uploadImagePath: this.util.getDomain()+'/blog/images/upload/',
+    uploadImagePath: this.util.getDomain()+'blog/images/upload/',
     placeholder: 'Enter Text Here',
   };
   loading
