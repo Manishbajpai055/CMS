@@ -1,0 +1,60 @@
+
+.card{
+    border-color: #007bff;
+    margin-top: 4%;
+    -webkit-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+    box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+}
+
+.title{
+color: #007bff;
+text-align: center;
+}
+@media screen and (min-device-width: 0px) and (max-device-width: 2180px){
+    
+    .carousel{
+        background-color: #007bff;
+        width: 100%;
+        border-radius: 11px 11px 11px 11px;
+        }
+    button{
+        background-color: #007bff;
+        border-radius: 11px 11px 11px 11px;
+        border-color: aliceblue;
+        display: inline;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+    ::placeholder{
+        color: wheat;
+    }
+    input{
+        margin: 1%;
+        background-color: #007bff;
+        color: wheat;
+        display: inline;
+        border-color: aliceblue;
+    }
+    label{
+        position: relative;
+        left :  3%;
+        color: white;
+    }
+
+}
+
+.input{
+    color: aliceblue;
+    padding: 0 4px 4px 4px;
+    border-color: white;
+    border-radius: 0px 10px;  
+}
+
+input:hover{
+    border-radius: 2px 2px;
+        border-color: aliceblue;
+    background-color: #404249;
+    
+}

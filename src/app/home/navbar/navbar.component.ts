@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
   constructor(private list:PageserviceService,private router:Router,private sitemetdata:AboutService) { }
 
   ngOnInit() {
-    
     this.refresh()
   }
   openPage(slug){
@@ -28,6 +27,7 @@ export class NavbarComponent implements OnInit {
   }
   refresh(){
     this.sitemetdata.About().subscribe(res =>{
+      console.log('header',res['sitename'])
       this.sitename = res['sitename']
     })
     if (localStorage.getItem('token')) {

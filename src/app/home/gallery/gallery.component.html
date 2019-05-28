@@ -29,11 +29,11 @@
     <div class="row">
       <div *ngFor="let slide of sliderArray" class="col-sm-6 col-md-4">
         <div (click)="openModal(template)" class="lightbox">
-          <img src="{{slide.image}}" alt="Park">
+          <img src="{{slide.image}}" alt="image">
           <ng-template #template>
             <div class="modal-header">
               <div class="col-sm-6 preview">
-                <img src="{{slide.image}}" alt="Park">
+                <img src="{{slide.image}}" alt="image">
               </div>
               <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
               </button>

@@ -20,6 +20,7 @@ import { UsernameValidator } from './authentication/UsernameValidator';
 import { ToastrModule } from 'ngx-toastr';
 import { GuestComponent } from './guest/guest.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 
 @NgModule({
@@ -41,8 +42,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ToastrModule.forRoot(),
     NgxPaginationModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    
+    LoadingBarHttpClientModule,
 
 
   ],

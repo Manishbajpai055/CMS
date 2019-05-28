@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UtilService } from './utilservices.service';
-import { Options } from 'selenium-webdriver/edge';
-import { utils } from 'protractor';
 const httpOptions = {
   headers: new HttpHeaders({
     'InterceptorSkipHeader': 'X-Skip-Interceptor'

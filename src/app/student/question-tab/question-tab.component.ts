@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { QustionServiceService } from 'src/app/services/student/qustion-service.service';
 import { UtilService } from 'src/app/services/utilservices.service';
 import { FileSaverService } from 'ngx-filesaver';
 import { HttpEventType } from '@angular/common/http';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-question-tab',
@@ -18,7 +19,8 @@ export class QuestionTabComponent implements OnInit {
   loading = false
   errormessege: string
   downloading
-  constructor(private qustionservice:QustionServiceService,private util:UtilService,private fileservice: FileSaverService) { }
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService, private qustionservice:QustionServiceService,private util:UtilService,private fileservice: FileSaverService) { }
   
   ngOnInit() {
     this.qustionservice.qustionsList().subscribe(res=>{
@@ -26,6 +28,9 @@ export class QuestionTabComponent implements OnInit {
     })
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
   viewQues(url){
     var newurl = this.Quesurl+url
     window.open(newurl)

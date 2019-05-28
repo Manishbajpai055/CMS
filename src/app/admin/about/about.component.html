@@ -1,16 +1,21 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div style="margin-right:4%;margin-left: 4%;align-content: center">
+        <label style="display: inline">Site Logo</label> <img width="200" height="100" src="{{selecetdFile}}">
+        <br> <input type="input" class="btn btn-success" type="file" (change)="onFileUpload($event)">
+        <form [formGroup]="AboutForm" (ngSubmit)="onSubmit()">
+          <label>SiteName:</label>
+          <input type="text" formControlName="sitename" placeholder="Your WebSite Name" id=""><br>
+          <label>siteDescription:</label>
+          <input type="text" formControlName="siteDescription" placeholder="Your WebSite Slogan" id=""><br>
+          <label>Site Auther Name</label>
+          <input type="text" formControlName="siteAuther" placeholder="Your WebSite Auther name" id=""><br>
 
- <div style="align-content: center">
-    <label style="display: inline">Site Logo</label>  <img width="200" height="100" src="{{selecetdFile}}">
-<br>  <input  type="input" class="btn btn-success" type="file" (change)="onFileUpload($event)">
-<form [formGroup]="AboutForm" (ngSubmit)="onSubmit()">
-  <label>SiteName:</label>
-  <input type="text" formControlName="sitename" placeholder="Your WebSite Name" id=""><br>
-  <label>siteDescription:</label>
-  <input type="text" formControlName="siteDescription" placeholder="Your WebSite Slogan" id=""><br>
-  <label>Site Auther Name</label>
-  <input type="text" formControlName="siteAuther" placeholder="Your WebSite Auther name" id=""><br>
- 
-  <div  formControlName="siteAbout" [ngxSummernote]="config"  ></div>
-  <button  type="submit" class="btn btn-success" (click)="upload()">Upload</button>
-</form>   
+          <div formControlName="siteAbout" [ngxSummernote]="config"></div>
+          <button type="submit" class="btn btn-success" (click)="upload()">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

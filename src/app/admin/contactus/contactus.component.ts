@@ -3,7 +3,6 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,11 +13,10 @@ import { Router } from '@angular/router';
 export class ContactusComponent implements OnInit {
 
   varified
-  active
   headerinfo : any;
   htmlToAdd: string;
 
-  constructor(private router: Router,private elementRef: ElementRef, private headerfooterservice: HeaderFooterService, private Contactus: ContactusService, private formBuilder: FormBuilder) { }
+  constructor(private elementRef: ElementRef, private headerfooterservice: HeaderFooterService, private Contactus: ContactusService, private formBuilder: FormBuilder) { }
   subscribeform: FormGroup
   submitted = false;
 
@@ -37,7 +35,6 @@ export class ContactusComponent implements OnInit {
   }
 }
   ngOnInit() {
-  
     this.refresh()
     this.varified = localStorage.getItem("varified")
     if (this.varified == "true") {

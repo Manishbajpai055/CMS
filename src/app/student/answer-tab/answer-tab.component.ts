@@ -12,9 +12,7 @@ import { FileSaverService } from 'ngx-filesaver';
 })
 export class AnswerTabComponent implements OnInit {
   answerlist 
-  view
   Ansurl  = "https://docs.google.com/viewerng/viewer?url="
-  src
   errormessege: string;
   downloading: boolean;
   constructor(private answerservice:AnswersServiceService,private util:UtilService,private fileservice:FileSaverService ) { }
@@ -28,8 +26,8 @@ export class AnswerTabComponent implements OnInit {
   }
 
   viewAns(url){
-   this.view = true
-   this.src = url
+    var newurl = this.Ansurl+url
+    window.open(newurl)
   }
   download(url,filename){
     this.loading=true
