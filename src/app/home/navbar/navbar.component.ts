@@ -11,7 +11,7 @@ import { AboutService } from 'src/app/services/about.service';
 })
 export class NavbarComponent implements OnInit {
   pagelist
-  sitename
+  siteLogo
   username = 's'
   loged_in:Boolean
   admin 
@@ -27,8 +27,8 @@ export class NavbarComponent implements OnInit {
   }
   refresh(){
     this.sitemetdata.About().subscribe(res =>{
-      console.log('header',res['sitename'])
-      this.sitename = res['sitename']
+      console.log('header',res['siteLogo'])
+      this.siteLogo = res['siteLogo']
     })
     if (localStorage.getItem('token')) {
       this.loged_in = true

@@ -6,3 +6,10 @@
     -moz-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
     box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
 }
+.card-body{
+    position: relative;
+    left: 0;
+    right: 0;
+    padding-left: 0;
+
+}

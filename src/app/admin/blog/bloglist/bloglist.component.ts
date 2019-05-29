@@ -13,7 +13,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class BloglistComponent implements OnInit, OnDestroy {
   bloglist;
-  slug=''
+  slug='' 
   modalRef: BsModalRef;
   p
   constructor(private list: BlogService , private router: Router, private rout: ActivatedRoute, private adminblog: AdminBlogComponent,private modalService: BsModalService) { }
