@@ -1,7 +1,6 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BlogService } from './../../../services/blog.service'
-import * as marked from 'marked';
 
 @Component({
   selector: 'app-blogdetail',

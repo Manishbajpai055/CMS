@@ -4,8 +4,6 @@ import { UserserviceService } from 'src/app/services/users/userservice.service';
 import { UsersComponent } from '../users.component';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { UsernameValidator } from 'src/app/authentication/UsernameValidator';
-import { validate } from 'graphql';
-import { count } from 'rxjs/operators';
 
 @Component({
   selector: 'app-userlist',
