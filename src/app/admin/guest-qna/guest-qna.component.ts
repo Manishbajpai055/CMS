@@ -20,7 +20,6 @@ export class GuestQNAComponent implements OnInit {
   modalRef: BsModalRef;
   p:number
   constructor(private qnaservice: GuestService,private modalService: BsModalService) { }
-
   ngOnInit() {
     this.refresh()
   }
@@ -83,6 +82,4 @@ export class GuestQNAComponent implements OnInit {
   decline(): void {
     this.modalRef.hide();
   }
-
-
 }
