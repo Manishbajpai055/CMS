@@ -20,6 +20,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
     ReactiveFormsModule,
     BlogModule,
     NgxSummernoteModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ShareButtonsModule.forRoot()
+
     
   ],
   exports: [ContactusComponent, 

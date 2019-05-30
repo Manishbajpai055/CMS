@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { BlogliistComponent } from './blogliist/blogliist.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     RouterModule,
     NgxSummernoteModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ShareButtonsModule
     
   ]
 })

@@ -10,8 +10,7 @@ import {BlogService } from './../../../services/blog.service'
 export class BlogdetailComponent implements OnInit {
   blodetail
   slug 
-  constructor(private route:ActivatedRoute, private detail:BlogService,private elementRef: ElementRef,
-    private renderer: Renderer2) {
+  constructor(private route:ActivatedRoute, private detail:BlogService,) {
    }
 
   ngOnInit() {
