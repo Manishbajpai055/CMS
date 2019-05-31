@@ -24,7 +24,7 @@ export class UtilService {
   }
 
   getDomain() {
-    const apiDomain= isDevMode() ? 'http://127.0.0.1:8000/' : 'https://shardaias.herokuapp.com/';
+    const apiDomain= isDevMode() ? 'https://shardaias.herokuapp.com/' : 'https://shardaias.herokuapp.com/';
     return apiDomain;
   }
 

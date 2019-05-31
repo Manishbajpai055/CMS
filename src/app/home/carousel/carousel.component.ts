@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CarouselService  } from './../../services/carousel.service'
 import { ViewEncapsulation } from '@angular/compiler/src/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 
 
 
@@ -12,9 +13,15 @@ import { ViewEncapsulation } from '@angular/compiler/src/core';
 })
 export class CarouselComponent implements OnInit {
   sliderArray ;
+  modalRef: BsModalRef;
   index 
-  constructor(private carousel:CarouselService,) { 
+  constructor(private modalService: BsModalService,private carousel:CarouselService,) { 
   }
+
+    openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+    }
+
 
   ngOnInit() {
     

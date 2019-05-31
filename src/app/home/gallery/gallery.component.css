@@ -5,12 +5,18 @@
 }
 
 }
-.col-sm-6.preview{
-    height: 100%;
-    width: 100%;
+
+.preview{
+    height: 200px;
+    width: 300px;
+    
 }
+
 .lightbox{
     cursor:grab;
+}
+.model-open{
+    left: 0;
 }
 .modal-header {
     display: -ms-flexbox;
@@ -21,7 +27,9 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding:0;
-    border-bottom: 0px solid #dee2e600;
+    left: 0;
+    float: left;
+    border-bottom: 0px solid #ffffff00;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
 }
