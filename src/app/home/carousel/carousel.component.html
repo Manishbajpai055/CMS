@@ -4,11 +4,24 @@
       <li data-target="#carouselExampleCaptions" *ngFor="let slide of sliderArray;let k = index" [attr.data-slide-to]="k" class="active"></li>
     </ol>
     <div class="carousel-inner">
-      <div *ngFor="let slide of sliderArray;let i = index"  [ngClass]="{ active: i===0}" class="carousel-item active ">
+      <div *ngFor="let slide of sliderArray;let i = index"  [ngClass]="{ active: i===0}" class="carousel-item active">
         <img src="{{slide.image}}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{slide.title}}{{i}}</h5>
-          <p>{{slide.description}}{{i}}</p>
+        <div class="carousel-caption d-md-block">
+            <a type="button" class="btn btn-primary" (click)="openModal(template)">{{i+1}} : {{slide.title}}</a>
+     
+            <ng-template #template>
+              <div class="modal-header">
+                <h6 class="modal-title pull-left">News Details : {{slide.title}}</h6>
+                <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img class="col-sm-6 col-md-12" src="{{slide.image}}">
+               <h4 style="padding-top: 20px;">   {{slide.description}} </h4>
+              </div>
+            </ng-template>
+          <p>{{slide.description}}</p>
         </div>
       </div>
         </div>

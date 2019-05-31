@@ -4,8 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
-import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { CarousellistComponent } from './admin/carousel/carousellist/carousellist.component';
 import { UtilService } from './services/utilservices.service';
@@ -21,9 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { GuestComponent } from './guest/guest.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { BlogsummeryComponent } from './home/blog/blogsummery/blogsummery.component';
 
 @NgModule({
   declarations: [
