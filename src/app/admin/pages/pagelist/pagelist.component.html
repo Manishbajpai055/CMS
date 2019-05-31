@@ -1,8 +1,9 @@
-<button class="btn btn-primary" (click)="add_newPage()" >Add New Post</button>
+<button class="btn btn-primary" (click)="add_newPage()" >Add New Page</button>
 <br>
 <br>
 <br>
-<table class="table">
+<div class="table-responsive">
+<table class="table table-active">
     <thead>
       <tr>
         <th scope="col">Title</th>
@@ -18,6 +19,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
   <!-- Modal -->

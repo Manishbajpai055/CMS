@@ -8,7 +8,9 @@
 <div  *ngIf="userlist">
 <button style="margin-bottom:1%" class="btn btn-primary" (click)="add_newUser()" >Add New User</button>
 <br>
-<table class="table">
+
+<div class="table-responsive">
+  <table class="table table-active">
     <thead>
       <tr>
         <th scope="col">Student name</th>
@@ -26,6 +28,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
   </div>
