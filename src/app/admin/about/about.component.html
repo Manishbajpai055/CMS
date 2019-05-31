@@ -1,8 +1,9 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
+        <p *ngIf="massage" class="alert alert-success" >{{massage}}</p>
       <div style="margin-right:4%;margin-left: 4%;align-content: center">
-        <label style="display: inline">Site Logo : </label> <img width="200" height="100" src="{{selecetdFile}}">
+        <label style="display: inline">Site Logo : </label> <img width="200" height="100" src="{{imgURL}}">
         <br>
         <br> 
         <input type="input" class="btn btn-success" type="file" (change)="onFileUpload($event)">
@@ -15,6 +16,7 @@
           <input type="text" formControlName="siteAuther" placeholder="Your WebSite Auther name" id=""><br>
 
           <div formControlName="siteAbout" [ngxSummernote]="config"></div>
+          <div *ngIf="loading" class="spinner-border text-dark"></div>
           <button type="submit" class="btn btn-success" (click)="upload()">Upload</button>
         </form>
       </div>
