@@ -6,8 +6,12 @@ import { RouterModule } from '@angular/router';
 import { BlogliistComponent } from './blogliist/blogliist.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ShareButtonsModule } from 'ngx-sharebuttons';
+import { ShareButtonsModule,ShareButtonsOptions } from 'ngx-sharebuttons';
+const options: ShareButtonsOptions = {
 
+  theme: 'modern-light',
+  gaTracking: true,
+}
 
 @NgModule({
   declarations: [BlogdetailComponent,BlogComponent,],
@@ -16,8 +20,8 @@ import { ShareButtonsModule } from 'ngx-sharebuttons';
     RouterModule,
     NgxSummernoteModule,
     NgxPaginationModule,
-    ShareButtonsModule
-    
+    ShareButtonsModule.forRoot(options)
+
   ]
 })
 export class BlogModule { }

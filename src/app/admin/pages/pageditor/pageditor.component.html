@@ -2,7 +2,7 @@
 <button class="btn btn-primary" (click)="goback()">Go back To list</button>
 <p *ngIf="erromassage">{{erromassage}}</p>
 <br>
-<div *ngIf="this.adminpage.isupdateeditoractive">
+<div *ngIf="active">
     <P>URL {{base}}#/page/{{slug}}</P>
     <a [routerLink]="['/page',slug]">View Page</a>
 </div>

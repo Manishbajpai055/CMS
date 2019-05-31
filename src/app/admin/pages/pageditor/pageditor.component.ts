@@ -17,6 +17,7 @@ export class PageditorComponent implements OnInit {
   marked
   slug
   base
+  active
   constructor(private newpage:PageserviceService,private adminpage:PagesComponent ,private fb: FormBuilder,private formBuilder: FormBuilder,private uti:UtilService ) { }
 
   ngOnInit() {
@@ -37,6 +38,7 @@ export class PageditorComponent implements OnInit {
         this.NewPost.get('menu_name').setValue(res['menu_name'])   
         this.slug = res['slug']
         this.base = window.location.origin
+        this.active = this.adminpage.isupdateeditoractive
      })
     }
   }

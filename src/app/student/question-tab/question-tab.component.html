@@ -11,7 +11,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">Posted on</th>
@@ -21,17 +20,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let question of qustionList | paginate: { itemsPerPage: 10, currentPage: p }">
-      <th scope="row"></th>
       <td>{{question.title}}</td>
       <td>{{question.desciption}}</td>
       <td>{{question.posted_on}}</td>
-
       <button type="button" class="btn btn-primary" (click)="openModal(template,question.qustion)">View</button>
       <td> <button class="btn btn-primary" (click)="download(question.qustion,question.title)">Downoad</button></td>
     </tr>
   </tbody>
 </table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls autoHide="true"  responsive="true"   (pageChange)="p = $event"></pagination-controls>
 
 
 <ng-template style="width:1000%" #template>

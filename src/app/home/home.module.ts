@@ -20,8 +20,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
-import { ShareButtonsModule } from 'ngx-sharebuttons';
+import { ShareButtonsModule,ShareButtonsOptions } from 'ngx-sharebuttons';
+const options: ShareButtonsOptions = {
 
+  theme: 'modern-light',
+  gaTracking: true,
+}
 
 @NgModule({
   declarations: [ContactusComponent, 
@@ -35,7 +39,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons';
     BlogModule,
     NgxSummernoteModule,
     NgxPaginationModule,
-    ShareButtonsModule.forRoot()
+    ShareButtonsModule.forRoot(options)
 
     
   ],

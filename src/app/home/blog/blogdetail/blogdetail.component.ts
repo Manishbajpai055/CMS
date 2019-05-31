@@ -10,7 +10,7 @@ import {BlogService } from './../../../services/blog.service'
 export class BlogdetailComponent implements OnInit {
   blodetail
   slug 
-  constructor(private route:ActivatedRoute, private detail:BlogService,) {
+  constructor(private route:ActivatedRoute, private detail:BlogService) {
    }
   ngOnInit() {
     this.route.params.subscribe( params => this.slug = params.slug);
