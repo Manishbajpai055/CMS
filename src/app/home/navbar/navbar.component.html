@@ -18,15 +18,16 @@
       <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/gallery']">Gallery</a>
       </li>
-      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist" >
-        <a class="nav-link" [routerLink]="['/page',page.slug]" >{{page.menu_name}}</a>
-        <!--(click)="openPage(page.slug)-->
-      </li>
+      
   
       <li  [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" id="guest" [routerLink]="['/notes']">Notes</a>
       </li>
 
+      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist" >
+        <a class="nav-link" [routerLink]="['/page',page.slug]" >{{page.menu_name}}</a>
+        <!--(click)="openPage(page.slug)-->
+      </li>
       <li *ngIf="!loged_in" [routerLinkActive]="['active']" class="nav-item">
           <a class="nav-link" id="auth" [routerLink]="['/auth']">Login</a>
         </li>

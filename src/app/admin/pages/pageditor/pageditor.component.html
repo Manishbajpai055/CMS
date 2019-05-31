@@ -1,32 +1,43 @@
 <div id="editor"></div>
 <button class="btn btn-primary" (click)="goback()">Go back To list</button>
 <p *ngIf="erromassage">{{erromassage}}</p>
+<br>
+<div *ngIf="this.adminpage.isupdateeditoractive">
+    <P>URL {{base}}#/page/{{slug}}</P>
+    <a [routerLink]="['/page',slug]">View Page</a>
+</div>
 <form [formGroup]="NewPost" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label>Title</label>
-            <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                <div *ngIf="f.title.errors.required">Title is required</div>
-            </div>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" formControlName="title" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+            <div *ngIf="f.title.errors.required">Title is required</div>
         </div>
-        <div class="form-group">
-            <label>Content</label>
-            <div id="editor" formControlName="content" [ngxSummernote]="config"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.content.errors }" >
-            </div>
-            <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
-                <div *ngIf="f.content.errors.required">Content is required</div>
-            </div>
+    </div>
+    <div class="form-group">
+        <label>Content</label>
+        <div id="editor" formControlName="content" [ngxSummernote]="config" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.content.errors }">
         </div>
-        <div class="form-group">
-            <label>Menu Name</label>
-            <input  formControlName="menu_name"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.menu_name.errors }" />
-            <div *ngIf="submitted && f.menu_name.errors" class="invalid-feedback">
-                <div *ngIf="f.menu_name.errors.required">Menu Name is required</div>
-            </div>
+        <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+            <div *ngIf="f.content.errors.required">Content is required</div>
         </div>
-        <div  *ngIf="loading" class="spinner-border text-dark"></div>
+    </div>
+    <label class="container"> Check if You want to Show this Page on Menu
+        <input type="checkbox" [checked]="marked" (change)="toggleVisibility($event)" />
+    </label>
+    <div *ngIf="marked" class="form-group">
+        <label>Menu Name</label>
+        <input formControlName="menu_name" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.menu_name.errors }" />
+        <div *ngIf="submitted && f.menu_name.errors" class="invalid-feedback">
+            <div *ngIf="f.menu_name.errors.required">Menu Name is required</div>
+        </div>
+    </div>
+    <div *ngIf="loading" class="spinner-border text-dark"></div>
 
-        <div *ngIf="!loading" class="form-group">
-            <button class="btn btn-primary">Save</button>
-        </div>
+    <div *ngIf="!loading" class="form-group">
+        <button class="btn btn-primary">Save</button>
+    </div>
 </form>
