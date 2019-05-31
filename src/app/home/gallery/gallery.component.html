@@ -31,12 +31,14 @@
         <div (click)="openModal(template)" class="lightbox">
           <img class="preview" src="{{slide.image}}" alt="image">
           <ng-template #template>
-            <div class="modal-header">
-              
-                <img   src="{{slide.image}}" alt="image">
-              
-              <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-              </button>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            </button>
+            <div style="align-content: center" class="modal-header">
+              <h5>{{slide.title}}</h5>
+            </div>
+            <br>
+            <div class="modal-body text-center">
+              <img style="width: 100%" src="{{slide.image}}" alt="image">
             </div>
           </ng-template>
         </div>

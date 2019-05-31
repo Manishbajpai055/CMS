@@ -4,10 +4,11 @@
       <div class="card-body">
         <h5 class="card-title">{{blog.title}}</h5>
         <app-blogsummery [content]="blog.content"></app-blogsummery>
-        <a (click)="ViewDetail(blog.slug)" class="btn btn-primary">Read</a>
+        <a (click)="ViewDetail(blog.slug)" class="btn btn-primary">Read More</a>
       </div>
-   </div>
-   <div style="text-align:center">
-      <pagination-controls autoHide="true"  responsive="true"  (pageChange)="p = $event"></pagination-controls>
     </div>
+    <div style="text-align:center">
+      <pagination-controls autoHide="true" responsive="true" (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
 </div>

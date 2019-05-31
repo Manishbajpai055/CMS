@@ -14,23 +14,22 @@
         <a class="nav-link" [routerLink]="['/blog']">Blogs</a>
       </li>
       <li [routerLinkActive]="['active']" class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">About</a>
-      </li>
-      <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/gallery']">Gallery</a>
       </li>
-      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist">
+      <li [routerLinkActive]="['active']" class="nav-item">
+        <a class="nav-link" [routerLink]="['/about']">About</a>
+      </li>
+    <!-- 
+      <li  class="nav-item">
+        <a class="nav-link" href="http://oems-demo.s3-website.us-east-2.amazonaws.com" >Test Series</a>
+      </li>
+      -->
+      <li  class="nav-item" *ngFor="let page of pagelist">
         <a *ngIf="page.menu_name" class="nav-link" [routerLink]="['/page',page.slug]">{{page.menu_name}}</a>
         <!--(click)="openPage(page.slug)-->
       </li>
-
       <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" id="guest" [routerLink]="['/notes']">Notes</a>
-      </li>
-
-      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist">
-        <a class="nav-link" [routerLink]="['/page',page.slug]">{{page.menu_name}}</a>
-        <!--(click)="openPage(page.slug)-->
       </li>
       <li *ngIf="!loged_in" [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" id="auth" [routerLink]="['/auth']">Login</a>

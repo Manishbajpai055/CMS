@@ -69,7 +69,6 @@ const routes: Routes = [
           component:BlogdetailComponent
       },
       ]
-
       
     },
     {

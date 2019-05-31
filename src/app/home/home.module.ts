@@ -21,6 +21,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
 import { ShareButtonsModule,ShareButtonsOptions } from 'ngx-sharebuttons';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+
 const options: ShareButtonsOptions = {
 
   theme: 'modern-light',
@@ -39,9 +41,8 @@ const options: ShareButtonsOptions = {
     BlogModule,
     NgxSummernoteModule,
     NgxPaginationModule,
-    ShareButtonsModule.forRoot(options)
-
-    
+    ShareButtonsModule.forRoot(options),
+    NgxSmartModalModule.forRoot() 
   ],
   exports: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
