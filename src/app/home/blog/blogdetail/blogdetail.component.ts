@@ -17,7 +17,6 @@ export class BlogdetailComponent implements OnInit {
     this.route.params.subscribe( params => this.slug = params.slug);
     this.detail.blodetail(this.slug).subscribe(
       data => {
-        console.log(data)
         this.blodetail = data;
       })
      

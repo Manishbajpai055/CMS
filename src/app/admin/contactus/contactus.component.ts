@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import {  FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
 
@@ -12,9 +12,8 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
 export class ContactusComponent implements OnInit {
 
   varified
-  headerinfo : Object;
+  headerinfo ;
   htmlToAdd: string;
-
 
   constructor(private elementRef: ElementRef, private headerfooterservice: HeaderFooterService, private Contactus: ContactusService, private formBuilder: FormBuilder) { }
   subscribeform: FormGroup
@@ -30,8 +29,6 @@ export class ContactusComponent implements OnInit {
        this.Contactus.postSubscriberinfo(this.subscribeform.value)
        localStorage.setItem("varified","true")
        this.varified= true
-
-   
   }
 }
   ngOnInit() {
