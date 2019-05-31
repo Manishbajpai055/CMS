@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" [routerLink]="['/']"><img class="navbar-brand" src="{{siteLogo}}"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li [routerLinkActive]="['active']" class="nav-item active">
-        <a class="nav-link"  [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
       </li>
       <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/blog']">Blogs</a>
@@ -18,34 +19,38 @@
       <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/gallery']">Gallery</a>
       </li>
-      <li  [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist">
-        <a  *ngIf="page.menu_name" class="nav-link" [routerLink]="['/page',page.slug]" >{{page.menu_name}}</a>
+      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist">
+        <a *ngIf="page.menu_name" class="nav-link" [routerLink]="['/page',page.slug]">{{page.menu_name}}</a>
         <!--(click)="openPage(page.slug)-->
       </li>
-  
-      <li  [routerLinkActive]="['active']" class="nav-item">
+
+      <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" id="guest" [routerLink]="['/notes']">Notes</a>
       </li>
 
+      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist">
+        <a class="nav-link" [routerLink]="['/page',page.slug]">{{page.menu_name}}</a>
+        <!--(click)="openPage(page.slug)-->
+      </li>
       <li *ngIf="!loged_in" [routerLinkActive]="['active']" class="nav-item">
-          <a class="nav-link" id="auth" [routerLink]="['/auth']">Login</a>
-        </li>
-        <li *ngIf="loged_in" id="auth" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            hey {{username}}
-          </a>
-          <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li  class="dropdown-item"   [routerLinkActive]="['active']" class="nav-item">
-                <a  *ngIf="admin" class="nav-link" [routerLink]="['/admin']">Dashboard</a>
-              <a  *ngIf="student" class="nav-link" [routerLink]="['/student']">Dashboard</a>
-              <a class="nav-link" [routerLink]="['/auth']">logout</a>
-            </li>
-          </div>
-        </li>
-      
-        
+        <a class="nav-link" id="auth" [routerLink]="['/auth']">Login</a>
+      </li>
+      <li *ngIf="loged_in" id="auth" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          hey {{username}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li class="dropdown-item" [routerLinkActive]="['active']" class="nav-item">
+        <a *ngIf="admin" class="nav-link" [routerLink]="['/admin']">Dashboard</a>
+        <a *ngIf="student" class="nav-link" [routerLink]="['/student']">Dashboard</a>
+        <a class="nav-link" [routerLink]="['/auth']">logout</a>
+      </li>
+  </div>
+  </li>
 
-    </ul>
-    
+
+  </ul>
+
   </div>
 </nav>

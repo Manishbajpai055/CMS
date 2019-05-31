@@ -12,6 +12,10 @@
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']"  [routerLink]="['/admin/pages']">Page</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin/homepage']">HomePage</a>
+          </li>
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/admin/homepage']">HomePage</a>
         </li>
@@ -30,15 +34,20 @@
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/admin/about']">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link"  [routerLinkActive]="['active']"  [routerLink]="['/admin/notes']">Notes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']"  [routerLink]="['/admin/questions']">Questions</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/admin/answers']">Answers</a>
-        </li>
+        <li  class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="navigation" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Students Notes/QnA
+            </a>
+            <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li  class="dropdown-item"   [routerLinkActive]="['active']" class="nav-item">        
+                <a  class="nav-link" [routerLink]="['/admin/notes']">Notes</a>
+                <a  class="nav-link" [routerLink]="['/admin/questions']">Questions</a>
+              
+                <a  class="nav-link" [routerLink]="['/admin/answers']">Answers</a>
+              
+            </li>
+            </div>
+          </li>
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/admin/guest']">Guest QNA</a>
         </li>
@@ -47,7 +56,8 @@
           </li>
           <li class="nav-item">
               <a class="nav-link" [routerLinkActive]="['active']"  [routerLink]="['/auth']">Log Out</a>
-            </li>
+         </li>
        </ul>
+       
     </div>
   </nav>

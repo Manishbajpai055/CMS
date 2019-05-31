@@ -16,6 +16,7 @@ text-align: center;
     .carousel{
         background-color: #007bff;
         width: 100%;
+        padding-bottom: 11px;
         border-radius: 11px 11px 11px 11px;
         }
     button{

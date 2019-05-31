@@ -35,11 +35,10 @@
               <div *ngIf="error">
                 <p class="text-warning .bg-warning">{{error}}</p>
               </div>
-              <div class="table-responsive-xl">
-            <table class="table">
+              <div class="table-responsive">
+                <table class="table table-active">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Description</th>
                   <th scope="col">Posted On</th>
@@ -49,7 +48,6 @@
               </thead>
               <tbody>
                 <tr *ngFor="let qna of qnalist | paginate: { itemsPerPage: 10, currentPage: p }">
-                  <th scope="row">{{qna.id}}</th>
                   <td>{{qna.title}}</td>
                   <td>{{qna.desciption}}</td>
                   <td>{{qna.posted_on}}</td>

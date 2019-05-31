@@ -1,48 +1,57 @@
-<h3>Letest Answers</h3>
-<div  *ngIf="loading"> Downloading Your FIle Please Wait
-    <div class="col-sm-4">
-        <div class="mb-2">
-          <progressbar [value]="progress">{{progress}}%</progressbar>
+<div class="card">
+  <div class="card-body">
+    <div style="margin-right:10px;margin-left:10px;align-content: center">
+      <h3>Letest Answers</h3>
+      <div *ngIf="loading"> Downloading Your FIle Please Wait
+        <div class="col-sm-4">
+          <div class="mb-2">
+            <progressbar [value]="progress">{{progress}}%</progressbar>
+          </div>
         </div>
+        <div class="spinner-border text-dark"></div>
       </div>
-  <div  class="spinner-border text-dark"></div>
-  </div>
-  <p *ngIf="errormessege">{{errormessege}}</p>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Posted on</th>
-        <td scope="col">View</td>
-        <td scope="col">Download</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let answer of answerlist | paginate: { itemsPerPage: 10, currentPage: p }">
-        <th scope="row"></th>
-        <td>{{answer.title}}</td>
-        <td>{{answer.desciption}}</td>
-        <td>{{answer.posted_on}}</td>
-       <td><button class="btn btn-primary" (click)="openModal(template,answer.answer)" >View</button></td>  
-       <td> <button class="btn btn-primary"  (click)="download(answer.answer,answer.title)"  >Downoad</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  
-  
-  
-  <ng-template style="width:1000%" #template>
-    <div  class="modal-header">
-      <h4 class="modal-title pull-left">Viwer</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div style="width:100%" class="modal-body">
-      <pdf-viewer [src]="src" [autoresize]="true" [fit-to-page]="true" [render-text]="true" >
-      </pdf-viewer>
-    </div>
-  </ng-template>
+      <p *ngIf="errormessege">{{errormessege}}</p>
+      
+<div class="table-responsive">
+  <table class="table table-active">
+     
+        <thead>
+          <tr>
+          
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Posted on</th>
+            <td scope="col">View</td>
+            <td scope="col">Download</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let answer of answerlist | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{answer.title}}</td>
+            <td>{{answer.desciption}}</td>
+            <td>{{answer.posted_on}}</td>
+            <td><button class="btn btn-primary" (click)="openModal(template,answer.answer)">View</button></td>
+            <td> <button class="btn btn-primary" (click)="download(answer.answer,answer.title)">Downoad</button></td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
+   </div>
+   </div>
+   
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+
+      <ng-template style="width:1000%" #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Viwer</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div style="width:100%" class="modal-body">
+          <pdf-viewer [src]="src" [autoresize]="true" [fit-to-page]="true" [render-text]="true">
+          </pdf-viewer>
+        </div>
+      </ng-template>

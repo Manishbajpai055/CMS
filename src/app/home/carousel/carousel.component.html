@@ -11,14 +11,14 @@
      
             <ng-template #template>
               <div class="modal-header">
-                <h6 class="modal-title pull-left">News Details : {{slide.title}}</h6>
+                <h6 class="modal-title pull-left">News Title : {{slide.title}}</h6>
                 <button class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
                 <img class="col-sm-6 col-md-12" src="{{slide.image}}">
-               <h4 style="padding-top: 20px;">   {{slide.description}} </h4>
+               <h6 style="padding-top: 20px;"> News Details : {{slide.description}} </h6>
               </div>
             </ng-template>
           <p>{{slide.description}}</p>

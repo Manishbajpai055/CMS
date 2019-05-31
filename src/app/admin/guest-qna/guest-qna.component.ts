@@ -55,7 +55,7 @@ export class GuestQNAComponent implements OnInit {
         this.selecetdFile = null
         this.refresh()
         this.loading = false
-      })
+      });
     }
   }
   refresh() {

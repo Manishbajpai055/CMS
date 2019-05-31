@@ -10,9 +10,10 @@ import { AboutService } from 'src/app/services/about.service';
 export class HomepageComponent implements OnInit {
 
   title = 'ShardaIas'
-  home
+  home: any;
   constructor(private titleserv:Title,private about:AboutService) { }
 
+ 
   ngOnInit() {
     this.about.About().subscribe(res =>{
       this.home = res['siteHome']
@@ -22,4 +23,5 @@ export class HomepageComponent implements OnInit {
 
   }
 
-}
+  }
+

@@ -4,7 +4,9 @@
             <div style="margin-right:4%;margin-left: 4%;align-content: center">
 
             <app-new-question></app-new-question>
-            <table class="table">
+            
+<div class="table-responsive">
+  <table class="table table-active">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -26,6 +28,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
             </div>

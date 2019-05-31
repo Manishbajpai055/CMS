@@ -3,7 +3,9 @@
         <div class="card-body">
             <div style="margin-right:4%;margin-left: 4%;align-content: center">
           <app-new-answers></app-new-answers>
-          <table class="table">
+          
+<div class="table-responsive">
+  <table class="table table-active">
             <thead>
               <tr>
                 
@@ -23,6 +25,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
           </div>

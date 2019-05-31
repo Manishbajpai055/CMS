@@ -13,3 +13,22 @@
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
 }
+
+.row{
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 0;
+    }
+    
+
+    .card{
+        border-color: #007bff;
+        margin-top: 4%;
+        margin-left: 10px;
+        margin-right: 10px;
+        -webkit-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+        box-shadow: -7px 7px 9px -1px rgba(0,0,0,0.75);
+    }
