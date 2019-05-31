@@ -39,7 +39,7 @@ export class QuestionTabComponent implements OnInit {
   }
   openModal(template: TemplateRef<any>, url) {
     
-    const initialState = { id: 545, type: "test", class: "modal-lg" };
+    const initialState = { id: 12312, type: "test", class: "modal-lg" };
     this.util.download(url).subscribe(event => {
       if (event.type === HttpEventType.Response) {
         var file = new File([event.body], "filename", { type: "text/plain" });
@@ -65,7 +65,7 @@ export class QuestionTabComponent implements OnInit {
 }
   download(url,filename){
     if (this.downloading == true) {
-      this.errormessege = "! Dowload In Progress Please Wait TO Finish"
+      this.errormessege = "Download In Progress Please Wait TO Finish"
         return
     } else {
       this.downloading=true
@@ -85,7 +85,7 @@ export class QuestionTabComponent implements OnInit {
 },(err: any) => {
   this.loading=false
   this.progress = 0
-  this.errormessege = "Check YOu Netwrok Connnection"
+  this.errormessege = "Check Your Network Connection"
   this.downloading = false
 });
 }
