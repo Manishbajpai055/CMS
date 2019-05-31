@@ -14,20 +14,29 @@ export class PageditorComponent implements OnInit {
   submitted: boolean;
   loading:boolean;
   erromassage: any;
+  marked
+  slug
+  base
   constructor(private newpage:PageserviceService,private adminpage:PagesComponent ,private fb: FormBuilder,private formBuilder: FormBuilder,private uti:UtilService ) { }
 
   ngOnInit() {
     this.NewPost = this.formBuilder.group({
       title: ['', Validators.required],
      content: ['', Validators.required],
-     menu_name:['',Validators.required]
+     menu_name:''
   })
     if (this.adminpage.isupdateeditoractive===true){
       this.newpage.pagedetail(this.adminpage.slug).subscribe(res =>{
-        this.updatepagedetail = res
-        this.NewPost.get('title').setValue(this.updatepagedetail.title) 
-        this.NewPost.get('content').setValue(this.updatepagedetail.content)
-        this.NewPost.get('menu_name').setValue(this.updatepagedetail.menu_name)   
+         if (res['menu_name']==='null'||res['menu_name']==='undefined'||res['menu_name']==='') {
+           this.marked = false
+      } else {
+        this.marked  = true
+         } 
+        this.NewPost.get('title').setValue(res['title']) 
+        this.NewPost.get('content').setValue(res['content'])
+        this.NewPost.get('menu_name').setValue(res['menu_name'])   
+        this.slug = res['slug']
+        this.base = window.location.origin
      })
     }
   }
@@ -38,8 +47,9 @@ export class PageditorComponent implements OnInit {
     placeholder: 'Enter Text Here',
   };
   onSubmit() {
-
     this.submitted = true;
+    if(this.marked === false || this.NewPost.value.menu_name===null ||this.NewPost.value.menu_name==='undefined'||this.NewPost.value.menu_name==='' )
+    this.NewPost.get('menu_name').setValue("null")   
     if (this.NewPost.invalid) {
       return;
     }
@@ -68,4 +78,13 @@ export class PageditorComponent implements OnInit {
   }
   get f() { return this.NewPost.controls; }
 
+  toggleVisibility(e){
+    this.marked= e.target.checked;
+    console.log(this.marked)
+  }
+  copyInputMessage(inputElement){
+    inputElement.select();
+    document.execCommand(this.slug);
+    inputElement.setSelectionRange(0, 0);
+  }
 }

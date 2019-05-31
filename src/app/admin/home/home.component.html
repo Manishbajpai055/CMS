@@ -2,11 +2,12 @@
 <h3>Manage YOur Home Page</h3>
 <form [formGroup]="home" (ngSubmit)="onSubmit()">
   <div class="form-group">
-      <label>Edit Home Page Conent </label>
-      <div id="editor" formControlName="siteHome" [ngxSummernote]="config"  class="form-control" ></div>
+    <label>Edit Home Page Conent </label>
+    <p class="alert alert-success" *ngIf="massage">{{massage}}</p>
+    <div id="editor" formControlName="siteHome" [ngxSummernote]="config" class="form-control"></div>
   </div>
-  <div  *ngIf="loading" class="spinner-border text-dark"></div>
+  <div *ngIf="loading" class="spinner-border text-dark"></div>
   <div *ngIf="loading!=true" class="form-group">
-      <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Save</button>
   </div>
 </form>

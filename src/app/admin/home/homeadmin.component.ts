@@ -17,6 +17,8 @@ export class HomeAdminComponent implements OnInit {
     height: 200,
     uploadImagePath: this.util.getDomain()+'blog/images/upload/',
   };
+  loading
+  massage
   ngOnInit() {
     this.home = this.formBuilder.group({
       siteHome: ['', Validators.required]
@@ -29,8 +31,10 @@ export class HomeAdminComponent implements OnInit {
   }
   onSubmit() {
     // data = data['siteLogo'] = this.selecetdFile
+       this.loading = true
        this.about.editAbout(this.home.value).subscribe(response=>{
-         console.log(response)
+        this.loading = false
+        this.massage = "Home Page Updated"
        });
      }
 

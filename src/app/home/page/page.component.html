@@ -1,8 +1,11 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div style="margin-right:4%;margin-left: 4%;align-content: center">
+            <div style="margin-right:2%;margin-left: 2%;align-content: center">
                 <h3 style="text-align:center; padding-top: 3%;">{{pageinfo.title}}<br></h3>
+                <hr>
+                <share-buttons></share-buttons>
+                <hr>
                 <br>
                     <div [ngxSummernoteView]="pageinfo.content"></div>
             </div>

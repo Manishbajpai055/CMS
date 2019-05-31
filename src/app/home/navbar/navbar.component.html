@@ -18,8 +18,8 @@
       <li [routerLinkActive]="['active']" class="nav-item">
         <a class="nav-link" [routerLink]="['/gallery']">Gallery</a>
       </li>
-      <li [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist" >
-        <a class="nav-link" [routerLink]="['/page',page.slug]" >{{page.menu_name}}</a>
+      <li  [routerLinkActive]="['active']" class="nav-item" *ngFor="let page of pagelist">
+        <a  *ngIf="page.menu_name" class="nav-link" [routerLink]="['/page',page.slug]" >{{page.menu_name}}</a>
         <!--(click)="openPage(page.slug)-->
       </li>
   

@@ -10,42 +10,53 @@ import { AboutService } from 'src/app/services/about.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  pagelist
+  pagelist: Object
   siteLogo
   username = 's'
-  loged_in:Boolean
-  admin 
+  loged_in: Boolean
+  admin
   student = false
-  constructor(private list:PageserviceService,private router:Router,private sitemetdata:AboutService) { }
+  menu = {}
+  constructor(private list: PageserviceService, private router: Router, private sitemetdata: AboutService) { }
 
   ngOnInit() {
     this.refresh()
   }
-  openPage(slug){
+  openPage(slug) {
     console.log(slug)
-    this.router.navigate(['page',slug]);
+    this.router.navigate(['page', slug]);
   }
-  refresh(){
-    this.sitemetdata.About().subscribe(res =>{
-      console.log('header',res['siteLogo'])
+  refresh() {
+    this.sitemetdata.About().subscribe(res => {
+      console.log('header', res['siteLogo'])
       this.siteLogo = res['siteLogo']
     })
     if (localStorage.getItem('token')) {
       this.loged_in = true
       this.username = localStorage.getItem('user')
-        if (localStorage.getItem('role') === 'admin') {
-          this.admin=true
-          this.student=false
-        } else {
-          this.student=true
-          this.admin = false
-        }
+      if (localStorage.getItem('role') === 'admin') {
+        this.admin = true
+        this.student = false
+      } else {
+        this.student = true
+        this.admin = false
+      }
 
     }
     this.list.pagelist().subscribe(
       data => {
-        this.pagelist = data;
-        
+        this.menu = data
+        for (var prop in this.menu) {
+          if (this.menu.hasOwnProperty(prop)) {
+            if (this.menu[prop]['menu_name'] === 'null') {
+              console.log(this.menu[prop],"Nulled MENue")
+              delete this.menu[prop]['menu_name'];
+            }
+          }
+        }
+        console.log(this.menu)
+        this.pagelist = this.menu
+
       })
   }
 }
