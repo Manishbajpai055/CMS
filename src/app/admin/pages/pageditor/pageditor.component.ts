@@ -41,11 +41,12 @@ export class PageditorComponent implements OnInit {
         this.active = this.adminpage.isupdateeditoractive
      })
     }
-  }
+  }    
+
   NewPost: FormGroup
   config = {
     height: '200px',
-    uploadImagePath: this.uti.getDomain()+'api/upload/',
+    uploadImagePath: this.uti.getDomain()+'blog/images/upload/',
     placeholder: 'Enter Text Here',
   };
   onSubmit() {
