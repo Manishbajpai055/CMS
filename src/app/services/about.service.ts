@@ -16,10 +16,8 @@ export class AboutService {
 
   About() {
     return this.http.get(this.util.getDomain()+'api/sitemetadata/1/',httpOptions);
-
   }
   editAbout(data) {
-    console.log(data)
       return this.http.put(this.util.getDomain()+'api/sitemetadata/1/update/',data);
   }
 

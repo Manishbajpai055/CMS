@@ -12,7 +12,7 @@ export class BlogsummeryComponent implements OnInit {
   sanetized_conent
   ngOnInit() 
   {
-    this.sanetized_conent = this.content.replace(/<img[^>]*>/g,"")
+    this.sanetized_conent = this.content.replace(/(<([^>]+)>)/ig,"")
   }
 
 }

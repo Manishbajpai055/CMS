@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {AboutService} from '../../services/about.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { UtilService } from 'src/app/services/utilservices.service';
 
 @Component({ 
   selector: 'app-about',
@@ -22,11 +23,10 @@ export class AboutComponentadmin implements OnInit  {
   config = {
     height: '200px',
     weight: 'auto',
-    uploadImagePath: 'http://127.0.0.1:8000/blog/images/upload/',
-    placeholder: 'Enter Text Here',
+    uploadImagePath: this.util.getDomain()+'/blog/images/upload/',
     
   };
-  constructor(private about: AboutService,private sanitizer:DomSanitizer) {
+  constructor(private about: AboutService,private util:UtilService) {
     }
   
   onFileUpload(event) {

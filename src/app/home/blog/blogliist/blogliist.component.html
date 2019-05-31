@@ -2,12 +2,11 @@
     <div *ngFor="let blog of bloglist | paginate: { itemsPerPage: 10, currentPage: p }" class="col-sm-6">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{blog.title}}</h5>
+          <h5 class="card-title ">{{blog.title}}</h5>
           <app-blogsummery [content]="blog.content"></app-blogsummery>
            <a (click)="ViewDetail(blog.slug)" class="btn btn-primary">Read</a>
         </div>
       </div>
    </div>
-   <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
+   <pagination-controls autoHide="true"  responsive="true"  (pageChange)="p = $event"></pagination-controls>
 </div>

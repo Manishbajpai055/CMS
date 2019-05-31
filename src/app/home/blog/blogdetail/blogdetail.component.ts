@@ -12,14 +12,11 @@ export class BlogdetailComponent implements OnInit {
   slug 
   constructor(private route:ActivatedRoute, private detail:BlogService,) {
    }
-
   ngOnInit() {
     this.route.params.subscribe( params => this.slug = params.slug);
     this.detail.blodetail(this.slug).subscribe(
       data => {
         this.blodetail = data;
-      })
-     
+      })  
   }
-
 }

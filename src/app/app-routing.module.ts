@@ -32,6 +32,7 @@ import { UsersComponent } from './admin/Student/users/users.component';
 import { UserlistComponent } from './admin/Student/users/userlist/userlist.component';
 import { GuestQNAComponent } from './admin/guest-qna/guest-qna.component';
 import { GuestComponent } from './guest/guest.component';
+import { HomeAdminComponent } from './admin/home/homeadmin.component';
 
 const routes: Routes = [
   {
@@ -122,6 +123,10 @@ const routes: Routes = [
       {
         path : 'pages',
         component : PagesComponent
+      },
+      {
+        path : 'homepage',
+        component : HomeAdminComponent
       },
       {
         path : 'blogs',

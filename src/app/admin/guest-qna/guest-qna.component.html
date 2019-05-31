@@ -1,9 +1,8 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div style="margin-right:4%;margin-left: 4%;align-content: center">
-                          
-            <div class="footerlable">Add new Question</div>
+            <div style="margin-right:1%;margin-left: 1%;align-content: center">
+             <div class="footerlable">Add new Question</div>
             <div *ngIf="loading">Uploading Question Please Wait
               <div class="spinner-border text-muted"></div>
             </div>
@@ -36,9 +35,7 @@
               <div *ngIf="error">
                 <p class="text-warning .bg-warning">{{error}}</p>
               </div>
-              
-
-
+              <div class="table-responsive-xl">
             <table class="table">
               <thead>
                 <tr>
@@ -61,8 +58,8 @@
                 </tr>
               </tbody>
             </table>
+            </div>
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
             </div>
           </div>
         </div>

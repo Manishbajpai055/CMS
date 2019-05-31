@@ -1,5 +1,6 @@
 import { Component, OnInit,HostBinding } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { AboutService } from 'src/app/services/about.service';
 
 @Component({
   selector: 'app-homepage',
@@ -8,11 +9,17 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomepageComponent implements OnInit {
 
-  tit = "geek"
-  constructor(private titleserv:Title) { }
+  title = 'ShardaIas'
+  home
+  constructor(private titleserv:Title,private about:AboutService) { }
 
   ngOnInit() {
-    this.titleserv.setTitle(this.tit)
+    this.about.About().subscribe(res =>{
+      this.home = res['siteHome']
+      this.title = res['sitename']
+      this.titleserv.setTitle(this.title)
+    })
+
   }
 
 }
