@@ -1,4 +1,7 @@
-            <h3>Latest Notes</h3>
+<div class="card">
+    <div class="card-body">
+      <div style="margin-right:10px;margin-left:10px;align-content: center">          
+          <h3>Latest Notes</h3>
 <div  *ngIf="loading"> Downloading Your File Please Wait
     <div class="col-sm-4">
         <div class="mb-2">
@@ -8,8 +11,8 @@
   <div  class="spinner-border text-dark"></div>
   </div>
   <p *ngIf="errormessege">{{errormessege}}</p>
-<table class="table">
-  <thead>
+  <div class="table-responsive">
+      <table class="table table-active">  <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
@@ -31,8 +34,12 @@
     </tr>
   </tbody>
 </table>
+</div>
+</div>
+</div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
+</div>
 <ng-template style="width:1000%" #template>
   <div  class="modal-header">
     <h4 class="modal-title pull-left">Viwer</h4>
