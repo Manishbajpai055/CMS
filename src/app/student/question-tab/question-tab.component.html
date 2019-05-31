@@ -30,17 +30,7 @@
 </table>
 <pagination-controls autoHide="true" responsive="true" (pageChange)="p = $event"></pagination-controls>
 
-<button type="button" class="btn btn-primary" (click)="openModal(template,question.qustion)">View</button>
-<td> <button class="btn btn-primary" (click)="download(question.qustion,question.title)">Downoad</button>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
 
 <ng-template style="width:1000%" #template>
   <div class="modal-header">

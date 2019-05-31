@@ -38,17 +38,14 @@ export class PageditorComponent implements OnInit {
         this.NewPost.get('menu_name').setValue(res['menu_name'])   
         this.slug = res['slug']
         this.base = window.location.origin
-<<<<<<< HEAD
         this.active = this.adminpage.isupdateeditoractive
-=======
->>>>>>> dd3f76d47ad093acef280e6c0078584d03b319ca
      })
     }
   }
   NewPost: FormGroup
   config = {
     height: '200px',
-    uploadImagePath: this.uti.getDomain()+'api/upload',
+    uploadImagePath: this.uti.getDomain()+'api/upload/',
     placeholder: 'Enter Text Here',
   };
   onSubmit() {

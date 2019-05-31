@@ -25,8 +25,6 @@ export class AdminhomeComponent implements OnInit {
    this.about.About().subscribe(res=>{
     this.home.get('siteHome').setValue(res['siteHome'])  
   })
-    
-    
   }
   onSubmit() {
     // data = data['siteLogo'] = this.selecetdFile

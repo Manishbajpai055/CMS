@@ -23,7 +23,7 @@ export class AboutComponentadmin implements OnInit  {
   config = {
     height: '200px',
     weight: 'auto',
-    uploadImagePath: this.util.getDomain()+'/blog/images/upload/',
+    uploadImagePath: this.util.getDomain()+'blog/images/upload/',
     
   };
   constructor(private about: AboutService,private util:UtilService) {
