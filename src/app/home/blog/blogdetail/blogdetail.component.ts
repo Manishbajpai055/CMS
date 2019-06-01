@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BlogService } from './../../../services/blog.service'
+import { Blog } from 'src/app/models';
 
 @Component({
   selector: 'app-blogdetail',
@@ -8,7 +9,7 @@ import {BlogService } from './../../../services/blog.service'
   styleUrls: ['./blogdetail.component.css']
 })
 export class BlogdetailComponent implements OnInit {
-  blodetail
+  blodetail:Blog[] = [];
   slug 
   constructor(private route:ActivatedRoute, private detail:BlogService) {
    }

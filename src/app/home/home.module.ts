@@ -4,10 +4,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
-import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { BlogdetailComponent } from './blog/blogdetail/blogdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogModule } from './blog/blog.module';
@@ -17,22 +15,15 @@ import { NgxSummernoteModule, } from 'ngx-summernote';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './page/page.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
-import { ShareButtonsModule,ShareButtonsOptions } from 'ngx-sharebuttons';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
-
-const options: ShareButtonsOptions = {
-
-  theme: 'modern-light',
-  gaTracking: true,
-}
 
 @NgModule({
   declarations: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
-     HeaderComponent, FooterComponent, PageComponent, GalleryComponent, ContactUsComponent,BlogsummeryComponent],
+     HeaderComponent, FooterComponent, PageComponent, GalleryComponent,BlogsummeryComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -41,12 +32,12 @@ const options: ShareButtonsOptions = {
     BlogModule,
     NgxSummernoteModule,
     NgxPaginationModule,
-    ShareButtonsModule.forRoot(options),
+    ShareButtonsModule.forRoot(),
     NgxSmartModalModule.forRoot() 
   ],
   exports: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,
-     HeaderComponent, FooterComponent, PageComponent, GalleryComponent, ContactUsComponent],
+     HeaderComponent, FooterComponent, PageComponent, GalleryComponent],
   
   providers: [] 
 })

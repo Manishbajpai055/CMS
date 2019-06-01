@@ -3,15 +3,10 @@ import { CommonModule } from '@angular/common';
 import { BlogComponent } from './blog.component';
 import { BlogdetailComponent } from './blogdetail/blogdetail.component';
 import { RouterModule } from '@angular/router';
-import { BlogliistComponent } from './blogliist/blogliist.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ShareButtonsModule,ShareButtonsOptions } from 'ngx-sharebuttons';
-const options: ShareButtonsOptions = {
+import { ShareButtonsModule, } from 'ngx-sharebuttons';
 
-  theme: 'modern-light',
-  gaTracking: true,
-}
 
 @NgModule({
   declarations: [BlogdetailComponent,BlogComponent,],
@@ -20,8 +15,7 @@ const options: ShareButtonsOptions = {
     RouterModule,
     NgxSummernoteModule,
     NgxPaginationModule,
-    ShareButtonsModule.forRoot(options)
-
+    ShareButtonsModule
   ]
 })
 export class BlogModule { }

@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {AboutService} from '../../services/about.service';
-
+export interface about {      
+  siteAbout  
+}  
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  Quill: any = null
-  aboutdetail;
+  aboutdetail = {}
   constructor(private about: AboutService) { }
-  ngOnInit() {
+   ngOnInit() {
     this.about.About().subscribe(res => {
       this.aboutdetail = res
      })

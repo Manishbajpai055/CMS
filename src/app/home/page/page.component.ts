@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {  ActivatedRoute } from '@angular/router';
 import { PageserviceService } from 'src/app/services/pageservice.service';
+import { Page } from 'src/app/models';
 
 @Component({
   selector: 'app-page',
@@ -8,9 +9,7 @@ import { PageserviceService } from 'src/app/services/pageservice.service';
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-
-  pageinfo
-  slug 
+  pageinfo:Page[] = [];
   previousslug
   constructor(private route: ActivatedRoute, private page:PageserviceService) { }
   ngOnInit() {
@@ -18,10 +17,8 @@ export class PageComponent implements OnInit {
   }
   refresh(){
     this.route.params.subscribe( params =>{
-       this.slug = params.slug
-       this.page.pagedetail(this.slug).subscribe(
+       this.page.pagedetail(params.slug).subscribe(
         data => {
-          console.log(data)
           this.pageinfo = data;
         })
       });  

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UtilService } from './utilservices.service';
+import { Observable } from 'rxjs';
+import { Page } from '../models';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,11 +17,11 @@ const httpOptions = {
 export class PageserviceService {
 
   constructor(private http:HttpClient,private util:UtilService) { }
-  pagelist(){
-    return this.http.get(this.util.getDomain()+'api/pages/',httpOptions)
+  pagelist(): Observable<Page[]>{
+    return this.http.get<Page[]>(this.util.getDomain()+'api/pages/',httpOptions)
   }
-  pagedetail(slug){
-    return this.http.get(this.util.getDomain()+'api/pages/'+slug+'/',httpOptions)
+  pagedetail(slug): Observable<Page[]>{
+    return this.http.get<Page[]>(this.util.getDomain()+'api/pages/'+slug+'/',httpOptions)
   }
   pageupdate(slug,data){
     return this.http.put(this.util.getDomain()+'api/pages/'+slug+'/update/',data)

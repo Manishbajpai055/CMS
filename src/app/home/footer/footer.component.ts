@@ -17,7 +17,5 @@ export class FooterComponent implements OnInit {
      this.footernotes = res
    }
    )
-   
   }
-
 }

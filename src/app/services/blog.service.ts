@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UtilService } from './utilservices.service';
-
+import { Observable } from 'rxjs';
+import { Blog } from '../models';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,12 +18,12 @@ export class BlogService {
 
   constructor(private http:HttpClient,private util:UtilService) { }
 
-  bloglist(){
-    return this.http.get(this.util.getDomain()+'blog/',httpOptions)
+  bloglist(): Observable<Blog[]> {
+    return this.http.get<Blog[]>(this.util.getDomain()+'blog/',httpOptions)
    
   }
-  blodetail(slug){
-    return this.http.get(this.util.getDomain()+'blog/'+slug+'/',httpOptions)
+  blodetail(slug): Observable<Blog[]> {
+    return this.http.get<Blog[]>(this.util.getDomain()+'blog/'+slug+'/',httpOptions)
       
   }
   newblog(data){

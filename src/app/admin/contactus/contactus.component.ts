@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import {  FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ContactusService } from 'src/app/services/contactus.service';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
+import { siteMeta } from 'src/app/models';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { HeaderFooterService } from 'src/app/services/header-footer.service';
 export class ContactusComponent implements OnInit {
 
   varified
-  headerinfo ;
+  headerinfo:siteMeta[] = []
   htmlToAdd: string;
 
   constructor(private elementRef: ElementRef, private headerfooterservice: HeaderFooterService, private Contactus: ContactusService, private formBuilder: FormBuilder) { }
