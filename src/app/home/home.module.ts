@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogModule } from './blog/blog.module';
 import { BlogliistComponent } from './blog/blogliist/blogliist.component';
-import { ContactusComponent } from '../admin/contactus/contactus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 import { NgxSummernoteModule, } from 'ngx-summernote';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageComponent } from './page/page.component';
