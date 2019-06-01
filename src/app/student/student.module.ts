@@ -8,15 +8,12 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StudentNotesComponent } from './student-notes/student-notes.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { NewstudentComponent } from './newstudent/newstudent.component';
-import { StudentlistComponent } from './newstudent/studentlist/studentlist.component';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { PdfviewerComponent } from './pdfviewer/pdfviewer.component';
 
 @NgModule({
-  declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent, NewstudentComponent, StudentlistComponent, PdfviewerComponent],
+  declarations: [StudentDashboardComponent, QuestionTabComponent, AnswerTabComponent, StudentComponent, NavbarComponent, StudentNotesComponent ],
   imports: [
     CommonModule,
     RouterModule,
