@@ -16,7 +16,6 @@ export class AdminauthgaurdGuard implements CanActivate {
         } else {
           this.router.navigate(['/auth'])
         }
-        console.log(role)
         return true
      }
      else {

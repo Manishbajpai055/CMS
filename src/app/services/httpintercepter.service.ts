@@ -17,12 +17,24 @@ import { Router } from '@angular/router';
 export class HttpintercepterService implements HttpInterceptor {
   constructor(public util: UtilService,private router:Router) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     console.log("Intercepter Excuting")
     if (request.headers.has("InterceptorSkipHeader")) {
       const headers = request.headers.delete("InterceptorSkipHeader");
-      console.log("skipd Login Page")
-      return next.handle(request.clone({ headers }));
+      console.log("skipd  Page")
+      return next.handle(request.clone({ headers })).pipe(
+        tap((event: HttpEvent<any>) => {
+          if (event instanceof HttpResponse) {
+          }
+        }, (err: any) => {
+          if (err instanceof HttpErrorResponse) {
+            if (err.status === 404) {
+              console.log("ahhh ")
+              this.router.navigate(['/']);
+            }
+          }
+
+        })
+      );
     }
       console.log("Token Excuted")
       request = request.clone({   
@@ -41,6 +53,7 @@ export class HttpintercepterService implements HttpInterceptor {
               this.router.navigate(['/auth/logout']);
             }
           }
+
         })
     );
 

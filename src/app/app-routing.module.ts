@@ -184,6 +184,8 @@ const routes: Routes = [
         component:StudentNotesComponent
       }
     ],
+    },{
+      path: '**', redirectTo: '/',
     }
 ];
 
