@@ -10,7 +10,6 @@ import { Page } from 'src/app/models';
 })
 export class PageComponent implements OnInit {
   pageinfo:Page[] = [];
-  previousslug
   constructor(private route: ActivatedRoute, private page:PageserviceService) { }
   ngOnInit() {
     this.refresh()
@@ -23,6 +22,5 @@ export class PageComponent implements OnInit {
         })
       });  
   }
-
 
 }

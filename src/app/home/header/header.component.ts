@@ -13,9 +13,7 @@ export class HeaderComponent implements OnInit {
   headerinfos:siteMeta[] = []
   ngOnInit() {
     this.headerfooterservice.getHeadeFooter().subscribe(res=>{
-      console.log(res)
       this.headerinfos =res
-    })
-
-}
+    }) 
+  }
 }

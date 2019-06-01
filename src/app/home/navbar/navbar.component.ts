@@ -23,12 +23,10 @@ export class NavbarComponent implements OnInit {
     this.refresh()
   }
   openPage(slug) {
-    console.log(slug)
     this.router.navigate(['page', slug]);
   }
   refresh() {
     this.sitemetdata.About().subscribe(res => {
-      console.log('header', res['siteLogo'])
       this.siteLogo = res['siteLogo']
     })
     if (localStorage.getItem('token')) {
@@ -41,7 +39,6 @@ export class NavbarComponent implements OnInit {
         this.student = true
         this.admin = false
       }
-
     }
     this.list.pagelist().subscribe(
       data => {
@@ -49,14 +46,11 @@ export class NavbarComponent implements OnInit {
         for (var prop in this.menu) {
           if (this.menu.hasOwnProperty(prop)) {
             if (this.menu[prop]['menu_name'] === 'null') {
-              console.log(this.menu[prop],"Nulled MENue")
               delete this.menu[prop]['menu_name'];
             }
           }
         }
-        console.log(this.menu)
         this.pagelist = this.menu
-
       })
   }
 }

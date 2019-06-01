@@ -18,7 +18,6 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BlogsummeryComponent } from './blog/blogsummery/blogsummery.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons';
-import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 @NgModule({
   declarations: [ContactusComponent, 
@@ -33,7 +32,6 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     NgxSummernoteModule,
     NgxPaginationModule,
     ShareButtonsModule.forRoot(),
-    NgxSmartModalModule.forRoot() 
   ],
   exports: [ContactusComponent, 
     HomepageComponent, NavbarComponent,HomeComponent, AboutComponent, CarouselComponent,BlogliistComponent,

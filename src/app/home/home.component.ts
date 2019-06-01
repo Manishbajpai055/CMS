@@ -6,17 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
   
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   onActivate(event) {
     window.scroll(0,0);
-    //or document.body.scrollTop = 0;
-    //or document.querySelector('body').scrollTo(0,0)
-
 }
   
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

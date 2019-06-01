@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderFooterService } from 'src/app/services/header-footer.service';
-
-declare var google: any;
+import { siteMeta } from 'src/app/models';
 
 @Component({
   selector: 'app-footer',
@@ -9,13 +8,12 @@ declare var google: any;
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  footernotes
+  footernotes:siteMeta[] = []
   constructor(private headerfooter: HeaderFooterService) { }
 
   ngOnInit() {
-   this.footernotes = this.headerfooter.getupdatefooter().subscribe(res => {
+  this.headerfooter.getupdatefooter().subscribe(res => {
      this.footernotes = res
-   }
-   )
+   })
   }
 }

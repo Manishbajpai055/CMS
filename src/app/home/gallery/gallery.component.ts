@@ -15,10 +15,9 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.galleryservice.gallerylist()
     this.galleryservice.gallerylist().subscribe(res =>{
       this.sliderArray= res
-      this.index = Object.keys(res);;
+      this.index = Object.keys(res);
     })
   }
 

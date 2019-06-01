@@ -18,7 +18,7 @@ export class HeaderFooterService {
 
   constructor(private http:HttpClient,private util:UtilService) { }
   postHeadeFooter(data){
-    return this.http.put<siteMeta[]>(this.util.getDomain()+'api/siteheaderfoooter/1/update/',data).subscribe(res=>{
+    return this.http.put(this.util.getDomain()+'api/siteheaderfoooter/1/update/',data).subscribe(res=>{
     })
   }
   getHeadeFooter(): Observable<siteMeta[]>{

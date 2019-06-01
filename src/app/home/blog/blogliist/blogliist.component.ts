@@ -13,15 +13,11 @@ export class BlogliistComponent implements OnInit {
   constructor(private list: BlogService,private router:Router) { }
 
   ngOnInit() {
-
-   this.list.bloglist().subscribe(
-    data => {
+   this.list.bloglist().subscribe(data => {
       this.bloglist = data;
-      console.log(data)
     })
   }
   ViewDetail(slug){
-    console.log(slug)
     this.router.navigate(['blog','post',slug]);
   }
   

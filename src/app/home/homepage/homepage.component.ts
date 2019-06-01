@@ -12,16 +12,12 @@ export class HomepageComponent implements OnInit {
   title = 'ShardaIas'
   home: any;
   constructor(private titleserv:Title,private about:AboutService) { }
-
- 
   ngOnInit() {
     this.about.About().subscribe(res =>{
       this.home = res['siteHome']
       this.title = res['sitename']
       this.titleserv.setTitle(this.title)
     })
-
   }
-
-  }
+}
 

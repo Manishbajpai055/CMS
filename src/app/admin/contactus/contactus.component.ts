@@ -55,7 +55,6 @@ export class ContactusComponent implements OnInit {
   get f() { return this.subscribeform.controls; }
   refresh() {
     this.headerfooterservice.getHeadeFooter().subscribe(res => {
-      console.log(res)
       this.headerinfo = res
     })
   }
