@@ -1,0 +1,15 @@
+* {
+  outline: none;
+}
+
+.ir-arriba {
+  display: none;
+  background: #172a74;
+  font-size: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+

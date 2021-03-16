@@ -1,0 +1,17 @@
+#brand-logo {
+  font-size: 34px;
+}
+
+#app-navbar {
+  background: linear-gradient(120deg, #00e4d0, #5983e8);
+}
+
+.border.rounded.shadow.box:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.border.rounded.box:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  margin-top: 2px;
+}
+

@@ -1,0 +1,92 @@
+.flex-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-wrap-wrap {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-justify-center {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex-align-center {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-box > div[class*="col"] {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.text-block {
+  position: absolute;
+  background-color: white;
+  color: rgb(0,0,0);
+  margin-top: -34px;
+  margin-left: 100px;
+  height: 50px;
+  /*padding-top: -48px;*/
+  width: 159px;
+  text-align: center;
+  padding-bottom: initial;
+}
+
+@media (min-width: 1366px) {
+  .text-b {
+    position: relative;
+    height: 36px;
+    width: 221px;
+    text-align: center;
+    margin-top: -52px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 11px;
+    padding-right: 11px;
+    background-color: #ffffff;
+    padding-top: 0px;
+  }
+}
+
+#Move2Top:hover {
+  padding-bottom: 6px;
+}
+
+@media (min-width: 300px) {
+  .navbar.navbar-dark.navbar-expand-md.bg-dark {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-right: 210px;
+    margin-top: -32px;
+    color: #000000;
+    font-family: Montserrat, sans-serif;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar.navbar-dark.navbar-expand-md.bg-dark {
+    margin-left: 359px;
+    width: 494px;
+  }
+}
+
+.carousel-control-prev-icon {
+  color: red;
+  font-style: oblique;
+}
+
